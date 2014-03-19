@@ -1,0 +1,22 @@
+<!-- yaml metadata -->
+ ---
+ layout: post
+ title: "Zombie Ninjas Attack: A survivor's retrospective"
+ date: 2011-07-03 5:59
+ comments: true
+ external-url:
+ categories:
+ ---
+ 
+<!--  -->
+# One category
+categories: Sass
+ 
+# Multiple categories example 1
+categories: [CSS3, Sass, Media Queries]
+ 
+# Multiple categories example 2
+categories:
+- CSS3
+- Sass
+- Media Queries
