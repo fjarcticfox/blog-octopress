@@ -3,7 +3,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://fjarcticfox.github.io               # For rewriting urls for RSS, etc
+url: http://blog.longgen.me
 title: 逆水行舟                                  # Used in the header and title tags
 subtitle: Do what you say, say what you do      # A description used in the header
 # If your site is a multi-author blog, you may want to set this config's author to the name of your company or project, and add author metadata to posts and pages to give proper attribution for those works.
