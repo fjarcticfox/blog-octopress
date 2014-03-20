@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[逆水行舟]]></title>
-  <link href="http://fjarcticfox.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[分类：github | 逆水行舟]]></title>
+  <link href="http://fjarcticfox.github.io/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://fjarcticfox.github.io/"/>
   <updated>2014-03-20T11:07:54+08:00</updated>
   <id>http://fjarcticfox.github.io/</id>
