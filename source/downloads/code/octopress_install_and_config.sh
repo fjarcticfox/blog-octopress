@@ -1,4 +1,4 @@
-# 从git复制Octopress http://octopress.org/docs/deploying/
+# 从git复制Octopress http://octopress.org/docs/deploying/， 最新版本Octopress https://github.com/octopress/octopress
 git clone git://github.com/imathis/octopress.git octopress
 cd octopress
 # 下一步，安装依赖
