@@ -52,13 +52,14 @@ rake deploy
 git clone -b source git@github.com:username/username.github.io.git octopress
 # clone GitHub上master分支代码至octopress子文件夹_deploy中
 cd octopress
-git clone git@github.com:username/username.github.com.git _deploy
+git clone git@github.com:username/username.github.io.git _deploy
 # 更新插件，执行相关配置
 gem install bundler
 bundle install
 rake setup_github_pages
-# 从远程GitHub上更新source及master分支到本地对应的octopress
-目录及_deploy目录下
+# 从远程GitHub上更新source及master分支到本地对应的octopress目录及_deploy目录下
 git pull origin source
 cd _deploy
 git pull origin master
+
+# 注意点：若rake版本不对，可以在命令前加bundlle exec执行。
