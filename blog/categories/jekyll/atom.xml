@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[分类：jekyll | 逆水行舟]]></title>
-  <link href="http://fjarcticfox.github.io/blog/categories/jekyll/atom.xml" rel="self"/>
-  <link href="http://fjarcticfox.github.io/"/>
-  <updated>2014-03-20T11:07:54+08:00</updated>
-  <id>http://fjarcticfox.github.io/</id>
+  <link href="http://blog.longgen.me/blog/categories/jekyll/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-03-20T23:45:16+08:00</updated>
+  <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
     <email><![CDATA[fjarcticfox@gmail.com]]></email>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Mac OS下Octopress + GitHub Pages发布博客]]></title>
-    <link href="http://fjarcticfox.github.io/blog/2014/03/19/mac-os-xia-octopress-plus-github-pages-fa-bu-bo-ke/"/>
+    <title type="html"><![CDATA[Mac OS X下Octopress + GitHub Pages发布博客]]></title>
+    <link href="http://blog.longgen.me/blog/2014/03/19/mac-os-x-xia-octopress-plus-github-pages-fa-bu-bo-ke/"/>
     <updated>2014-03-19T23:22:03+08:00</updated>
-    <id>http://fjarcticfox.github.io/blog/2014/03/19/mac-os-xia-octopress-plus-github-pages-fa-bu-bo-ke</id>
+    <id>http://blog.longgen.me/blog/2014/03/19/mac-os-x-xia-octopress-plus-github-pages-fa-bu-bo-ke</id>
     <content type="html"><![CDATA[<h1>前言</h1>
 
 <h2>优点</h2>
@@ -48,45 +48,133 @@
 <h2>设置Octopress</h2>
 
 <ul>
-<li><p>从git复制Octopress</p>
-
-<pre><code>  git clone git://github.com/imathis/octopress.git octopress
-  cd octopress
-</code></pre></li>
-<li><p>下一步，安装依赖</p>
-
-<pre><code>  gem install bundler   # 若报权限错误，加sudo执行相关命令
-  rbenv rehash    # If you use rbenv, rehash to be able to run the bundle command
-  bundle install
-</code></pre></li>
-<li><p>安装Octopress默认主题</p>
-
-<pre><code>  rake install    # 由于默认主题名为“classic” 该命令等效于：rake install['classic]
-</code></pre></li>
-<li><p>或者安装<a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">第三方主题</a></p>
-
-<pre><code>  cd octopress
-  git clone GIT_URL .themes/THEME_NAME
-  rake install['THEME_NAME']
-  rake generate
-</code></pre></li>
-<li><p>Octopress发布在Github Pages上</p>
-
-<pre><code>  rake setup_github_pages   # 该命令将进行一系列的github相关配置
-  rake generate             # This will generate your blog, copy the generated files into _deploy/
-  rake deploy               # dd them to git, commit and push them up to the master branch
-</code></pre></li>
-<li><p>将octopress目录下所有代码提交到source分支</p>
-
-<pre><code>  git add .
-  git commit -m '源码提交'
-  git push origin source
-</code></pre></li>
-<li><p>自定义域名</p></li>
+<li>从git复制Octopress</li>
 </ul>
 
 
-<p>File /Users/arcticfox/octopress/source/downloads/code/start:10 could not be found</p>
+<p>```sh</p>
+
+<pre><code>git clone git://github.com/imathis/octopress.git octopress
+cd octopress
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>下一步，安装依赖</li>
+</ul>
+
+
+<p>```sh</p>
+
+<pre><code>gem install bundler     # 若报权限错误，加sudo执行相关命令
+rbenv rehash            # If you use rbenv, rehash to be able to run the bundle command
+bundle install
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>安装Octopress默认主题</li>
+</ul>
+
+
+<p>```sh</p>
+
+<pre><code>rake install    # 由于默认主题名为“classic” 该命令等效于：rake install['classic]
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>或者安装<a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">第三方主题</a></li>
+</ul>
+
+
+<p>```sh</p>
+
+<pre><code>cd octopress
+git clone GIT_URL .themes/THEME_NAME
+rake install['THEME_NAME']
+rake generate
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>Octopress发布在Github Pages上</li>
+</ul>
+
+
+<p>```sh</p>
+
+<pre><code>rake setup_github_pages   # 该命令将进行一系列的github相关配置
+rake generate             # This will generate your blog, copy the generated files into _deploy/
+rake preview              # 本地预览页面，页面默认发布在localhost:4000
+rake deploy               # dd them to git, commit and push them up to the master branch
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>将octopress目录下所有代码提交到source分支</li>
+</ul>
+
+
+<p>```sh</p>
+
+<pre><code>git add .
+git commit -m '源码提交'
+git push origin source
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>自定义域名</li>
+</ul>
+
+
+<p>```sh</p>
+
+<pre><code>echo 'your-domain.com' &gt;&gt; source/CNAME
+# 或者
+echo 'www.your-domain.com' &gt;&gt; source/CNAME
+# 然后，你必须访问你得域名注册商或者DNS主机，为你的域名增加一个record
+# 注意最好不要使用顶级域名作为CNAME，另外，DNS解析生效需要比较长的时间
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>按规范<a href="http://octopress.org/docs/blogging/">发布文章</a>，新发布文章的默认扩展名是markdown，你可以在Rakefile文件中更改扩展名</li>
+</ul>
+
+
+<p>```sh</p>
+
+<pre><code>rake new_post["title"]                    # 按规范发布文章，并且为文章自动生成yaml metadata
+rake new_page[super-awesome]              # 创建 /source/super-awesome/index.markdown
+rake new_page[super-awesome/page.html]    # 创建 /source/super-awesome/page.html
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li><a href="http://octopress.org/docs/updating/">远程更新至本地</a></li>
+</ul>
+
+
+<p>```sh</p>
+
+<pre><code>git pull octopress master     # Get the latest Octopress
+bundle install                # Keep gems updated
+rake update_source            # update the template's source
+rake update_style             # update the template's style
+# rake update命令相当于以上rake update_source和rake update_style两个命令合并执行(该命令无效？？？)
+</code></pre>
+
+<p>```</p>
 ]]></content>
   </entry>
   
