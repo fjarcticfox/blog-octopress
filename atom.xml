@@ -4,7 +4,7 @@
   <title><![CDATA[逆水行舟]]></title>
   <link href="http://blog.longgen.me/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-03-21T00:05:55+08:00</updated>
+  <updated>2014-03-23T16:48:56+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -14,7 +14,435 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Mac OS X下Octopress + GitHub Pages发布博客]]></title>
+    <title type="html"><![CDATA[本博客Markdown 语法测试]]></title>
+    <link href="http://blog.longgen.me/blog/2014/03/23/markdown-yu-fa-ce-shi/"/>
+    <updated>2014-03-23T15:18:12+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/03/23/markdown-yu-fa-ce-shi</id>
+    <content type="html"><![CDATA[<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt;&gt; 仅支持六级标题（pre code效果）
+</span><span class='line'>
+</span><span class='line'># 1. 一级标题
+</span><span class='line'>
+</span><span class='line'>## 1.1. 二级标题
+</span><span class='line'>
+</span><span class='line'>### 1.1.1. 三级标题
+</span><span class='line'>
+</span><span class='line'>#### 1.1.1.1. 四级标题
+</span><span class='line'>
+</span><span class='line'>##### 1.1.1.1.1. 五级标题
+</span><span class='line'>
+</span><span class='line'>###### 1.1.1.1.1.1. 六级标题</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>1. 一级标题</h1>
+
+<h2>1.1. 二级标题</h2>
+
+<h3>1.1.1. 三级标题</h3>
+
+<h4>1.1.1.1. 四级标题</h4>
+
+<h5>1.1.1.1.1. 五级标题</h5>
+
+<h6>1.1.1.1.1.1. 六级标题</h6>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt;&gt; 列表
+</span><span class='line'>
+</span><span class='line'>无序列表可以用 - + * 三种写法
+</span><span class='line'>
+</span><span class='line'>- 减号1
+</span><span class='line'>
+</span><span class='line'>- 减号2
+</span><span class='line'>
+</span><span class='line'>+ 加号1
+</span><span class='line'>
+</span><span class='line'>+ 加号2
+</span><span class='line'>
+</span><span class='line'>* 星号1
+</span><span class='line'>
+</span><span class='line'>* 星号2
+</span><span class='line'>
+</span><span class='line'>有序列表用数字表示，序号错了会被自动识别，输出会纠正
+</span><span class='line'>
+</span><span class='line'>1. 数字1
+</span><span class='line'>
+</span><span class='line'>2. 数字2
+</span><span class='line'>
+</span><span class='line'>4. 数字4
+</span><span class='line'>
+</span><span class='line'>3. 数字3
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>        /* 列表中两次缩进形成的代码块 */
+</span><span class='line'>
+</span><span class='line'>        var a = 2;
+</span><span class='line'>
+</span><span class='line'>        var b = 4;
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>列表之间可以有空行，不过 html 等处理稍有不同
+</span><span class='line'>列表中得文字可以断行，建议换缩进更美观，不缩进也可以
+</span><span class='line'>列表中的文字还允许有空行，至少段首要一个缩进
+</span><span class='line'>列表中也可以放代码块，需要两个缩进</span></code></pre></td></tr></table></div></figure>
+
+
+<p>无序列表可以用 &ndash; + * 三种写法</p>
+
+<ul>
+<li><p>减号1</p></li>
+<li><p>减号2</p></li>
+<li><p>加号1</p></li>
+<li><p>加号2</p></li>
+<li><p>星号1</p></li>
+<li><p>星号2</p></li>
+</ul>
+
+
+<p>有序列表用数字表示，序号错了会被自动识别，输出会纠正</p>
+
+<ol>
+<li><p>数字1</p></li>
+<li><p>数字2</p></li>
+<li><p>数字4</p></li>
+<li><p>数字3</p>
+
+<pre><code> /* 列表中两次缩进形成的代码块 */
+
+ var a = 2;
+
+ var b = 4;
+</code></pre></li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt;&gt; 分割线用三个以上的减号、加号或分割线表示，行内不能有空格以外的其他字符
+</span><span class='line'>
+</span><span class='line'>---
+</span><span class='line'>
+</span><span class='line'>+++
+</span><span class='line'>
+</span><span class='line'>***</span></code></pre></td></tr></table></div></figure>
+
+
+<hr />
+
+<p>+++</p>
+
+<hr />
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt;&gt; 强调
+</span><span class='line'>
+</span><span class='line'>*em效果*
+</span><span class='line'>
+</span><span class='line'>**strong效果**
+</span><span class='line'>
+</span><span class='line'>_em效果_
+</span><span class='line'>
+</span><span class='line'>__strong效果__</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>em效果</em></p>
+
+<p><strong>strong效果</strong></p>
+
+<p><em>em效果</em></p>
+
+<p><strong>strong效果</strong></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt;&gt; 代码效果
+</span><span class='line'>
+</span><span class='line'>行内代码`var a = 1`
+</span><span class='line'>
+</span><span class='line'>要在代码里包含反引号，你可以使用多个反引号引起来这段代码：``There is a literal backtick (`) here.``
+</span><span class='line'>
+</span><span class='line'>```javascript
+</span><span class='line'>
+</span><span class='line'>    /* 代码块 */
+</span><span class='line'>    var a = 1;
+</span><span class='line'>
+</span><span class='line'>    var b = 2;
+</span><span class='line'>
+</span><span class='line'>    var c = function(a, b){
+</span><span class='line'>        return a + b;
+</span><span class='line'>    };
+</span><span class='line'>
+</span><span class='line'>    c(a, b);
+</span><span class='line'>
+</span><span class='line'>```</span></code></pre></td></tr></table></div></figure>
+
+
+<p>行内代码<code>var a = 1</code></p>
+
+<p>要在代码里包含反引号，你可以使用多个反引号引起来这段代码：<code>There is a literal backtick (`) here.</code></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="cm">/* 代码块 */</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">){</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="nx">c</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">&gt;&gt;</span> <span class="nx">Markdown</span><span class="err">用表示链接相同的语法来表示图片，有两种方式：内联和参考。</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">内联语法</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">这是</span><span class="nx">Google</span><span class="o">+</span><span class="err">的图标</span><span class="o">!</span><span class="p">[</span><span class="nx">Google</span><span class="o">+</span><span class="p">](</span><span class="nx">http</span><span class="o">:</span><span class="c1">//www.google.com/images/icons/ui/gprofile_button-32.png)</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">!</span><span class="p">[</span><span class="nx">Google</span><span class="o">+</span><span class="p">](</span><span class="nx">http</span><span class="o">:</span><span class="c1">//www.google.com/images/icons/ui/gprofile_button-32.png &#39;标题&#39;)</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">参考语法</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">这是</span><span class="nx">Google</span><span class="o">+</span><span class="err">的图标</span><span class="o">!</span><span class="p">[</span><span class="nx">Google</span><span class="o">+</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">!</span><span class="p">[</span><span class="nx">Google</span><span class="o">+</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span> <span class="nx">http</span><span class="o">:</span><span class="c1">//www.google.com/images/icons/ui/gprofile_button-32.png</span>
+</span><span class='line'><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span> <span class="nx">http</span><span class="o">:</span><span class="c1">//www.google.com/images/icons/ui/gprofile_button-32.png &#39;标题&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>内联语法</p>
+
+<p>这是Google+的图标<img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" alt="Google+" /></p>
+
+<p><img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" title="标题" alt="Google+" /></p>
+
+<p>参考语法</p>
+
+<p>这是Google+的图标<img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" alt="Google+" /></p>
+
+<p><img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" title="标题" alt="Google+" /></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">&gt;&gt;</span> <span class="err">链接及邮件</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">http</span><span class="o">:</span><span class="c1">//example.com/&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">address</span><span class="err">@</span><span class="nx">example</span><span class="p">.</span><span class="nx">com</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://example.com/">http://example.com/</a></p>
+
+<p><a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#97;&#100;&#x64;&#114;&#x65;&#x73;&#115;&#64;&#101;&#x78;&#x61;&#x6d;&#x70;&#x6c;&#101;&#x2e;&#99;&#111;&#x6d;">&#x61;&#100;&#100;&#x72;&#x65;&#115;&#115;&#64;&#101;&#x78;&#97;&#109;&#112;&#108;&#x65;&#46;&#99;&#x6f;&#x6d;</a></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">&gt;&gt;</span> <span class="err">反斜线转义</span> <span class="nx">Markdown</span> <span class="err">中的特殊字符</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">\</span><span class="nx">as</span> <span class="err">普通字符不转义</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">\</span><span class="o">*</span><span class="nx">literal</span> <span class="nx">asterisks</span><span class="err">\</span><span class="o">*</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">\\</span> <span class="nx">backslash</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">\`</span>   <span class="nx">backtick</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">\</span><span class="o">*</span>   <span class="nx">asterisk</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">\</span><span class="nx">_</span>   <span class="nx">underscore</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">\</span><span class="p">{</span><span class="err">\</span><span class="p">}</span>  <span class="nx">curly</span> <span class="nx">braces</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">\</span><span class="p">[</span><span class="err">\</span><span class="p">]</span>  <span class="nx">square</span> <span class="nx">brackets</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">\</span><span class="p">(</span><span class="err">\</span><span class="p">)</span>  <span class="nx">parentheses</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">\#</span>   <span class="nx">hash</span> <span class="nx">mark</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">\</span><span class="o">+</span>   <span class="nx">plus</span> <span class="nx">sign</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">\</span><span class="o">-</span>   <span class="nx">minus</span> <span class="nx">sign</span> <span class="p">(</span><span class="nx">hyphen</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">\</span><span class="p">.</span>   <span class="nx">dot</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">\</span><span class="o">!</span>   <span class="nx">exclamation</span> <span class="nx">mark</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>\as 普通字符不转义</p>
+
+<p>*literal asterisks*</p>
+
+<p>\ backslash</p>
+
+<p>`   backtick</p>
+
+<p>*   asterisk</p>
+
+<p>_   underscore</p>
+
+<p>{}  curly braces</p>
+
+<p>[]  square brackets</p>
+
+<p>()  parentheses</p>
+
+<p>-   minus sign (hyphen)</p>
+
+<p>+   plus sign</p>
+
+<p>#   hash mark</p>
+
+<p>.   dot</p>
+
+<p>!   exclamation mark</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mac OS X 下 Octopress + GitHub Pages 发布博客]]></title>
     <link href="http://blog.longgen.me/blog/2014/03/19/mac-os-x-xia-octopress-plus-github-pages-fa-bu-bo-ke/"/>
     <updated>2014-03-19T23:22:03+08:00</updated>
     <id>http://blog.longgen.me/blog/2014/03/19/mac-os-x-xia-octopress-plus-github-pages-fa-bu-bo-ke</id>
@@ -24,9 +452,9 @@
 
 <ul>
 <li>广泛的使用者及相关文档</li>
-<li>Octopress整合了丰富的第三方插件</li>
-<li>内置支持Gitub、Twitter、Google Plus One、Pinboard、Delicious、Disqus Comments、Google Analytics、Facebook</li>
-<li>源码版本信息完全自己通过github控制，可定制高度个性化的个人博客</li>
+<li>Octopress 整合了丰富的第三方插件</li>
+<li>内置支持 Gitub、Twitter、Google Plus One、Pinboard、Delicious、Disqus Comments、Google Analytics、Facebook</li>
+<li>源码版本信息完全自己通过 github 控制，可定制高度个性化的个人博客</li>
 </ul>
 
 
@@ -36,19 +464,19 @@
 
 <h1>安装及配置</h1>
 
-<h2>Git安装</h2>
+<h2>Git 安装</h2>
 
-<h2>Ruby安装，版本号要求大于1.9.3</h2>
+<h2>Ruby 安装，版本号要求大于1.9.3</h2>
 
 <ul>
 <li>通过 <a href="http://octopress.org/docs/setup/rbenv">rbenv</a> 或者 <a href="http://octopress.org/docs/setup/rvm">RVM</a> 安装。</li>
 </ul>
 
 
-<h2>设置Octopress</h2>
+<h2>设置 Octopress</h2>
 
 <ul>
-<li>从git复制Octopress</li>
+<li>从 git 复制 Octopress</li>
 </ul>
 
 
@@ -67,19 +495,19 @@
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install bundler     <span class="c"># 若报权限错误，加sudo执行相关命令</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install bundler     <span class="c"># 若报权限错误，加 sudo 执行相关命令</span>
 </span><span class='line'>rbenv rehash            <span class="c"># If you use rbenv, rehash to be able to run the bundle command</span>
 </span><span class='line'>bundle install
 </span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
-<li>安装Octopress默认主题</li>
+<li>安装 Octopress 默认主题</li>
 </ul>
 
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake install    <span class="c"># 由于默认主题名为“classic” 该命令等效于：rake install[&#39;classic]</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake install    <span class="c"># 由于默认主题名为“classic” 该命令等效于：rake install[&#39;classic‘]</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -108,15 +536,15 @@
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake setup_github_pages   <span class="c"># 该命令将进行一系列的github相关配置</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake setup_github_pages   <span class="c"># 该命令将进行一系列的 github 相关配置</span>
 </span><span class='line'>rake generate             <span class="c"># This will generate your blog, copy the generated files into _deploy/</span>
-</span><span class='line'>rake preview              <span class="c"># 本地预览页面，页面默认发布在localhost:4000</span>
+</span><span class='line'>rake preview              <span class="c"># 本地预览页面，页面默认发布在 localhost:4000</span>
 </span><span class='line'>rake deploy               <span class="c"># dd them to git, commit and push them up to the master branch</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
-<li>将octopress目录下所有代码提交到source分支</li>
+<li>将 octopress 目录下所有代码提交到 source 分支</li>
 </ul>
 
 
@@ -142,20 +570,20 @@
 </pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nb">echo</span> <span class="s1">&#39;your-domain.com&#39;</span> &gt;&gt; <span class="nb">source</span>/CNAME
 </span><span class='line'><span class="c"># 或者</span>
 </span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;www.your-domain.com&#39;</span> &gt;&gt; <span class="nb">source</span>/CNAME
-</span><span class='line'><span class="c"># 然后，你必须访问你得域名注册商或者DNS主机，为你的域名增加一个record</span>
-</span><span class='line'><span class="c"># 注意最好不要使用顶级域名作为CNAME，另外，DNS解析生效需要比较长的时间</span>
+</span><span class='line'><span class="c"># 然后，你必须访问你得域名注册商或者 DNS 主机，为你的域名增加一个 record</span>
+</span><span class='line'><span class="c"># 注意最好不要使用顶级域名作为 CNAME，另外，DNS 解析生效需要比较长的时间</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
-<li>按规范<a href="http://octopress.org/docs/blogging/">发布文章</a>，新发布文章的默认扩展名是markdown，你可以在Rakefile文件中更改扩展名</li>
+<li>按规范<a href="http://octopress.org/docs/blogging/">发布文章</a>，新发布文章的默认扩展名是 markdown，你可以在 Rakefile 文件中更改扩展名</li>
 </ul>
 
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake new_post<span class="o">[</span><span class="s2">&quot;title&quot;</span><span class="o">]</span>                    <span class="c"># 按规范发布文章，并且为文章自动生成yaml metadata</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake new_post<span class="o">[</span><span class="s2">&quot;title&quot;</span><span class="o">]</span>                    <span class="c"># 按规范发布文章，并且为文章自动生成 yaml metadata</span>
 </span><span class='line'>rake new_page<span class="o">[</span>super-awesome<span class="o">]</span>              <span class="c"># 创建 /source/super-awesome/index.markdown</span>
 </span><span class='line'>rake new_page<span class="o">[</span>super-awesome/page.html<span class="o">]</span>    <span class="c"># 创建 /source/super-awesome/page.html</span>
 </span></code></pre></td></tr></table></div></figure>
@@ -175,7 +603,7 @@
 </span><span class='line'>bundle install                <span class="c"># Keep gems updated</span>
 </span><span class='line'>rake update_source            <span class="c"># update the template&#39;s source</span>
 </span><span class='line'>rake update_style             <span class="c"># update the template&#39;s style</span>
-</span><span class='line'><span class="c"># rake update命令相当于以上rake update_source和rake update_style两个命令合并执行(该命令无效？？？)</span>
+</span><span class='line'><span class="c"># rake update命令相当于以上rake update_source和rake update_style 两个命令合并执行(该命令无效？？？)</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
