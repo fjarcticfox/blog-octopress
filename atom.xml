@@ -4,7 +4,7 @@
   <title><![CDATA[逆水行舟]]></title>
   <link href="http://blog.longgen.me/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-03-23T16:51:34+08:00</updated>
+  <updated>2014-03-23T16:58:34+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -170,20 +170,14 @@
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt;&gt; 分割线用三个以上的减号、加号或分割线表示，行内不能有空格以外的其他字符
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt;&gt; 分割线用三个以上的减号或分割线表示，行内不能有空格以外的其他字符
 </span><span class='line'>
 </span><span class='line'>---
-</span><span class='line'>
-</span><span class='line'>+++
 </span><span class='line'>
 </span><span class='line'>***</span></code></pre></td></tr></table></div></figure>
 
 
 <hr />
-
-<p>+++</p>
 
 <hr />
 
@@ -348,7 +342,7 @@
 
 <p><a href="http://example.com/">http://example.com/</a></p>
 
-<p><a href="&#x6d;&#97;&#x69;&#108;&#116;&#111;&#58;&#97;&#x64;&#100;&#114;&#x65;&#115;&#115;&#64;&#x65;&#120;&#x61;&#109;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#x6d;">&#x61;&#100;&#100;&#114;&#x65;&#x73;&#x73;&#64;&#101;&#x78;&#97;&#109;&#x70;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;</a></p>
+<p><a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#58;&#97;&#x64;&#x64;&#x72;&#101;&#x73;&#115;&#64;&#101;&#120;&#x61;&#109;&#x70;&#108;&#101;&#46;&#x63;&#111;&#109;">&#97;&#x64;&#100;&#x72;&#x65;&#x73;&#x73;&#x40;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;</a></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
