@@ -4,7 +4,7 @@
   <title><![CDATA[分类：markdown | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/markdown/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-03-23T16:48:56+08:00</updated>
+  <updated>2014-03-23T16:51:34+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[本博客Markdown 语法测试]]></title>
+    <title type="html"><![CDATA[本博客 Markdown 语法测试]]></title>
     <link href="http://blog.longgen.me/blog/2014/03/23/markdown-yu-fa-ce-shi/"/>
     <updated>2014-03-23T15:18:12+08:00</updated>
     <id>http://blog.longgen.me/blog/2014/03/23/markdown-yu-fa-ce-shi</id>
@@ -145,24 +145,24 @@
 
 <pre><code>&gt;&gt; 强调
 
-*em效果*
+*em 效果*
 
-**strong效果**
+**strong 效果**
 
-_em效果_
+_em 效果_
 
-__strong效果__
+__strong 效果__
 </code></pre>
 
 <p>```</p>
 
-<p><em>em效果</em></p>
+<p><em>em 效果</em></p>
 
-<p><strong>strong效果</strong></p>
+<p><strong>strong 效果</strong></p>
 
-<p><em>em效果</em></p>
+<p><em>em 效果</em></p>
 
-<p><strong>strong效果</strong></p>
+<p><strong>strong 效果</strong></p>
 
 <p>```</p>
 
@@ -214,17 +214,17 @@ var a = 1;</p>
 
 <p>```</p>
 
-<pre><code>&gt;&gt; Markdown用表示链接相同的语法来表示图片，有两种方式：内联和参考。
+<pre><code>&gt;&gt; Markdown 用表示链接相同的语法来表示图片，有两种方式：内联和参考。
 
 内联语法
 
-这是Google+的图标![Google+](http://www.google.com/images/icons/ui/gprofile_button-32.png)
+这是 Google+ 的图标![Google+](http://www.google.com/images/icons/ui/gprofile_button-32.png)
 
 ![Google+](http://www.google.com/images/icons/ui/gprofile_button-32.png '标题')
 
 参考语法
 
-这是Google+的图标![Google+][1]
+这是 Google+ 的图标![Google+][1]
 
 ![Google+][2]
 
@@ -236,13 +236,13 @@ var a = 1;</p>
 
 <p>内联语法</p>
 
-<p>这是Google+的图标<img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" alt="Google+" /></p>
+<p>这是 Google+ 的图标<img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" alt="Google+" /></p>
 
 <p><img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" title="标题" alt="Google+" /></p>
 
 <p>参考语法</p>
 
-<p>这是Google+的图标<img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" alt="Google+" /></p>
+<p>这是 Google+ 的图标<img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" alt="Google+" /></p>
 
 <p><img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" title="标题" alt="Google+" /></p>
 
@@ -259,7 +259,7 @@ var a = 1;</p>
 
 <p><a href="http://example.com/">http://example.com/</a></p>
 
-<p><a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#97;&#x64;&#100;&#x72;&#101;&#x73;&#115;&#64;&#101;&#x78;&#97;&#109;&#112;&#x6c;&#x65;&#x2e;&#99;&#111;&#x6d;">&#97;&#100;&#100;&#x72;&#x65;&#x73;&#115;&#x40;&#101;&#x78;&#97;&#x6d;&#x70;&#x6c;&#x65;&#46;&#x63;&#111;&#x6d;</a></p>
+<p><a href="&#x6d;&#97;&#x69;&#108;&#116;&#x6f;&#x3a;&#x61;&#100;&#100;&#114;&#101;&#x73;&#115;&#x40;&#x65;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;">&#x61;&#100;&#x64;&#x72;&#x65;&#115;&#x73;&#x40;&#x65;&#x78;&#97;&#109;&#x70;&#108;&#101;&#x2e;&#99;&#x6f;&#x6d;</a></p>
 
 <p>```</p>
 
