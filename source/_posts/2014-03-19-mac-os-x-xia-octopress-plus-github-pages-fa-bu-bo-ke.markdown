@@ -15,6 +15,7 @@ categories: [jekyll, octopress, github, github pages, blog]
 * 内置支持 Gitub、Twitter、Google Plus One、Pinboard、Delicious、Disqus Comments、Google Analytics、Facebook
 * 源码版本信息完全自己通过 github 控制，可定制高度个性化的个人博客
 
+<!-- more -->
 
 ## 官方文档
 
