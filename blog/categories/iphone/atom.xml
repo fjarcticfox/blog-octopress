@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：iphone | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/iphone/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-03-31T12:01:44+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[IOS 7 iPhone/iPad 应用开发技术详解]]></title>
+    <link href="http://blog.longgen.me/blog/2014/03/25/ios-7-iphone-slash-ipad-ying-yong-kai-fa-ji-zhu-xiang-jie/"/>
+    <updated>2014-03-25T14:57:42+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/03/25/ios-7-iphone-slash-ipad-ying-yong-kai-fa-ji-zhu-xiang-jie</id>
+    <content type="html"><![CDATA[<blockquote><ul>
+<li>书名《IOS 7 iPhone/iPad 应用开发技术详解》</li>
+<li>书号 ISBN 978-7-111-44051-2</li>
+<li>刘一道 著</li>
+<li>机械工业出版社</li>
+<li>2013 年 11 月第 1 版第 1 次印刷</li>
+</ul>
+</blockquote>
+]]></content>
+  </entry>
+  
+</feed>

@@ -4,15 +4,59 @@
         <loc>
             http://blog.longgen.me/blog/2014/03/19/mac-os-x-xia-octopress-plus-github-pages-fa-bu-bo-ke/
         </loc>
-        <lastmod>2014-03-23T16:18:53+08:00</lastmod>
+        <lastmod>2014-03-26T11:43:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/blog/2014/03/23/markdown-yu-fa-ce-shi/</loc>
-        <lastmod>2014-03-23T16:56:53+08:00</lastmod>
+        <lastmod>2014-03-26T11:46:51+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/blog/2014/03/23/objective-c-xue-xi/</loc>
-        <lastmod>2014-03-24T18:11:37+08:00</lastmod>
+        <lastmod>2014-03-26T11:43:29+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/03/25/android-xia-opengl-es/</loc>
+        <lastmod>2014-03-25T10:09:11+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/03/25/ios-xia-opengl-es/</loc>
+        <lastmod>2014-03-25T10:09:25+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/03/25/opengl-es-xue-xi/</loc>
+        <lastmod>2014-03-25T10:09:34+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://blog.longgen.me/blog/2014/03/25/opengl-es%28ios%2Candroid%29kai-fa-huan-jing-da-jian/
+        </loc>
+        <lastmod>2014-03-26T11:47:34+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/03/25/android-kai-fa-huan-jing-da-jian/</loc>
+        <lastmod>2014-03-26T11:47:01+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://blog.longgen.me/blog/2014/03/25/ios-7-iphone-slash-ipad-ying-yong-kai-fa-ji-zhu-xiang-jie/
+        </loc>
+        <lastmod>2014-03-25T15:08:21+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/03/25/sourcetree-gong-ju/</loc>
+        <lastmod>2014-03-26T11:47:45+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/03/26/xcode-shi-yong-ji-qiao/</loc>
+        <lastmod>2014-03-28T11:06:00+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/03/28/ios-kai-fa-bi-ji/</loc>
+        <lastmod>2014-03-28T10:20:06+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/03/29/pow-an-zhuang-pei-zhi-ji-shi-yong/</loc>
+        <lastmod>2014-03-31T12:00:43+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/about/</loc>
@@ -20,11 +64,11 @@
     </url>
     <url>
         <loc>http://blog.longgen.me/blog/archives/</loc>
-        <lastmod>2014-03-24T18:11:37+08:00</lastmod>
+        <lastmod>2014-03-31T12:00:43+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/</loc>
-        <lastmod>2014-03-24T18:11:37+08:00</lastmod>
+        <lastmod>2014-03-31T12:00:43+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/robots.txt</loc>

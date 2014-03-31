@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[分类：Objective-C | 逆水行舟]]></title>
+  <title><![CDATA[分类：objective-c | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/objective-c/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-03-25T09:58:23+08:00</updated>
+  <updated>2014-03-31T12:01:44+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -38,6 +38,9 @@
 <h2>1.3 内容简介</h2>
 
 <p>Objective-C 是 C 语言的一个扩展集。Objective-C 以 C 语言为基础，扩展了许多特性。</p>
+
+<!-- more -->
+
 
 <h1>2 对 C 的扩展</h1>
 
@@ -85,7 +88,7 @@ return (0);
 
 <blockquote><p>学完本书后，还需要精通 Cocoa 和 Application Kit，用户界面元素、打印、声音、颜色和声音管理、AppleScript 支持等。参阅《Learn Cocoa on the Mac》。</p></blockquote>
 
-<h3>2.2.2 NSLog() 和 @“字符串”</h3>
+<h3>2.2.2 NSLog() 和 @“字符串"</h3>
 
 <ul>
 <li><p>类似 C 语言的 printf()，相对添加了新特性，例如时间戳、日期戳和自动附加换行符（'\n'）等。</p></li>
@@ -1009,16 +1012,16 @@ count = [garage valueForKeyPath: @&ldquo;cars.@count&rdquo;];</p>
 
 <p>NSNumber *sum;
 // 计算某些特定值的总和，例如，车队行驶的总英里数
-sum = [garage valueForKeyPath: @&ldquo;<a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#58;&#x63;&#97;&#x72;&#115;&#x2e;&#64;&#115;&#x75;&#x6d;&#x2e;&#x6d;&#105;&#108;&#101;&#x61;&#x67;&#x65;">&#x63;&#97;&#114;&#x73;&#x2e;&#64;&#x73;&#x75;&#x6d;&#46;&#109;&#105;&#108;&#101;&#x61;&#x67;&#x65;</a>&rdquo;];</p>
+sum = [garage valueForKeyPath: @&ldquo;<a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#99;&#97;&#114;&#x73;&#46;&#64;&#x73;&#x75;&#109;&#46;&#x6d;&#105;&#x6c;&#101;&#97;&#103;&#101;">&#99;&#97;&#114;&#115;&#46;&#64;&#x73;&#x75;&#109;&#x2e;&#x6d;&#105;&#x6c;&#101;&#97;&#x67;&#101;</a>&rdquo;];</p>
 
 <p>NSNumber *avgMileage;
 // 计算平均每辆汽车行驶的距离
-avgMileage = [garage valueForKeyPath: @&ldquo;<a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#99;&#x61;&#114;&#115;&#46;&#x40;&#x61;&#x76;&#x67;&#x2e;&#109;&#105;&#x6c;&#x65;&#97;&#103;&#101;">&#99;&#97;&#114;&#x73;&#x2e;&#x40;&#97;&#x76;&#x67;&#46;&#x6d;&#105;&#x6c;&#101;&#97;&#103;&#101;</a>&rdquo;];</p>
+avgMileage = [garage valueForKeyPath: @&ldquo;<a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x63;&#x61;&#114;&#x73;&#x2e;&#64;&#x61;&#118;&#x67;&#46;&#109;&#x69;&#108;&#x65;&#97;&#x67;&#x65;">&#x63;&#x61;&#114;&#x73;&#x2e;&#x40;&#x61;&#118;&#103;&#46;&#109;&#105;&#x6c;&#101;&#x61;&#103;&#101;</a>&rdquo;];</p>
 
 <p>// @min、@max
 NSNumber <em>min, </em>max;
-min = [garage valueForKeyPath: @&ldquo;<a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#99;&#x61;&#x72;&#115;&#x2e;&#x40;&#109;&#x69;&#x6e;&#46;&#109;&#x69;&#108;&#x65;&#97;&#x67;&#x65;">&#x63;&#97;&#x72;&#x73;&#46;&#x40;&#109;&#x69;&#110;&#x2e;&#109;&#105;&#108;&#x65;&#97;&#x67;&#101;</a>&rdquo;];
-max = [garage valueForKeyPath: @&ldquo;<a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#99;&#97;&#x72;&#x73;&#46;&#64;&#109;&#x61;&#120;&#x2e;&#x6d;&#x69;&#x6c;&#x65;&#97;&#x67;&#101;">&#99;&#x61;&#114;&#x73;&#x2e;&#x40;&#109;&#97;&#x78;&#46;&#109;&#x69;&#x6c;&#x65;&#x61;&#103;&#101;</a>&rdquo;];</p>
+min = [garage valueForKeyPath: @&ldquo;<a href="&#x6d;&#97;&#x69;&#108;&#116;&#111;&#58;&#99;&#x61;&#x72;&#115;&#46;&#64;&#x6d;&#x69;&#x6e;&#x2e;&#x6d;&#105;&#108;&#101;&#97;&#103;&#101;">&#99;&#97;&#x72;&#115;&#x2e;&#64;&#x6d;&#105;&#110;&#46;&#x6d;&#105;&#108;&#x65;&#97;&#x67;&#101;</a>&rdquo;];
+max = [garage valueForKeyPath: @&ldquo;<a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#58;&#99;&#x61;&#114;&#115;&#x2e;&#64;&#x6d;&#x61;&#120;&#46;&#109;&#105;&#108;&#x65;&#97;&#103;&#x65;">&#x63;&#97;&#x72;&#x73;&#x2e;&#64;&#x6d;&#x61;&#120;&#46;&#x6d;&#x69;&#x6c;&#x65;&#x61;&#x67;&#101;</a>&rdquo;];</p>
 
 <p>```</p>
 
@@ -1160,13 +1163,13 @@ NSLog(@&ldquo;%@&rdquo;, results);</p>
 </ul>
 
 
-<h2>书名《Learn Objective-C on the Mac》Objective-C 基础教程</h2>
-
-<h2>高朝勤 杨越 刘霞 等译，人民邮电出版社</h2>
-
-<h2>2009年8月第一版</h2>
-
-<h2><strong>书写得不怎么样，做做笔记就OK了。</strong></h2>
+<blockquote><ul>
+<li>书名《Learn Objective-C on the Mac》Objective-C 基础教程</li>
+<li>高朝勤 杨越 刘霞 等译，人民邮电出版社</li>
+<li><p>2009年8月第一版</p></li>
+<li><p><strong>这本书写得或者是翻译得很差。</strong></p></li>
+</ul>
+</blockquote>
 ]]></content>
   </entry>
   
