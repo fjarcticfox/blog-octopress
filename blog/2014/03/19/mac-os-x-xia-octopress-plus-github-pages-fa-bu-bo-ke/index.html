@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Mac OS X 下 Octopress + GitHub Pages 发布博客 - 逆水行舟</title>
+  <meta name="author" content="Longgen">
+
+  
+  <meta name="description" content="前言 优点 广泛的使用者及相关文档
+Octopress 整合了丰富的第三方插件
+内置支持 Gitub、Twitter、Google Plus One、Pinboard、Delicious、Disqus Comments、Google Analytics、Facebook
+源码版本信息完全自己通过 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.longgen.me/blog/2014/03/19/mac-os-x-xia-octopress-plus-github-pages-fa-bu-bo-ke">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="逆水行舟" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48617955-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">逆水行舟</a></h1>
+  
+    <h2>Do what you say, say what you do</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.longgen.me" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">首页</a></li>
+  <li><a href="/blog/archives">归档</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Mac OS X 下 Octopress + GitHub Pages 发布博客</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-19T23:22:03+08:00" pubdate data-updated="true">Mar 19<span>th</span>, 2014</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h1>前言</h1>
+
+<h2>优点</h2>
+
+<ul>
+<li>广泛的使用者及相关文档</li>
+<li>Octopress 整合了丰富的第三方插件</li>
+<li>内置支持 Gitub、Twitter、Google Plus One、Pinboard、Delicious、Disqus Comments、Google Analytics、Facebook</li>
+<li>源码版本信息完全自己通过 github 控制，可定制高度个性化的个人博客</li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>官方文档</h2>
+
+<h2>相关资源</h2>
+
+<h1>安装及配置</h1>
+
+<h2>Git 安装</h2>
+
+<h2>Ruby 安装，版本号要求大于1.9.3</h2>
+
+<ul>
+<li>通过 <a href="http://octopress.org/docs/setup/rbenv">rbenv</a> 或者 <a href="http://octopress.org/docs/setup/rvm">RVM</a> 安装。</li>
+</ul>
+
+
+<h2>设置 Octopress</h2>
+
+<ul>
+<li>从 git 复制 Octopress</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>git clone git://github.com/imathis/octopress.git octopress
+</span><span class='line'><span class="nb">cd </span>octopress
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>下一步，安装依赖</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>gem install bundler     <span class="c"># 若报权限错误，加 sudo 执行相关命令</span>
+</span><span class='line'>rbenv rehash            <span class="c"># If you use rbenv, rehash to be able to run the bundle command</span>
+</span><span class='line'>bundle install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>安装 Octopress 默认主题</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake install    <span class="c"># 由于默认主题名为“classic” 该命令等效于：rake install[&#39;classic‘]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>或者安装<a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">第三方主题</a></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nb">cd </span>octopress
+</span><span class='line'>git clone GIT_URL .themes/THEME_NAME
+</span><span class='line'>rake install<span class="o">[</span><span class="s1">&#39;THEME_NAME&#39;</span><span class="o">]</span>
+</span><span class='line'>rake generate
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Octopress发布在Github Pages上</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake setup_github_pages   <span class="c"># 该命令将进行一系列的 github 相关配置</span>
+</span><span class='line'>rake generate             <span class="c"># This will generate your blog, copy the generated files into _deploy/</span>
+</span><span class='line'>rake preview              <span class="c"># 本地预览页面，页面默认发布在 localhost:4000</span>
+</span><span class='line'>rake deploy               <span class="c"># dd them to git, commit and push them up to the master branch</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>将 octopress 目录下所有代码提交到 source 分支</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>git add .
+</span><span class='line'>git commit -m <span class="s1">&#39;源码提交&#39;</span>
+</span><span class='line'>git push origin <span class="nb">source</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>自定义域名</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nb">echo</span> <span class="s1">&#39;your-domain.com&#39;</span> &gt;&gt; <span class="nb">source</span>/CNAME
+</span><span class='line'><span class="c"># 或者</span>
+</span><span class='line'><span class="nb">echo</span> <span class="s1">&#39;www.your-domain.com&#39;</span> &gt;&gt; <span class="nb">source</span>/CNAME
+</span><span class='line'><span class="c"># 然后，你必须访问你得域名注册商或者 DNS 主机，为你的域名增加一个 record</span>
+</span><span class='line'><span class="c"># 注意最好不要使用顶级域名作为 CNAME，另外，DNS 解析生效需要比较长的时间</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>按规范<a href="http://octopress.org/docs/blogging/">发布文章</a>，新发布文章的默认扩展名是 markdown，你可以在 Rakefile 文件中更改扩展名</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake new_post<span class="o">[</span><span class="s2">&quot;title&quot;</span><span class="o">]</span>                    <span class="c"># 按规范发布文章，并且为文章自动生成 yaml metadata</span>
+</span><span class='line'>rake new_page<span class="o">[</span>super-awesome<span class="o">]</span>              <span class="c"># 创建 /source/super-awesome/index.markdown</span>
+</span><span class='line'>rake new_page<span class="o">[</span>super-awesome/page.html<span class="o">]</span>    <span class="c"># 创建 /source/super-awesome/page.html</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><a href="http://octopress.org/docs/updating/">远程更新至本地</a></li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>git pull octopress master     <span class="c"># Get the latest Octopress</span>
+</span><span class='line'>bundle install                <span class="c"># Keep gems updated</span>
+</span><span class='line'>rake update_source            <span class="c"># update the template&#39;s source</span>
+</span><span class='line'>rake update_style             <span class="c"># update the template&#39;s style</span>
+</span><span class='line'><span class="c"># rake update命令相当于以上rake update_source和rake update_style 两个命令合并执行(该命令无效？？？)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Longgen</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-19T23:22:03+08:00" pubdate data-updated="true">Mar 19<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/github-pages/'>github pages</a>, <a class='category' href='/blog/categories/jekyll/'>jekyll</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.longgen.me/blog/2014/03/19/mac-os-x-xia-octopress-plus-github-pages-fa-bu-bo-ke/" data-via="fjarcticfox" data-counturl="http://blog.longgen.me/blog/2014/03/19/mac-os-x-xia-octopress-plus-github-pages-fa-bu-bo-ke/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/03/23/markdown-yu-fa-ce-shi/" title="Next Post: 本博客 Markdown 语法测试">本博客 Markdown 语法测试 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>最新文章</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/04/10/linux-cha-kan-xi-tong-pei-zhi-chang-yong-ming-ling/">Linux 查看系统配置常用命令</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/04/10/kai-yuan-xie-yi-jian-jie/">开源协议简介</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/29/pow-an-zhuang-pei-zhi-ji-shi-yong/">Pow 安装配置及使用</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/28/ios-kai-fa-bi-ji/">IOS 开发笔记</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/26/xcode-shi-yong-ji-qiao/">Xcode 使用技巧</a>
+      </li>
+    
+  </ul>
+</section>
+<section> 
+  <h1>文章分类</h1> 
+  <ul id="categories"> 
+    <li class='category'><a href='/blog/categories/android/'>android (3)</a></li>
+<li class='category'><a href='/blog/categories/blog/'>blog (1)</a></li>
+<li class='category'><a href='/blog/categories/github/'>github (1)</a></li>
+<li class='category'><a href='/blog/categories/github-pages/'>github pages (1)</a></li>
+<li class='category'><a href='/blog/categories/homebrew/'>homebrew (1)</a></li>
+<li class='category'><a href='/blog/categories/ios/'>ios (4)</a></li>
+<li class='category'><a href='/blog/categories/ipad/'>ipad (1)</a></li>
+<li class='category'><a href='/blog/categories/iphone/'>iphone (1)</a></li>
+<li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (1)</a></li>
+<li class='category'><a href='/blog/categories/markdown/'>markdown (1)</a></li>
+<li class='category'><a href='/blog/categories/objective-c/'>objective-c (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/opengl-es/'>opengl es (4)</a></li>
+<li class='category'><a href='/blog/categories/opensource/'>opensource (1)</a></li>
+<li class='category'><a href='/blog/categories/pow/'>pow (1)</a></li>
+<li class='category'><a href='/blog/categories/protocol/'>protocol (1)</a></li>
+<li class='category'><a href='/blog/categories/sourcetree/'>sourcetree (1)</a></li>
+<li class='category'><a href='/blog/categories/xcode/'>xcode (1)</a></li>
+<li class='category'><a href='/blog/categories/开发环境/'>开发环境 (2)</a></li>
+ 
+  </ul> 
+</section>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/fjarcticfox">@fjarcticfox</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'fjarcticfox',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/fjarcticfox?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/fjarcticfox">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/100396039005337701113?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Longgen -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'longgen';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.longgen.me/blog/2014/03/19/mac-os-x-xia-octopress-plus-github-pages-fa-bu-bo-ke/';
+        var disqus_url = 'http://blog.longgen.me/blog/2014/03/19/mac-os-x-xia-octopress-plus-github-pages-fa-bu-bo-ke/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

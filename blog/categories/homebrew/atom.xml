@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：homebrew | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/homebrew/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-04-10T15:53:34+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Pow 安装配置及使用]]></title>
+    <link href="http://blog.longgen.me/blog/2014/03/29/pow-an-zhuang-pei-zhi-ji-shi-yong/"/>
+    <updated>2014-03-29T01:48:36+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/03/29/pow-an-zhuang-pei-zhi-ji-shi-yong</id>
+    <content type="html"><![CDATA[<p>Pow，Mac OS X 上零配置的 Rack Server。它使得开发 Rails 及 Rack 应用更为简便。</p>
+
+<h1>Pow 安装配置及使用</h1>
+
+<ul>
+<li>官网：<a href="http://pow.cx/">http://pow.cx/</a></li>
+<li>Homebrew 的 GitHub 源码：<a href="https://github.com/Homebrew/homebrew">https://github.com/Homebrew/homebrew</a></li>
+<li>Pow 的 GitHub 源码：<a href="https://github.com/basecamp/pow">https://github.com/basecamp/pow</a></li>
+<li>Pow 文档说明：<a href="http://pow.cx/manual.html">http://pow.cx/manual.html</a></li>
+<li>Pow 安装说明：<a href="https://github.com/basecamp/pow/wiki/Installation">https://github.com/basecamp/pow/wiki/Installation</a></li>
+<li>Pow 常见错误解决办法：<a href="https://github.com/basecamp/pow/wiki/Troubleshooting">https://github.com/basecamp/pow/wiki/Troubleshooting</a></li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>通过官方包安装（<strong>推荐方式</strong>）</h2>
+
+<p>```sh</p>
+
+<pre><code>curl get.pow.cx | sh
+</code></pre>
+
+<p>```</p>
+
+<h2>通过源码安装</h2>
+
+<p>```sh</p>
+
+<pre><code># 若未安装node 先安装node
+brew install node
+# clone 源码
+git clone git@github.com:basecamp/pow.git
+cd pow
+npm --global install
+npm --global run-script pow restart
+# 若你希望在每次登陆时都通过 launchd 启动 Pow 则 
+launchctl load -Fw "$HOME/Library/LaunchAgents/cx.pow.powd.plist"
+</code></pre>
+
+<p>```</p>
+
+<h2>Homebrew 安装及配置</h2>
+
+<p>```sh</p>
+
+<pre><code># 安装 pow
+brew install pow
+# 根据 Caveats 配置相关目录
+mkdir -p ~/Library/Application\ Support/Pow/Hosts
+# 创建软链接，若 ~/.pow 目录不存在，则先mkdir ~/.pow
+ln -s ~/Library/Application\ Support/Pow/Hosts ~/.pow
+
+# Setup port 80 forwarding and launchd agents:
+sudo pow --install-system
+pow --install-local
+
+# Load launchd agents:
+sudo launchctl load -w /Library/LaunchDaemons/cx.pow.firewall.plist
+launchctl load -w ~/Library/LaunchAgents/cx.pow.powd.plist
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>
