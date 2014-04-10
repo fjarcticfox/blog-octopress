@@ -4,7 +4,7 @@
   <title><![CDATA[逆水行舟]]></title>
   <link href="http://blog.longgen.me/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-04-10T16:31:15+08:00</updated>
+  <updated>2014-04-10T21:12:35+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -528,15 +528,6 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[IOS 开发笔记]]></title>
-    <link href="http://blog.longgen.me/blog/2014/03/28/ios-kai-fa-bi-ji/"/>
-    <updated>2014-03-28T10:19:33+08:00</updated>
-    <id>http://blog.longgen.me/blog/2014/03/28/ios-kai-fa-bi-ji</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Xcode 使用技巧]]></title>
     <link href="http://blog.longgen.me/blog/2014/03/26/xcode-shi-yong-ji-qiao/"/>
     <updated>2014-03-26T16:52:01+08:00</updated>
@@ -556,113 +547,6 @@
 <li><p>代码格式化：Re-Indent</p></li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[SourceTree 工具]]></title>
-    <link href="http://blog.longgen.me/blog/2014/03/25/sourcetree-gong-ju/"/>
-    <updated>2014-03-25T15:28:00+08:00</updated>
-    <id>http://blog.longgen.me/blog/2014/03/25/sourcetree-gong-ju</id>
-    <content type="html"><![CDATA[<h1>本地文件和服务器文件冲突解决办法</h1>
-
-<ul>
-<li>Dsicard Hunk 服务器覆盖本地冲突文件</li>
-<li>Stage Hunk 本地覆盖服务器冲突文件</li>
-<li>Discard Selected 服务器覆盖本地冲突文件中选中行代码</li>
-<li>Stage Selected 本地覆盖服务器冲突文件中选中行代码</li>
-</ul>
-
-
-<!-- more -->
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[IOS 7 iPhone/iPad 应用开发技术详解]]></title>
-    <link href="http://blog.longgen.me/blog/2014/03/25/ios-7-iphone-slash-ipad-ying-yong-kai-fa-ji-zhu-xiang-jie/"/>
-    <updated>2014-03-25T14:57:42+08:00</updated>
-    <id>http://blog.longgen.me/blog/2014/03/25/ios-7-iphone-slash-ipad-ying-yong-kai-fa-ji-zhu-xiang-jie</id>
-    <content type="html"><![CDATA[<blockquote><ul>
-<li>书名《IOS 7 iPhone/iPad 应用开发技术详解》</li>
-<li>书号 ISBN 978-7-111-44051-2</li>
-<li>刘一道 著</li>
-<li>机械工业出版社</li>
-<li>2013 年 11 月第 1 版第 1 次印刷</li>
-</ul>
-</blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android 开发环境搭建]]></title>
-    <link href="http://blog.longgen.me/blog/2014/03/25/android-kai-fa-huan-jing-da-jian/"/>
-    <updated>2014-03-25T10:54:13+08:00</updated>
-    <id>http://blog.longgen.me/blog/2014/03/25/android-kai-fa-huan-jing-da-jian</id>
-    <content type="html"><![CDATA[<h2>基于 Android Studio 搭建</h2>
-
-<!-- more -->
-
-
-<h2>基于 Eclipse 搭建</h2>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[OpenGL ES（IOS，Android）开发环境搭建]]></title>
-    <link href="http://blog.longgen.me/blog/2014/03/25/opengl-es%28ios%2Candroid%29kai-fa-huan-jing-da-jian/"/>
-    <updated>2014-03-25T10:13:36+08:00</updated>
-    <id>http://blog.longgen.me/blog/2014/03/25/opengl-es(ios,android)kai-fa-huan-jing-da-jian</id>
-    <content type="html"><![CDATA[<h2>Mac 下开发环境搭建</h2>
-
-<h3>基于 Eclipse 搭建</h3>
-
-<ul>
-<li>Eclipse 下载地址：<a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a></li>
-</ul>
-
-
-<!-- more -->
-
-
-<pre><code>* 下载 Eclipse IDE for C/C++ Developers 或 Eclipse for Parallel Application Developers 版本。版本自带 C/C++ Development Tools（CDT）。或下载 Eclipse Standard 版本，自行安装 CDT 等相关插件
-
-* DevCPP 工具安装。
-
-* 配置 Eclipse - window - preference - C/C++ - environment
-
-    1. path 配置
-    2. LIBRARY_PATH
-    3. C_INCLUDE_PATH
-</code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[OpenGL ES 学习]]></title>
-    <link href="http://blog.longgen.me/blog/2014/03/25/opengl-es-xue-xi/"/>
-    <updated>2014-03-25T10:07:26+08:00</updated>
-    <id>http://blog.longgen.me/blog/2014/03/25/opengl-es-xue-xi</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[IOS 下 OpenGL ES]]></title>
-    <link href="http://blog.longgen.me/blog/2014/03/25/ios-xia-opengl-es/"/>
-    <updated>2014-03-25T10:07:07+08:00</updated>
-    <id>http://blog.longgen.me/blog/2014/03/25/ios-xia-opengl-es</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Android 下 OpenGL ES]]></title>
-    <link href="http://blog.longgen.me/blog/2014/03/25/android-xia-opengl-es/"/>
-    <updated>2014-03-25T10:06:52+08:00</updated>
-    <id>http://blog.longgen.me/blog/2014/03/25/android-xia-opengl-es</id>
-    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
@@ -2359,7 +2243,7 @@
 
 <p><a href="http://example.com/">http://example.com/</a></p>
 
-<p><a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#97;&#x64;&#x64;&#x72;&#x65;&#x73;&#115;&#64;&#101;&#120;&#x61;&#x6d;&#112;&#108;&#101;&#46;&#x63;&#111;&#x6d;">&#97;&#100;&#100;&#x72;&#x65;&#115;&#x73;&#64;&#x65;&#120;&#x61;&#109;&#112;&#x6c;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+<p><a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#58;&#97;&#x64;&#100;&#x72;&#101;&#115;&#x73;&#64;&#x65;&#120;&#97;&#109;&#x70;&#108;&#101;&#46;&#99;&#111;&#x6d;">&#x61;&#100;&#x64;&#x72;&#101;&#115;&#115;&#x40;&#x65;&#120;&#97;&#x6d;&#x70;&#108;&#101;&#46;&#99;&#111;&#x6d;</a></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
