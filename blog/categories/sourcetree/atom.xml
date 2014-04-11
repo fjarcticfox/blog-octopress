@@ -4,7 +4,7 @@
   <title><![CDATA[分类：sourcetree | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/sourcetree/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-04-11T12:12:40+08:00</updated>
+  <updated>2014-04-11T12:18:23+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -18,7 +18,7 @@
     <link href="http://blog.longgen.me/blog/2014/03/25/sourcetree-gong-ju/"/>
     <updated>2014-03-25T15:28:00+08:00</updated>
     <id>http://blog.longgen.me/blog/2014/03/25/sourcetree-gong-ju</id>
-    <content type="html"><![CDATA[<h1>本地文件和服务器文件冲突解决办法</h1>
+    <content type="html"><![CDATA[<h2>本地文件和服务器文件冲突解决办法</h2>
 
 <ul>
 <li>Dsicard Hunk 服务器覆盖本地冲突文件</li>
