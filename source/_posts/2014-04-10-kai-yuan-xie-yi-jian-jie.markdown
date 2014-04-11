@@ -61,10 +61,12 @@ MIT 是和 BSD 一样宽范的许可协议，作者只想保留版权，而无�
 
 ## 参考资料
 
-1. 五种开源协议的比较(BSD,Apache,GPL,LGPL,MIT) <http://www.awflasher.com/blog/archives/939>
-2. 开源协议 <http://www.opensource.org/licenses/alphabetical>
-3. Various Licenses and Comments about Them <http://www.gnu.org/licenses/license-list.html>
+1. [开源协议][1]
+2. [五种开源协议的比较(BSD,Apache,GPL,LGPL,MIT)][2]
+3. [Various Licenses and Comments about Them][3]
 
 
 
  [1]: http://www.opensource.org/licenses/alphabetical
+ [2]: http://www.awflasher.com/blog/archives/939
+ [3]: http://www.gnu.org/licenses/license-list.html
