@@ -15,8 +15,44 @@
         <lastmod>2014-03-26T11:43:29+08:00</lastmod>
     </url>
     <url>
+        <loc>http://blog.longgen.me/blog/2014/03/25/android-xia-opengl-es/</loc>
+        <lastmod>2014-04-03T17:45:52+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/03/25/ios-xia-opengl-es/</loc>
+        <lastmod>2014-04-03T17:46:00+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/03/25/opengl-es-xue-xi/</loc>
+        <lastmod>2014-04-03T17:46:11+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://blog.longgen.me/blog/2014/03/25/opengl-es%28ios%2Candroid%29kai-fa-huan-jing-da-jian/
+        </loc>
+        <lastmod>2014-04-03T17:46:07+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/03/25/android-kai-fa-huan-jing-da-jian/</loc>
+        <lastmod>2014-04-03T17:50:09+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://blog.longgen.me/blog/2014/03/25/ios-7-iphone-slash-ipad-ying-yong-kai-fa-ji-zhu-xiang-jie/
+        </loc>
+        <lastmod>2014-04-03T17:45:56+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/03/25/sourcetree-gong-ju/</loc>
+        <lastmod>2014-04-03T17:46:20+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://blog.longgen.me/blog/2014/03/26/xcode-shi-yong-ji-qiao/</loc>
         <lastmod>2014-03-28T11:06:00+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/03/28/ios-kai-fa-bi-ji/</loc>
+        <lastmod>2014-04-10T12:45:30+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/blog/2014/03/29/pow-an-zhuang-pei-zhi-ji-shi-yong/</loc>
@@ -24,13 +60,17 @@
     </url>
     <url>
         <loc>http://blog.longgen.me/blog/2014/04/10/kai-yuan-xie-yi-jian-jie/</loc>
-        <lastmod>2014-04-10T14:34:12+08:00</lastmod>
+        <lastmod>2014-04-11T09:17:00+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.longgen.me/blog/2014/04/10/linux-cha-kan-xi-tong-pei-zhi-chang-yong-ming-ling/
         </loc>
-        <lastmod>2014-04-10T13:43:25+08:00</lastmod>
+        <lastmod>2014-04-11T09:13:08+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/04/10/linux-chang-yong-ming-ling/</loc>
+        <lastmod>2014-04-11T11:53:02+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/about/</loc>
@@ -38,11 +78,11 @@
     </url>
     <url>
         <loc>http://blog.longgen.me/blog/archives/</loc>
-        <lastmod>2014-04-10T14:34:12+08:00</lastmod>
+        <lastmod>2014-04-11T11:53:02+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/</loc>
-        <lastmod>2014-04-10T14:34:12+08:00</lastmod>
+        <lastmod>2014-04-11T11:53:02+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/robots.txt</loc>
