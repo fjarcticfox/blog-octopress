@@ -6,6 +6,8 @@ comments: true
 categories: [linux]
 ---
 
+<!-- more -->
+
 初级用户：以下是初学者常用的一些命令。
 
 ## ls 命令

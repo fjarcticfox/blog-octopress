@@ -8,8 +8,7 @@ categories: [pow, homebrew]
 
 Pow，Mac OS X 上零配置的 Rack Server。它使得开发 Rails 及 Rack 应用更为简便。
 
-
-# Pow 安装配置及使用
+<!-- more -->
 
 * 官网：<http://pow.cx/>
 * Homebrew 的 GitHub 源码：<https://github.com/Homebrew/homebrew>
@@ -18,7 +17,6 @@ Pow，Mac OS X 上零配置的 Rack Server。它使得开发 Rails 及 Rack 应�
 * Pow 安装说明：<https://github.com/basecamp/pow/wiki/Installation>
 * Pow 常见错误解决办法：<https://github.com/basecamp/pow/wiki/Troubleshooting>
 
-<!-- more -->
 
 ## 通过官方包安装（**推荐方式**）
 
