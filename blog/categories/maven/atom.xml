@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：maven | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/maven/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-04-30T09:23:26+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu11.04 下配置Nexus]]></title>
+    <link href="http://blog.longgen.me/blog/2014/04/30/ubuntu11-dot-04-xia-pei-zhi-nexus/"/>
+    <updated>2014-04-30T09:19:38+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/04/30/ubuntu11-dot-04-xia-pei-zhi-nexus</id>
+    <content type="html"><![CDATA[<!-- more -->
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Linux 下使用 Nexus 搭建 Maven 仓库]]></title>
+    <link href="http://blog.longgen.me/blog/2014/04/15/linux-xia-shi-yong-nexus-da-jian-maven-cang-ku/"/>
+    <updated>2014-04-15T15:38:24+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/04/15/linux-xia-shi-yong-nexus-da-jian-maven-cang-ku</id>
+    <content type="html"><![CDATA[<h2>仓库管理器优点</h2>
+
+<ol>
+<li>时间及带宽的节省，加速组织内部项目构建。</li>
+<li>可控制 Maven 下载的机制，为组织的总体架构和政策实施提供了依赖方面的控制（例如，避免不小心添加 GPL 许可证的依赖等等）。</li>
+<li>为开发人员和部门之间提供一种共享内部项目构件的快照版本和发布版本的机制，避免组织内的每个成员单独下载并构建各自的内部项目。</li>
+</ol>
+
+
+<h2>下载及安装</h2>
+
+<p>进入 [Nexus 下载页面][1]，下载并安装 Nexus。</p>
+
+<p>```sh</p>
+
+<h1>下载 nexus oss（nexus pro 收费）当前版本 2.8.0</h1>
+
+<p>wget <a href="http://www.sonatype.org/downloads/nexus-latest-bundle.zip">http://www.sonatype.org/downloads/nexus-latest-bundle.zip</a></p>
+
+<h1>解压</h1>
+
+<p>unzip nexus-latest-bundle.zip</p>
+
+<h1>创建软连接</h1>
+
+<p>ln -s nexus-latest-bundle.zip nexus</p>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>

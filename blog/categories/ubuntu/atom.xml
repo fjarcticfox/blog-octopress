@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：ubuntu | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/ubuntu/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-04-30T09:23:26+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu11.04 下配置Nexus]]></title>
+    <link href="http://blog.longgen.me/blog/2014/04/30/ubuntu11-dot-04-xia-pei-zhi-nexus/"/>
+    <updated>2014-04-30T09:19:38+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/04/30/ubuntu11-dot-04-xia-pei-zhi-nexus</id>
+    <content type="html"><![CDATA[<!-- more -->
+
+
+
+]]></content>
+  </entry>
+  
+</feed>
