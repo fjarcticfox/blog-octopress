@@ -4,7 +4,7 @@
   <title><![CDATA[分类：linux | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-04-30T09:23:26+08:00</updated>
+  <updated>2014-05-05T17:10:17+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -12,42 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Linux 下使用 Nexus 搭建 Maven 仓库]]></title>
-    <link href="http://blog.longgen.me/blog/2014/04/15/linux-xia-shi-yong-nexus-da-jian-maven-cang-ku/"/>
-    <updated>2014-04-15T15:38:24+08:00</updated>
-    <id>http://blog.longgen.me/blog/2014/04/15/linux-xia-shi-yong-nexus-da-jian-maven-cang-ku</id>
-    <content type="html"><![CDATA[<h2>仓库管理器优点</h2>
-
-<ol>
-<li>时间及带宽的节省，加速组织内部项目构建。</li>
-<li>可控制 Maven 下载的机制，为组织的总体架构和政策实施提供了依赖方面的控制（例如，避免不小心添加 GPL 许可证的依赖等等）。</li>
-<li>为开发人员和部门之间提供一种共享内部项目构件的快照版本和发布版本的机制，避免组织内的每个成员单独下载并构建各自的内部项目。</li>
-</ol>
-
-
-<h2>下载及安装</h2>
-
-<p>进入 [Nexus 下载页面][1]，下载并安装 Nexus。</p>
-
-<p>```sh</p>
-
-<h1>下载 nexus oss（nexus pro 收费）当前版本 2.8.0</h1>
-
-<p>wget <a href="http://www.sonatype.org/downloads/nexus-latest-bundle.zip">http://www.sonatype.org/downloads/nexus-latest-bundle.zip</a></p>
-
-<h1>解压</h1>
-
-<p>unzip nexus-latest-bundle.zip</p>
-
-<h1>创建软连接</h1>
-
-<p>ln -s nexus-latest-bundle.zip nexus</p>
-
-<p>```</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Linux 常用命令]]></title>
@@ -1625,7 +1589,7 @@ tecmint.com.        14400   IN  A   40.216.66.239
 
 <p>[avishek@tecmint ~]$ wall &ldquo;we will be going down for maintenance for one hour sharply at 03:30 pm&rdquo;</p>
 
-<p>Broadcast message from <a href="&#109;&#97;&#105;&#x6c;&#x74;&#x6f;&#58;&#114;&#x6f;&#111;&#x74;&#64;&#x6c;&#x6f;&#x63;&#x61;&#x6c;&#x68;&#x6f;&#x73;&#x74;&#46;&#x6c;&#x6f;&#x63;&#97;&#x6c;&#100;&#111;&#x6d;&#x61;&#105;&#x6e;">&#114;&#111;&#111;&#x74;&#64;&#x6c;&#111;&#99;&#97;&#108;&#104;&#x6f;&#115;&#x74;&#46;&#x6c;&#111;&#x63;&#97;&#108;&#100;&#x6f;&#x6d;&#x61;&#105;&#110;</a> (pts/0) (Sat Jun 29 14:44:02 2013):</p>
+<p>Broadcast message from <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#114;&#x6f;&#111;&#x74;&#64;&#x6c;&#x6f;&#x63;&#97;&#x6c;&#x68;&#x6f;&#115;&#116;&#x2e;&#108;&#111;&#x63;&#x61;&#108;&#100;&#x6f;&#109;&#x61;&#105;&#x6e;">&#114;&#x6f;&#x6f;&#116;&#64;&#x6c;&#x6f;&#x63;&#97;&#x6c;&#104;&#x6f;&#115;&#116;&#x2e;&#x6c;&#x6f;&#x63;&#97;&#x6c;&#x64;&#111;&#109;&#97;&#105;&#x6e;</a> (pts/0) (Sat Jun 29 14:44:02 2013):</p>
 
 <p>we will be going down for maintenance for one hour sharply at 03:30 pm</p>
 

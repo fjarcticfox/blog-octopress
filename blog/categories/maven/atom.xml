@@ -4,7 +4,7 @@
   <title><![CDATA[分类：maven | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/maven/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-04-30T09:23:26+08:00</updated>
+  <updated>2014-05-05T17:10:17+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -14,22 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Ubuntu11.04 下配置Nexus]]></title>
-    <link href="http://blog.longgen.me/blog/2014/04/30/ubuntu11-dot-04-xia-pei-zhi-nexus/"/>
-    <updated>2014-04-30T09:19:38+08:00</updated>
-    <id>http://blog.longgen.me/blog/2014/04/30/ubuntu11-dot-04-xia-pei-zhi-nexus</id>
-    <content type="html"><![CDATA[<!-- more -->
-
-
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Linux 下使用 Nexus 搭建 Maven 仓库]]></title>
-    <link href="http://blog.longgen.me/blog/2014/04/15/linux-xia-shi-yong-nexus-da-jian-maven-cang-ku/"/>
-    <updated>2014-04-15T15:38:24+08:00</updated>
-    <id>http://blog.longgen.me/blog/2014/04/15/linux-xia-shi-yong-nexus-da-jian-maven-cang-ku</id>
+    <title type="html"><![CDATA[Ubuntu 11.04 下使用 Nexus 搭建 Maven 仓库]]></title>
+    <link href="http://blog.longgen.me/blog/2014/04/30/ubuntu-11-dot-04-xia-shi-yong-nexus-da-jian-maven-cang-ku/"/>
+    <updated>2014-04-30T10:03:33+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/04/30/ubuntu-11-dot-04-xia-shi-yong-nexus-da-jian-maven-cang-ku</id>
     <content type="html"><![CDATA[<h2>仓库管理器优点</h2>
 
 <ol>
@@ -39,9 +27,66 @@
 </ol>
 
 
-<h2>下载及安装</h2>
+<!-- more -->
 
-<p>进入 [Nexus 下载页面][1]，下载并安装 Nexus。</p>
+
+<h2>Java 下载及安装</h2>
+
+<ol>
+<li>根据需求，在 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a> 下载对应 JDK 版本。或者通过 wget 命令将下载中的 JDK 链接地址通过命令行下载。</li>
+<li>将 JDK 压缩包复制至指定目录，解压 JDK 压缩包，并配置环境变量。</li>
+</ol>
+
+
+<p>```sh</p>
+
+<h1>创建 Java JDK 目标目录</h1>
+
+<p>sudo mkdir -p /usr/lib/java</p>
+
+<h1>将 JDK 压缩包复制至 /usr/lib/java 目录</h1>
+
+<p>sudo cp jdk-7u55-linux-x64.tar.gz /usr/lib/java</p>
+
+<h1>解压 JDK</h1>
+
+<p>cd /usr/lib/java
+sudo tar zxvf jdk-7u55-linux-x64.tar.gz</p>
+
+<h1>给当前用户赋予可执行权限</h1>
+
+<p>sudo chmod u+x jdk1.7.0_55</p>
+
+<h1>Windows 下可以采用 gedit 编辑器（或其他编辑器）配置环境变量</h1>
+
+<p>sudo gedit /etc/profile</p>
+
+<h1>或类 Unix 环境下，采用 nano 或 vi 等编辑器配置环境变量</h1>
+
+<p>sudo nano /etc/profile</p>
+
+<h1>将如下内容添加至文件中，保存并关闭文件</h1>
+
+<pre><code># JDK environment
+export JAVA_HOME=/usr/lib/java/jdk1.7.0_55
+export JRE_HOME=$JAVA_HOME/jre
+export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
+</code></pre>
+
+<h1>重新登陆使配置生效，或执行以下命令使配置生效</h1>
+
+<p>source /etc/profile</p>
+
+<h1>测试 JAVA 版本</h1>
+
+<p>java -version</p>
+
+<p>```</p>
+
+<h2>Nexus 下载及安装</h2>
+
+<p>进入 <a href="http://www.sonatype.org/nexus/archived">Nexus 下载页面</a>，下载安装 Nexus，并配置环境。</p>
 
 <p>```sh</p>
 
@@ -49,15 +94,90 @@
 
 <p>wget <a href="http://www.sonatype.org/downloads/nexus-latest-bundle.zip">http://www.sonatype.org/downloads/nexus-latest-bundle.zip</a></p>
 
+<h1>复制至/usr/lcoal</h1>
+
+<p>sudo cp nexus-latest-bundle.zip /usr/local</p>
+
 <h1>解压</h1>
 
 <p>unzip nexus-latest-bundle.zip</p>
 
 <h1>创建软连接</h1>
 
-<p>ln -s nexus-latest-bundle.zip nexus</p>
+<p>ln -s nexus-2.8.0-05 nexus</p>
+
+<h1>编辑 /etc/profile 文件，配置 Nexus 环境</h1>
+
+<p>sudo vi /etc/profile</p>
+
+<h1>在文件中加入如下内容</h1>
+
+<pre><code># Nexus environment
+export NEXUS_HOME=/usr/local/nexus
+</code></pre>
+
+<h1>重新登陆，或执行以下命令使配置生效</h1>
+
+<p>source /etc/profile</p>
+
+<h1>为 nexus-2.8.0_05 及 sonatype-work 赋权</h1>
+
+<p>sudo chmod -R a+rwx nexus-2.8.0_05
+sudo chmod -R a+rwx sonatype-work</p>
 
 <p>```</p>
+
+<h2>启动 Nexus</h2>
+
+<p>简单启动 nexus</p>
+
+<p>```sh</p>
+
+<h1>console 启动</h1>
+
+<p>cd /usr/local/nexus
+./bin/nexus console</p>
+
+<h1>后台启动</h1>
+
+<p>./bin/nexus start</p>
+
+<h1>查看日志</h1>
+
+<p>tail -f logs/wrapper.log</p>
+
+<p>```</p>
+
+<p>以服务启动 nexus</p>
+
+<p>```sh</p>
+
+<h1>假设 nexus 用户具有运行 nexus 服务的权限</h1>
+
+<h1>复制 $NEXUS_HOME/bin/nexus 到 /etc/init.d/nexus，或创建一个symlink</h1>
+
+<p>sudo ln -s $NEXUS_HOME/bin/nexus /etc/init.d/nexus</p>
+
+<h1>给/etc/init.d/nexus 脚本赋可执行权限</h1>
+
+<p>chmod 755 /etc/init.d/nexus</p>
+
+<h1>更改 /etc/init.d/nexus 脚本中的内容</h1>
+
+<pre><code>1. 设置 NEXUS_HOME="/usr/local/nexus"
+2. 设置 RUN_AS_USER=nexus 或其他具有权限的用户来执行 Nexus 服务，避免使用 root 来运行 Nexus 服务
+3. 
+</code></pre>
+
+<p>```</p>
+
+<h2>参考资料</h2>
+
+<ul>
+<li><a href="http://books.sonatype.com/nexus-book/reference/index.html">Repository Management with Nexus</a></li>
+<li><a href="http://books.sonatype.com/nexus-book/reference/install-sect-service.html">Configuring Nexus as a Service</a></li>
+</ul>
+
 ]]></content>
   </entry>
   
