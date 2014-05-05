@@ -4,6 +4,7 @@ title: "Xcode 使用技巧"
 date: 2014-03-26 16:52:01 +0800
 comments: true
 categories: [xcode]
+keywords: xcode
 ---
 
 <!-- more -->

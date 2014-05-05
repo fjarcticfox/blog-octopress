@@ -4,6 +4,7 @@ title: "本博客 Markdown 语法测试"
 date: 2014-03-23 15:18:12 +0800
 comments: true
 categories: [markdown]
+keywords: markdown
 ---
 
 ```

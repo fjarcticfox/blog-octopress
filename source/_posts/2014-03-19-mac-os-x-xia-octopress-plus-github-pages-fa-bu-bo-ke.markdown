@@ -4,6 +4,7 @@ title: "Mac OS X 下 Octopress + GitHub Pages 发布博客"
 date: 2014-03-19 23:22:03 +0800
 comments: true
 categories: [jekyll, octopress, github, github pages, blog]
+keywords: jekyll, octopress, github, github pages, blog
 ---
 
 # 前言

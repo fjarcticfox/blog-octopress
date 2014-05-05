@@ -4,6 +4,7 @@ title: "Linux 查看系统配置常用命令"
 date: 2014-04-10 12:47:27 +0800
 comments: true
 categories: [linux]
+keywords: linux
 ---
 
 <!-- more -->

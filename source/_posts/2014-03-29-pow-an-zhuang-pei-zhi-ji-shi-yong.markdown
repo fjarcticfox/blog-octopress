@@ -4,6 +4,7 @@ title: "Pow 安装配置及使用"
 date: 2014-03-29 01:48:36 +0800
 comments: true
 categories: [pow, homebrew]
+keywords: pow, homebrew
 ---
 
 Pow，Mac OS X 上零配置的 Rack Server。它使得开发 Rails 及 Rack 应用更为简便。

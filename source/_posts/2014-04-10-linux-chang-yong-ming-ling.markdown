@@ -4,6 +4,7 @@ title: "Linux 常用命令"
 date: 2014-04-10 21:20:11 +0800
 comments: true
 categories: [linux]
+keywords: linux
 ---
 
 <!-- more -->

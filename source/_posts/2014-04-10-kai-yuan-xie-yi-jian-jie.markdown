@@ -4,6 +4,7 @@ title: "开源协议简介"
 date: 2014-04-10 12:42:15 +0800
 comments: true
 categories: [protocol, opensource]
+keywords: protocol, opensource
 ---
 
 [Open Source Initiative 组织批准的开源协议][1]中，我们常见的有：BSD、GPL、LGPL、MIT 等。
