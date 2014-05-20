@@ -4,7 +4,7 @@
   <title><![CDATA[分类：linux | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-05-05T17:10:17+08:00</updated>
+  <updated>2014-05-21T02:54:31+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -1589,7 +1589,7 @@ tecmint.com.        14400   IN  A   40.216.66.239
 
 <p>[avishek@tecmint ~]$ wall &ldquo;we will be going down for maintenance for one hour sharply at 03:30 pm&rdquo;</p>
 
-<p>Broadcast message from <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#114;&#x6f;&#111;&#x74;&#64;&#x6c;&#x6f;&#x63;&#97;&#x6c;&#x68;&#x6f;&#115;&#116;&#x2e;&#108;&#111;&#x63;&#x61;&#108;&#100;&#x6f;&#109;&#x61;&#105;&#x6e;">&#114;&#x6f;&#x6f;&#116;&#64;&#x6c;&#x6f;&#x63;&#97;&#x6c;&#104;&#x6f;&#115;&#116;&#x2e;&#x6c;&#x6f;&#x63;&#97;&#x6c;&#x64;&#111;&#109;&#97;&#105;&#x6e;</a> (pts/0) (Sat Jun 29 14:44:02 2013):</p>
+<p>Broadcast message from <a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#58;&#114;&#x6f;&#111;&#116;&#x40;&#x6c;&#x6f;&#99;&#97;&#x6c;&#x68;&#111;&#115;&#116;&#x2e;&#108;&#x6f;&#x63;&#x61;&#108;&#100;&#x6f;&#109;&#97;&#105;&#110;">&#114;&#x6f;&#111;&#116;&#x40;&#108;&#x6f;&#x63;&#x61;&#108;&#104;&#111;&#115;&#116;&#x2e;&#x6c;&#111;&#x63;&#97;&#x6c;&#100;&#x6f;&#x6d;&#x61;&#x69;&#x6e;</a> (pts/0) (Sat Jun 29 14:44:02 2013):</p>
 
 <p>we will be going down for maintenance for one hour sharply at 03:30 pm</p>
 
