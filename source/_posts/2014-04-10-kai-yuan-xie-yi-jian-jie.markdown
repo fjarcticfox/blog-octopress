@@ -3,8 +3,8 @@ layout: post
 title: "开源协议简介"
 date: 2014-04-10 12:42:15 +0800
 comments: true
-categories: [protocol, opensource]
-keywords: protocol, opensource
+categories: [protocol, open source]
+keywords: protocol, open source
 ---
 
 [Open Source Initiative 组织批准的开源协议][1]中，我们常见的有：BSD、GPL、LGPL、MIT 等。
@@ -54,9 +54,22 @@ LGPL 是 GPL 的一个为主要为类库使用设计的开源协议。和 GPL �
 
 GPL/LGPL 都保障原作者的知识产权，避免有人利用开源代码复制并开发类似的产品。
 
+## CPAL（Common Public Attribution License）
+
+CPAL 本质上其是由 Mozilla 公共许可证（MPL）加入新的条款构成的。该许可证要求开发者对软件进行标记。
+
 ## MIT（MIT）
 
 MIT 是和 BSD 一样宽范的许可协议，作者只想保留版权，而无任何其他了限制。也就是说，你必须在你的发行版里包含原许可协议的声明，无论你是以二进制发布的还是以源代码发布的。
+
+## MPL（The Mozilla Public License）
+
+MPL 是 1998 年初 Netscape 的 Mozilla 小组为其开源软件项目设计的软件许可证。MPL 更好的平衡了开发者对源代码的需求和他们可以利用源代码获得的利益。MPL 在许多权利与义务的约定方面同著名的 GPL 许可证和 BSD 许可证相同，都是符合 OSIA 认定的开源软件许可证。MPL 主要有以下几个显著不同：
+
+1. MPL 虽然也要求经 MPL 许可证发布的源代码的修改也要以 MPL 许可证的方式再许可出来，以保证其他人可以在 MPL 许可证下共享源代码，但是，在 MPL 中对“发布”的定义是“以源代码方式发布的文件”，这就允许企业更灵活的在自己的商业软件中使用 MPL 许可证发布的源码。
+2. MPL 许可证第三条第 7 条款中 允许被许可人将经过 MPL 许可证获得的源代码同自己其他类型的代码混合得到自己的软件程序。
+3. 对软件专利的态度，MPL 许可证不像 GPL 许可证那样明确表示反对软件专利，但是却明确要求源代码的提供者不能提供已经受专利保护的源代码（除非他本人是专利权人，并书面向公众免费许可这些源代码），也不能在将这些源代码以开放源代码许可证形式许可后，再去申请与这些源代码有关的专利。
+
 
 
 
