@@ -54,13 +54,13 @@ LGPL 是 GPL 的一个为主要为类库使用设计的开源协议。和 GPL �
 
 GPL/LGPL 都保障原作者的知识产权，避免有人利用开源代码复制并开发类似的产品。
 
-## CPAL（Common Public Attribution License）
-
-CPAL 本质上其是由 Mozilla 公共许可证（MPL）加入新的条款构成的。该许可证要求开发者对软件进行标记。
-
 ## MIT（MIT）
 
 MIT 是和 BSD 一样宽范的许可协议，作者只想保留版权，而无任何其他了限制。也就是说，你必须在你的发行版里包含原许可协议的声明，无论你是以二进制发布的还是以源代码发布的。
+
+## CPAL（Common Public Attribution License）
+
+CPAL 本质上其是由 Mozilla 公共许可证（MPL）加入新的条款构成的。该许可证要求开发者对软件进行标记。
 
 ## MPL（The Mozilla Public License）
 

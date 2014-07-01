@@ -1,0 +1,199 @@
+---
+layout: post
+title: "Android 开发常用库"
+date: 2014-07-01 11:30:43 +0800
+comments: true
+categories: [android, library]
+---
+
+Android 开发过程中，恰当的使用一些比较成熟的库，能够大大提高开发效率。
+
+<!-- more -->
+
+## Gson
+
+Gson 是 Google 提供的用来在 Java 对象和 JSON 数据之间进行映射的 Java 类库。可用于将 Java 对象转换成对应的 JSON 表示，也可以将 JSON 字符串转换成一个等效的 Java 对象。如果与 API 打交道的话，那么这将会是你经常需要的东西。我们主要使用 JSON 的原因就是，相较 XML，轻量级的 JSON 要简单的多。
+
+```java
+
+// Serialize 
+String userJSON = new Gson().toJson(user);
+
+// Deserialize
+User user = new Gson().fromJson(userJSON, User.class);
+
+```
+
+## Retrofit
+
+就如它网站上的介绍“Retrofit 将你的 REST API 变为 Java 接口”一样，Retrofit 把 REST API 返回的数据转化为 Java 对象方便操作，对于在项目中组织 API 调用，是一个不错的解决方案。其请求方法和相对 URL 都带有注解，使得代码变得更加简洁。使用注解，你可以很容易的添加一个请求主体，操纵 URL 或头文件，并添加查询参数。除此之外，每个函数可以定义为同步或异步，具有返回值的函数为同步执行，而异步函数没有返回值且最后一个参数为 Callback 对象。
+
+```java
+
+public interface RetrofitInterface {
+
+    // asynchronously with a callback
+    @GET("/api/user")
+    User getUser(@Query("user_id") int userId, Callback<User> callback);
+
+    // synchronously
+    @POST("/api/user/register")
+    User registerUser(@Body User user);
+}
+
+
+// example
+RetrofitInterface retrofitInterface = new RestAdapter.Builder()
+            .setServer(API.API_URL).build().create(RetrofitInterface.class);
+
+// fetch user with id 2048
+retrofitInterface.getUser(2048, new Callback<User>() {
+    @Override
+    public void success(User user, Response response) {
+
+    }
+
+    @Override
+    public void failure(RetrofitError retrofitError) {
+
+    }
+});
+
+```
+
+## EventBus
+
+EventBus 是用于简化应用中各个部件之间通信的一个库。比如从一个 Activity 发送消息到一个正在运行的服务，亦或是片段之间简单的互动。而下面使用的示例，就是如果网络连接丢失，该如何通知一个活动。
+
+```java
+
+public class NetworkStateReceiver extends BroadcastReceiver {
+
+    // post event if there is no Internet connection
+    public void onReceive(Context context, Intent intent) {
+        super.onReceive(context, intent);
+        if(intent.getExtras()!=null) {
+            NetworkInfo ni=(NetworkInfo) intent.getExtras().get(ConnectivityManager.EXTRA_NETWORK_INFO);
+            if(ni!=null && ni.getState()==NetworkInfo.State.CONNECTED) {
+                // there is Internet connection
+            } else if(intent
+                .getBooleanExtra(ConnectivityManager.EXTRA_NO_CONNECTIVITY,Boolean.FALSE)) {
+                // no Internet connection, send network state changed
+                EventBus.getDefault().post(new NetworkStateChanged(false));
+            }
+}
+
+// event
+public class NetworkStateChanged {
+
+    private mIsInternetConnected;
+
+    public NetworkStateChanged(boolean isInternetConnected) {
+        this.mIsInternetConnected = isInternetConnected;
+    }
+
+    public boolean isInternetConnected() {
+        return this.mIsInternetConnected;
+    }
+}
+
+public class HomeActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        EventBus.getDefault().register(this); // register EventBus
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this); // unregister EventBus
+    }
+
+    // method that will be called when someone posts an event NetworkStateChanged
+    public void onEventMainThread(NetworkStateChanged event) {
+        if (!event.isInternetConnected()) {
+            Toast.makeText(this, "No Internet connection!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+}
+
+```
+
+## ActiveAndroid
+
+ActiveAndroid 算是一个轻量级的 ORM（对象关系映射），让你无需编写一个单独的SQL语句，就可以保存和检索 SQLite 数据库记录。每个数据库记录都被包裹整齐地归为一类，如 delete（）和 save（）的方法。
+
+```java
+
+// 扩展 ActiveAndroid Model 的对象能够保存在数据库里，如：
+user.save();
+
+// 可以轻易替代大型 SQL 语句：
+INSERT INTO Users (Nickname, Name, Address, City, PostalCode, Country) VALUES ('Batman','Bruce W','Palisades 21','Gotham','40000','USA');
+
+// 获取所有用户的例子：
+List<User> users = new Select().from(User.class).execute();
+
+// 而其对应的 SQL 语句是这样：
+SELECT Nickname, Name, Address, City, PostalCode, Country FROM Users;
+
+// ActiveAndroid 是移除大量，用于和数据库一同工作的样板代码的一个很好的方法。当然除此之外，还有其他开源解决方案，如 GreenDAO 和 ORMLite。
+
+```
+
+## Universal Image Loader
+
+UIL 是是一个开源项目，其目的就是提供一个可重复使用的仪器为异步图像加载、缓存和显示。它的使用很简单：
+
+```java
+
+imageLoader.displayImage(imageUri, imageView);
+
+```
+
+尽管 Picasso 拥有更好的API，但其缺乏自定义。而使用 UIL 构建器几乎可以配置所有（其中最重要的就是在抓取和缓存大型图片时，Picasso 会失败）。
+
+良好的开源库会让你的开发变得更简单更快速，而普遍流行的库通常测试良好且易用使用。在大多情况下，你可以很容易的将它们从 Maven 中导入到 Android Studio 项目里。将它们添加到相关性的 build.gradle 文件。并且同步之后，在你的应用里将能够很好的实现它们。
+
+```java
+
+dependencies {
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.squareup.okhttp:okhttp:1.3.0'
+    compile 'com.squareup.retrofit:retrofit:1.3.0'
+    compile 'de.greenrobot:eventbus:2.2.+'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.1'
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 参考资料
+
+1. [Android 开发者必知的 5 个开源库][1]
+
+[1]: http://www.csdn.net/article/2014-06-16/2820224-top-5-android-libraries

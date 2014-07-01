@@ -1,0 +1,223 @@
+---
+layout: post
+title: "Ubuntu 软件安装与卸载"
+date: 2014-06-27 11:56:37 +0800
+comments: true
+categories: [ubuntu, operation system, command, software, install, uninstall]
+---
+
+<!-- more -->
+
+## 软件包的安装、卸载
+
+### 软件包的安装
+
+* APT 方式
+
+```sh
+
+# 普通安装
+apt-get install softname1 softname2 ...;
+
+# 修复安装（-f Atemp to correct broken dependencies）
+apt-get -f install softname1 softname2 ...;
+
+# 重新安装
+apt-get --reinstall install softname1 softname2 ...;
+
+```
+
+* Dpkg 方式
+
+```sh
+
+# 普通安装
+dpkg -i package_name.deb
+
+```
+
+* 源码安装（.tar、tar.gz、tar.bz2、tar.Z）
+
+```sh
+
+# 首先解压源码压缩包，通过 tar 命令来完成
+tar zxf xx.tar.gz
+tar zxf xx.tar.Z
+tar zxf xx.tgz
+bunzip2 xx.bz2
+tar xf xx.tar
+
+# 进入到解压出的目录中，查看README之类的说明文件，或使用`ls -F --color`或`ls -F`命令查看下可执行文件，可执行文件会以*号的尾部标识。一般依次执行一下操作即可完成安装：
+./configure
+make
+sudo make install
+
+```
+
+### 软件包的卸载
+
+* APT 方式
+
+```sh
+
+# 移除式卸载（移除软件包，当尾部有+时，表示安装）
+apt-get remove softname1 softname2 ...;
+
+# 清除式卸载（卸载同时，清除配置）
+apt-get --purge remove softname1 softname2 ...;
+
+# 清除式卸载（卸载同时，清除配置）
+apt-get purge softname1 softname2 ...;
+
+```
+
+* Dpkg 方式
+
+```sh
+
+# 移除式卸载
+dpkg -r pkg1 pkg2 ...;
+
+# 清除式卸载
+dpkg -P pkg1 pkg2 ...;
+
+```
+
+## 查看是否安装某软件包
+
+* Dpkg 使用文本文件来作为数据库，通常在`/var/lib/dpkg`目录下。通常在`status`文件中存储软件状态和控制信息，在`info/`目录下备份控制文件，并在其下的`.list`文件中记录安装文件清单，其下`.md5sums`保存文件的 MD5 编码。
+
+```sh
+
+dpkg -l
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                                   Version                  Architecture             Description
++++-======================================-========================-========================-==================================================================================
+ii  account-plugin-aim                     3.8.6-0ubuntu9           amd64                    Messaging account plugin for AIM
+ii  account-plugin-facebook                0.11+14.04.20140409.1-0u all                      GNOME Control Center account plugin for single signon - facebook
+ii  account-plugin-flickr                  0.11+14.04.20140409.1-0u all                      GNOME Control Center account plugin for single signon - flickr
+ii  account-plugin-google                  0.11+14.04.20140409.1-0u all                      GNOME Control Center account plugin for single signon
+ii  account-plugin-jabber                  3.8.6-0ubuntu9           amd64                    Messaging account plugin for Jabber/XMPP
+......
+
+```
+
+* 以上每条记录对应一个软件包，每条记录前三个字符表示软件包的状态标识，后边依次是软件包名称、版本号和简单描述
+
+```
+# 第一个字符为期望值，它包括：
+
+    * u 状态未知，这意味着软件包未安装，并且用户也未发出安装请求
+    * i 用户请求安装软件包
+    * r 用户请求卸载软件包
+    * p 用户请求清除软件包
+    * h 用户请求保持软件包版本锁定
+
+# 第二个字符为软件包当前状态，包括：
+
+    * n 软件包未安装
+    * i 软件包安装并完成配置
+    * c 软件包以前安装过，现在删除了，但是它的配置文件还留在系统中
+    * u 软件包被解包，但还未配置
+    * f 试图配置软件包，但是失败了
+    * h 软件包安装，但是没有安装成功
+
+# 第三个字符为错误状态，包括
+
+    * 空 表示没有问题
+    * h 软件包被强制保持，因为有其他软件包依赖需求，无法升级
+    * r 软件包被破坏，可能需要重新安装才能正常使用（包括删除）
+    * x 软件包被破坏，并且被强制保持
+
+```
+
+* 其他查询方式
+
+```sh
+
+# 通配符模糊查询
+dpkg -l nano*
+
+# 查询系统中属于 nano 的文件
+dpkg --listfiles nano
+# 或
+dpkg-query -L nano
+
+# 查看软件nano的详细信息
+dpkg -s nano
+# 或
+dpkg-query -s nano
+
+# 查看系统中软件包状态，支持模糊查询
+dpkg -l
+# 或
+dpkg-query -l
+
+# 查看某个文件的归属包
+dpkg -S nano
+# 或
+dpkg-query -S nano
+
+```
+
+
+## 其他命令
+
+```
+
+apt-cache search # package 搜索包
+apt-cache show # package 获取包的相关信息，如说明、大小、版本等
+apt-get install # package 安装包，下载软件包及其所有的依赖包，同时进行包的安装或升级。如果某个包被设置了 hold，将不会被升级
+apt-get --reinstall install # package --reinstall 重新安装包
+apt-get -f install # package 强制安装，-f 即 --fix-missing
+apt-get remove # package 删除包以及任何依赖这个包的其他包
+apt-get remove --purge # package 删除包，同时删除配置文件等
+apt-get autoremove --purge # package 删除包及其依赖的软件包和配置文件等，只对6.10有效
+apt-get update # 更新源
+apt-get upgrade # 更新已安装的包为最新可用版本，不会安装新的或移除老的包，如果一个包改变了依赖关系而需要安装一个新的包，那么它将不会被升级，而是标识为 hold。建议同时使用 -u 选项，能看到哪些包将会被升级
+apt-get dist-upgrade # 升级系统，和 apt-get upgrade 类似，但是会安装和移除包来满足依赖关系，具有一定危险性
+apt-get dselect-upgrade # 使用 dselect 升级
+apt-cache depends # package 了解使用依赖
+apt-cache rdepends # package 了解某个具体的依赖，查看该包被哪些包依赖
+apt-cache showpkg # 显示 package 更多信息以及和其他包的关系
+apt-get build-dep # package 安装相关的编译环境
+apt-get source # package 下载该包的源码
+apt-get clean # 清理下载文件的存档
+apt-get autoclean # 只清理过时的包
+apt-get check # 检查是否有损坏的依赖
+dpkg -S filename # 查找 filename 属于哪个软件包
+apt-file search filename # 查找 filename 属于哪个软件包
+apt-file list packagename # 列出软件包的内容
+apt-file update # 更新 apt-file 的数据库
+
+dpkg --info packagename # 列出软件包解包后的包名称
+dpkg -l ## 列出当前系统中所有的包，可以和参数 less 一起使用在分屏查看（类似于 rpm -qa）
+dpkg -l | grep -i packagename # 查看系统中与 packagename 相关联得包
+dpkg -s # 查询已经安装的包的详细信息
+dpkg -L # 查询系统中已安装的软件包所安装的位置（类似于 rpm -ql）
+dpkg -S # 查询系统中某个文件属于哪个软件包（类似于 rpm -qf）
+dpkg -I # 查询 deb 包的详细信息，在一个软件包下载到本地之后看看是否需要安装
+dpkg -i # 手动安装软件包（这个命令不能解决软件包之前的依赖性问题），如果在安装某一个软件包的时候遇到了软件依赖的问题，可以用 apt-get -f install 在解决依赖性问题
+dpkg -r # 卸载软件包，不是完全的卸载，它的配置文件还在
+dpkg -P # 全部卸载（但是还是不能解决软件包的依赖性问题）
+dpkg -reconfigure # 重新配置
+dpkg-reconfigure --frontend=dialog debconf # 如果安装时选错了，可以改回来
+dpkg -c # 列出内容
+
+```
+
+
+
+
+
+
+
+
+
+## 参考资料
+
+1. [ubuntu 安装和查看已安装][1]
+
+[1]: http://www.cnblogs.com/forward/archive/2012/01/10/2318483.html
