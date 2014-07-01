@@ -1,0 +1,632 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Android 开发常用库 - 逆水行舟</title>
+  <meta name="author" content="Longgen">
+
+  
+  <meta name="description" content="Android 开发过程中，恰当的使用一些比较成熟的库，能够大大提高开发效率。 Gson Gson 是 Google 提供的用来在 Java 对象和 JSON 数据之间进行映射的 Java 类库。可用于将 Java 对象转换成对应的 JSON 表示，也可以将 JSON 字符串转换成一个等效的 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.longgen.me/blog/2014/07/01/android-kai-fa-chang-yong-ku">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="逆水行舟" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48617955-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">逆水行舟</a></h1>
+  
+    <h2>Do what you say, say what you do</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.longgen.me" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">首页</a></li>
+  <li><a href="/blog/archives">归档</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Android 开发常用库</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-01T11:30:43+08:00" pubdate data-updated="true">Jul 1<span>st</span>, 2014</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Android 开发过程中，恰当的使用一些比较成熟的库，能够大大提高开发效率。</p>
+
+<!-- more -->
+
+
+<h2>Gson</h2>
+
+<p>Gson 是 Google 提供的用来在 Java 对象和 JSON 数据之间进行映射的 Java 类库。可用于将 Java 对象转换成对应的 JSON 表示，也可以将 JSON 字符串转换成一个等效的 Java 对象。如果与 API 打交道的话，那么这将会是你经常需要的东西。我们主要使用 JSON 的原因就是，相较 XML，轻量级的 JSON 要简单的多。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="c1">// Serialize </span>
+</span><span class='line'><span class="n">String</span> <span class="n">userJSON</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gson</span><span class="o">().</span><span class="na">toJson</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Deserialize</span>
+</span><span class='line'><span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gson</span><span class="o">().</span><span class="na">fromJson</span><span class="o">(</span><span class="n">userJSON</span><span class="o">,</span> <span class="n">User</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Retrofit</h2>
+
+<p>就如它网站上的介绍“Retrofit 将你的 REST API 变为 Java 接口”一样，Retrofit 把 REST API 返回的数据转化为 Java 对象方便操作，对于在项目中组织 API 调用，是一个不错的解决方案。其请求方法和相对 URL 都带有注解，使得代码变得更加简洁。使用注解，你可以很容易的添加一个请求主体，操纵 URL 或头文件，并添加查询参数。除此之外，每个函数可以定义为同步或异步，具有返回值的函数为同步执行，而异步函数没有返回值且最后一个参数为 Callback 对象。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">RetrofitInterface</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// asynchronously with a callback</span>
+</span><span class='line'>    <span class="nd">@GET</span><span class="o">(</span><span class="s">&quot;/api/user&quot;</span><span class="o">)</span>
+</span><span class='line'>    <span class="n">User</span> <span class="nf">getUser</span><span class="o">(</span><span class="nd">@Query</span><span class="o">(</span><span class="s">&quot;user_id&quot;</span><span class="o">)</span> <span class="kt">int</span> <span class="n">userId</span><span class="o">,</span> <span class="n">Callback</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">callback</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// synchronously</span>
+</span><span class='line'>    <span class="nd">@POST</span><span class="o">(</span><span class="s">&quot;/api/user/register&quot;</span><span class="o">)</span>
+</span><span class='line'>    <span class="n">User</span> <span class="nf">registerUser</span><span class="o">(</span><span class="nd">@Body</span> <span class="n">User</span> <span class="n">user</span><span class="o">);</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// example</span>
+</span><span class='line'><span class="n">RetrofitInterface</span> <span class="n">retrofitInterface</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RestAdapter</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+</span><span class='line'>            <span class="o">.</span><span class="na">setServer</span><span class="o">(</span><span class="n">API</span><span class="o">.</span><span class="na">API_URL</span><span class="o">).</span><span class="na">build</span><span class="o">().</span><span class="na">create</span><span class="o">(</span><span class="n">RetrofitInterface</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// fetch user with id 2048</span>
+</span><span class='line'><span class="n">retrofitInterface</span><span class="o">.</span><span class="na">getUser</span><span class="o">(</span><span class="mi">2048</span><span class="o">,</span> <span class="k">new</span> <span class="n">Callback</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;()</span> <span class="o">{</span>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">success</span><span class="o">(</span><span class="n">User</span> <span class="n">user</span><span class="o">,</span> <span class="n">Response</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">failure</span><span class="o">(</span><span class="n">RetrofitError</span> <span class="n">retrofitError</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>EventBus</h2>
+
+<p>EventBus 是用于简化应用中各个部件之间通信的一个库。比如从一个 Activity 发送消息到一个正在运行的服务，亦或是片段之间简单的互动。而下面使用的示例，就是如果网络连接丢失，该如何通知一个活动。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NetworkStateReceiver</span> <span class="kd">extends</span> <span class="n">BroadcastReceiver</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// post event if there is no Internet connection</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceive</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="kd">super</span><span class="o">.</span><span class="na">onReceive</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">intent</span><span class="o">);</span>
+</span><span class='line'>        <span class="k">if</span><span class="o">(</span><span class="n">intent</span><span class="o">.</span><span class="na">getExtras</span><span class="o">()!=</span><span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>            <span class="n">NetworkInfo</span> <span class="n">ni</span><span class="o">=(</span><span class="n">NetworkInfo</span><span class="o">)</span> <span class="n">intent</span><span class="o">.</span><span class="na">getExtras</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="n">ConnectivityManager</span><span class="o">.</span><span class="na">EXTRA_NETWORK_INFO</span><span class="o">);</span>
+</span><span class='line'>            <span class="k">if</span><span class="o">(</span><span class="n">ni</span><span class="o">!=</span><span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">ni</span><span class="o">.</span><span class="na">getState</span><span class="o">()==</span><span class="n">NetworkInfo</span><span class="o">.</span><span class="na">State</span><span class="o">.</span><span class="na">CONNECTED</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>                <span class="c1">// there is Internet connection</span>
+</span><span class='line'>            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">intent</span>
+</span><span class='line'>                <span class="o">.</span><span class="na">getBooleanExtra</span><span class="o">(</span><span class="n">ConnectivityManager</span><span class="o">.</span><span class="na">EXTRA_NO_CONNECTIVITY</span><span class="o">,</span><span class="n">Boolean</span><span class="o">.</span><span class="na">FALSE</span><span class="o">))</span> <span class="o">{</span>
+</span><span class='line'>                <span class="c1">// no Internet connection, send network state changed</span>
+</span><span class='line'>                <span class="n">EventBus</span><span class="o">.</span><span class="na">getDefault</span><span class="o">().</span><span class="na">post</span><span class="o">(</span><span class="k">new</span> <span class="n">NetworkStateChanged</span><span class="o">(</span><span class="kc">false</span><span class="o">));</span>
+</span><span class='line'>            <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// event</span>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NetworkStateChanged</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">private</span> <span class="n">mIsInternetConnected</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="nf">NetworkStateChanged</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">isInternetConnected</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">this</span><span class="o">.</span><span class="na">mIsInternetConnected</span> <span class="o">=</span> <span class="n">isInternetConnected</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isInternetConnected</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">mIsInternetConnected</span><span class="o">;</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HomeActivity</span> <span class="kd">extends</span> <span class="n">Activity</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span><span class='line'>        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">EventBus</span><span class="o">.</span><span class="na">getDefault</span><span class="o">().</span><span class="na">register</span><span class="o">(</span><span class="k">this</span><span class="o">);</span> <span class="c1">// register EventBus</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span> <span class="o">{</span>
+</span><span class='line'>        <span class="kd">super</span><span class="o">.</span><span class="na">onDestroy</span><span class="o">();</span>
+</span><span class='line'>        <span class="n">EventBus</span><span class="o">.</span><span class="na">getDefault</span><span class="o">().</span><span class="na">unregister</span><span class="o">(</span><span class="k">this</span><span class="o">);</span> <span class="c1">// unregister EventBus</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// method that will be called when someone posts an event NetworkStateChanged</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEventMainThread</span><span class="o">(</span><span class="n">NetworkStateChanged</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+</span><span class='line'>        <span class="k">if</span> <span class="o">(!</span><span class="n">event</span><span class="o">.</span><span class="na">isInternetConnected</span><span class="o">())</span> <span class="o">{</span>
+</span><span class='line'>            <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">&quot;No Internet connection!&quot;</span><span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</span><span class='line'>        <span class="o">}</span>
+</span><span class='line'>    <span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>ActiveAndroid</h2>
+
+<p>ActiveAndroid 算是一个轻量级的 ORM（对象关系映射），让你无需编写一个单独的SQL语句，就可以保存和检索 SQLite 数据库记录。每个数据库记录都被包裹整齐地归为一类，如 delete（）和 save（）的方法。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="c1">// 扩展 ActiveAndroid Model 的对象能够保存在数据库里，如：</span>
+</span><span class='line'><span class="n">user</span><span class="o">.</span><span class="na">save</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// 可以轻易替代大型 SQL 语句：</span>
+</span><span class='line'><span class="n">INSERT</span> <span class="n">INTO</span> <span class="nf">Users</span> <span class="o">(</span><span class="n">Nickname</span><span class="o">,</span> <span class="n">Name</span><span class="o">,</span> <span class="n">Address</span><span class="o">,</span> <span class="n">City</span><span class="o">,</span> <span class="n">PostalCode</span><span class="o">,</span> <span class="n">Country</span><span class="o">)</span> <span class="n">VALUES</span> <span class="o">(</span><span class="err">&#39;</span><span class="n">Batman</span><span class="sc">&#39;,&#39;</span><span class="n">Bruce</span> <span class="n">W</span><span class="sc">&#39;,&#39;</span><span class="n">Palisades</span> <span class="mi">21</span><span class="sc">&#39;,&#39;</span><span class="n">Gotham</span><span class="sc">&#39;,&#39;</span><span class="mi">40000</span><span class="sc">&#39;,&#39;</span><span class="n">USA</span><span class="err">&#39;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// 获取所有用户的例子：</span>
+</span><span class='line'><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">users</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Select</span><span class="o">().</span><span class="na">from</span><span class="o">(</span><span class="n">User</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">execute</span><span class="o">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// 而其对应的 SQL 语句是这样：</span>
+</span><span class='line'><span class="n">SELECT</span> <span class="n">Nickname</span><span class="o">,</span> <span class="n">Name</span><span class="o">,</span> <span class="n">Address</span><span class="o">,</span> <span class="n">City</span><span class="o">,</span> <span class="n">PostalCode</span><span class="o">,</span> <span class="n">Country</span> <span class="n">FROM</span> <span class="n">Users</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// ActiveAndroid 是移除大量，用于和数据库一同工作的样板代码的一个很好的方法。当然除此之外，还有其他开源解决方案，如 GreenDAO 和 ORMLite。</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Universal Image Loader</h2>
+
+<p>UIL 是是一个开源项目，其目的就是提供一个可重复使用的仪器为异步图像加载、缓存和显示。它的使用很简单：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">imageLoader</span><span class="o">.</span><span class="na">displayImage</span><span class="o">(</span><span class="n">imageUri</span><span class="o">,</span> <span class="n">imageView</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>尽管 Picasso 拥有更好的API，但其缺乏自定义。而使用 UIL 构建器几乎可以配置所有（其中最重要的就是在抓取和缓存大型图片时，Picasso 会失败）。</p>
+
+<p>良好的开源库会让你的开发变得更简单更快速，而普遍流行的库通常测试良好且易用使用。在大多情况下，你可以很容易的将它们从 Maven 中导入到 Android Studio 项目里。将它们添加到相关性的 build.gradle 文件。并且同步之后，在你的应用里将能够很好的实现它们。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="n">dependencies</span> <span class="o">{</span>
+</span><span class='line'>    <span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">google</span><span class="o">.</span><span class="na">code</span><span class="o">.</span><span class="na">gson</span><span class="o">:</span><span class="nl">gson:</span><span class="mf">2.2</span><span class="o">.</span><span class="mi">4</span><span class="err">&#39;</span>
+</span><span class='line'>    <span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">squareup</span><span class="o">.</span><span class="na">okhttp</span><span class="o">:</span><span class="nl">okhttp:</span><span class="mf">1.3</span><span class="o">.</span><span class="mi">0</span><span class="err">&#39;</span>
+</span><span class='line'>    <span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">squareup</span><span class="o">.</span><span class="na">retrofit</span><span class="o">:</span><span class="nl">retrofit:</span><span class="mf">1.3</span><span class="o">.</span><span class="mi">0</span><span class="err">&#39;</span>
+</span><span class='line'>    <span class="n">compile</span> <span class="err">&#39;</span><span class="n">de</span><span class="o">.</span><span class="na">greenrobot</span><span class="o">:</span><span class="nl">eventbus:</span><span class="mf">2.2</span><span class="o">.+</span><span class="err">&#39;</span>
+</span><span class='line'>    <span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">nostra13</span><span class="o">.</span><span class="na">universalimageloader</span><span class="o">:</span><span class="n">universal</span><span class="o">-</span><span class="n">image</span><span class="o">-</span><span class="nl">loader:</span><span class="mf">1.9</span><span class="o">.</span><span class="mi">1</span><span class="err">&#39;</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>参考资料</h2>
+
+<ol>
+<li><a href="http://www.csdn.net/article/2014-06-16/2820224-top-5-android-libraries">Android 开发者必知的 5 个开源库</a></li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Longgen</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-01T11:30:43+08:00" pubdate data-updated="true">Jul 1<span>st</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/android/'>android</a>, <a class='category' href='/blog/categories/library/'>library</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.longgen.me/blog/2014/07/01/android-kai-fa-chang-yong-ku/" data-via="fjarcticfox" data-counturl="http://blog.longgen.me/blog/2014/07/01/android-kai-fa-chang-yong-ku/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/06/27/ubuntu-yong-hu-%2C-zu-%2C-quan-xian-de-guan-li/" title="Previous Post: Ubuntu 用户、组、权限的管理">&laquo; Ubuntu 用户、组、权限的管理</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/07/01/cun-chu-xing-neng-ping-jing-de-cheng-yin-%2C-ding-wei-yu-pai-cha/" title="Next Post: 储性能瓶颈的成因、定位与排查【转】">储性能瓶颈的成因、定位与排查【转】 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>最新文章</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/01/cun-chu-xing-neng-ping-jing-de-cheng-yin-%2C-ding-wei-yu-pai-cha/">储性能瓶颈的成因、定位与排查【转】</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/01/android-kai-fa-chang-yong-ku/">Android 开发常用库</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/27/ubuntu-yong-hu-%2C-zu-%2C-quan-xian-de-guan-li/">Ubuntu 用户、组、权限的管理</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi/">Ubuntu SSH 服务开启</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/">Ubuntu 软件安装与卸载</a>
+      </li>
+    
+  </ul>
+</section>
+<section> 
+  <h1>文章分类</h1> 
+  <ul id="categories"> 
+    <li class='category'><a href='/blog/categories/c/'>C (1)</a></li>
+<li class='category'><a href='/blog/categories/android/'>android (4)</a></li>
+<li class='category'><a href='/blog/categories/blog/'>blog (1)</a></li>
+<li class='category'><a href='/blog/categories/command/'>command (1)</a></li>
+<li class='category'><a href='/blog/categories/eclipse/'>eclipse (1)</a></li>
+<li class='category'><a href='/blog/categories/github/'>github (1)</a></li>
+<li class='category'><a href='/blog/categories/github-pages/'>github pages (1)</a></li>
+<li class='category'><a href='/blog/categories/group/'>group (1)</a></li>
+<li class='category'><a href='/blog/categories/homebrew/'>homebrew (1)</a></li>
+<li class='category'><a href='/blog/categories/install/'>install (1)</a></li>
+<li class='category'><a href='/blog/categories/ios/'>ios (4)</a></li>
+<li class='category'><a href='/blog/categories/ipad/'>ipad (1)</a></li>
+<li class='category'><a href='/blog/categories/iphone/'>iphone (1)</a></li>
+<li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
+<li class='category'><a href='/blog/categories/library/'>library (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (2)</a></li>
+<li class='category'><a href='/blog/categories/markdown/'>markdown (1)</a></li>
+<li class='category'><a href='/blog/categories/maven/'>maven (1)</a></li>
+<li class='category'><a href='/blog/categories/nexus/'>nexus (1)</a></li>
+<li class='category'><a href='/blog/categories/objective-c/'>objective-c (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/open-source/'>open source (1)</a></li>
+<li class='category'><a href='/blog/categories/opengl-es/'>opengl es (4)</a></li>
+<li class='category'><a href='/blog/categories/operation-system/'>operation system (2)</a></li>
+<li class='category'><a href='/blog/categories/permission/'>permission (1)</a></li>
+<li class='category'><a href='/blog/categories/pow/'>pow (1)</a></li>
+<li class='category'><a href='/blog/categories/protocol/'>protocol (1)</a></li>
+<li class='category'><a href='/blog/categories/software/'>software (1)</a></li>
+<li class='category'><a href='/blog/categories/sourcetree/'>sourcetree (1)</a></li>
+<li class='category'><a href='/blog/categories/ssh/'>ssh (1)</a></li>
+<li class='category'><a href='/blog/categories/storage/'>storage (1)</a></li>
+<li class='category'><a href='/blog/categories/ubuntu/'>ubuntu (4)</a></li>
+<li class='category'><a href='/blog/categories/uninstall/'>uninstall (1)</a></li>
+<li class='category'><a href='/blog/categories/user/'>user (1)</a></li>
+<li class='category'><a href='/blog/categories/xcode/'>xcode (1)</a></li>
+<li class='category'><a href='/blog/categories/开发环境/'>开发环境 (2)</a></li>
+ 
+  </ul> 
+</section>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/fjarcticfox">@fjarcticfox</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'fjarcticfox',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/fjarcticfox?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/fjarcticfox">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/100396039005337701113?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Longgen -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'longgen';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.longgen.me/blog/2014/07/01/android-kai-fa-chang-yong-ku/';
+        var disqus_url = 'http://blog.longgen.me/blog/2014/07/01/android-kai-fa-chang-yong-ku/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

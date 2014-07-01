@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：user | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/user/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-07-01T15:16:51+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 用户、组、权限的管理]]></title>
+    <link href="http://blog.longgen.me/blog/2014/06/27/ubuntu-yong-hu-%2C-zu-%2C-quan-xian-de-guan-li/"/>
+    <updated>2014-06-27T12:43:51+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/06/27/ubuntu-yong-hu-,-zu-,-quan-xian-de-guan-li</id>
+    <content type="html"><![CDATA[<p>以下命令基于 Ubuntu 14.04版本。</p>
+
+<h2>组管理</h2>
+
+<p>```sh</p>
+
+<p>groups &mdash;help
+Usage: groups [OPTION]&hellip; [USERNAME]&hellip;
+Print group memberships for each USERNAME or, if no USERNAME is specified, for
+the current process (which may differ if the groups database has changed).</p>
+
+<pre><code>  --help     display this help and exit
+  --version  output version information and exit
+</code></pre>
+
+<p>Report groups bugs to <a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#98;&#x75;&#103;&#x2d;&#x63;&#x6f;&#x72;&#x65;&#117;&#116;&#x69;&#x6c;&#x73;&#x40;&#103;&#x6e;&#117;&#x2e;&#x6f;&#x72;&#x67;">&#x62;&#x75;&#103;&#45;&#x63;&#x6f;&#114;&#101;&#117;&#x74;&#105;&#x6c;&#x73;&#x40;&#x67;&#x6e;&#x75;&#46;&#x6f;&#x72;&#x67;</a>
+GNU coreutils home page: <a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>
+General help using GNU software: <a href="http://www.gnu.org/gethelp/">http://www.gnu.org/gethelp/</a>
+Report groups translation bugs to <a href="http://translationproject.org/team/">http://translationproject.org/team/</a>
+For complete documentation, run: info coreutils &lsquo;groups invocation&rsquo;</p>
+
+<p>```</p>
+
+<p>```sh</p>
+
+<p>gpasswd &mdash;help
+Usage: gpasswd [option] GROUP</p>
+
+<p>Options:
+  -a, &mdash;add USER                add USER to GROUP
+  -d, &mdash;delete USER             remove USER from GROUP
+  -h, &mdash;help                    display this help message and exit
+  -Q, &mdash;root CHROOT_DIR         directory to chroot into
+  -r, &mdash;remove-password         remove the GROUP&rsquo;s password
+  -R, &mdash;restrict                restrict access to GROUP to its members
+  -M, &mdash;members USER,&hellip;        set the list of members of GROUP
+  -A, &mdash;administrators ADMIN,&hellip;</p>
+
+<pre><code>                            set the list of administrators for GROUP
+</code></pre>
+
+<p>Except for the -A and -M options, the options cannot be combined.</p>
+
+<p>```</p>
+
+<h2>用户管理</h2>
+
+<p>```sh</p>
+
+<p>useradd -h
+Usage: useradd [options] LOGIN</p>
+
+<pre><code>   useradd -D
+   useradd -D [options]
+</code></pre>
+
+<p>Options:
+  -b, &mdash;base-dir BASE_DIR       base directory for the home directory of the</p>
+
+<pre><code>                            new account
+</code></pre>
+
+<p>  -c, &mdash;comment COMMENT         GECOS field of the new account
+  -d, &mdash;home-dir HOME_DIR       home directory of the new account
+  -D, &mdash;defaults                print or change default useradd configuration
+  -e, &mdash;expiredate EXPIRE_DATE  expiration date of the new account
+  -f, &mdash;inactive INACTIVE       password inactivity period of the new account
+  -g, &mdash;gid GROUP               name or ID of the primary group of the new</p>
+
+<pre><code>                            account
+</code></pre>
+
+<p>  -G, &mdash;groups GROUPS           list of supplementary groups of the new</p>
+
+<pre><code>                            account
+</code></pre>
+
+<p>  -h, &mdash;help                    display this help message and exit
+  -k, &mdash;skel SKEL_DIR           use this alternative skeleton directory
+  -K, &mdash;key KEY=VALUE           override /etc/login.defs defaults
+  -l, &mdash;no-log-init             do not add the user to the lastlog and</p>
+
+<pre><code>                            faillog databases
+</code></pre>
+
+<p>  -m, &mdash;create-home             create the user&rsquo;s home directory
+  -M, &mdash;no-create-home          do not create the user&rsquo;s home directory
+  -N, &mdash;no-user-group           do not create a group with the same name as</p>
+
+<pre><code>                            the user
+</code></pre>
+
+<p>  -o, &mdash;non-unique              allow to create users with duplicate</p>
+
+<pre><code>                            (non-unique) UID
+</code></pre>
+
+<p>  -p, &mdash;password PASSWORD       encrypted password of the new account
+  -r, &mdash;system                  create a system account
+  -R, &mdash;root CHROOT_DIR         directory to chroot into
+  -s, &mdash;shell SHELL             login shell of the new account
+  -u, &mdash;uid UID                 user ID of the new account
+  -U, &mdash;user-group              create a group with the same name as the user
+  -Z, &mdash;selinux-user SEUSER     use a specific SEUSER for the SELinux user mapping</p>
+
+<p>```</p>
+
+<p>```sh</p>
+
+<p>adduser [&mdash;home DIR] [&mdash;shell SHELL] [&mdash;no-create-home] [&mdash;uid ID]
+[&mdash;firstuid ID] [&mdash;lastuid ID] [&mdash;gecos GECOS] [&mdash;ingroup GROUP | &mdash;gid ID]
+[&mdash;disabled-password] [&mdash;disabled-login] [&mdash;encrypt-home] USER
+   Add a normal user</p>
+
+<p>adduser &mdash;system [&mdash;home DIR] [&mdash;shell SHELL] [&mdash;no-create-home] [&mdash;uid ID]
+[&mdash;gecos GECOS] [&mdash;group | &mdash;ingroup GROUP | &mdash;gid ID] [&mdash;disabled-password]
+[&mdash;disabled-login] USER
+   Add a system user</p>
+
+<p>adduser &mdash;group [&mdash;gid ID] GROUP
+addgroup [&mdash;gid ID] GROUP
+   Add a user group</p>
+
+<p>addgroup &mdash;system [&mdash;gid ID] GROUP
+   Add a system group</p>
+
+<p>adduser USER GROUP
+   Add an existing user to an existing group</p>
+
+<p>general options:
+  &mdash;quiet | -q      don&rsquo;t give process information to stdout
+  &mdash;force-badname   allow usernames which do not match the</p>
+
+<pre><code>                NAME_REGEX[_SYSTEM] configuration variable
+</code></pre>
+
+<p>  &mdash;help | -h       usage message
+  &mdash;version | -v    version number and copyright
+  &mdash;conf | -c FILE  use FILE as configuration file</p>
+
+<p>```</p>
+
+<h2>密码管理</h2>
+
+<p>```sh</p>
+
+<p>passwd &mdash;help
+Usage: passwd [options] [LOGIN]</p>
+
+<p>Options:
+  -a, &mdash;all                     report password status on all accounts
+  -d, &mdash;delete                  delete the password for the named account
+  -e, &mdash;expire                  force expire the password for the named account
+  -h, &mdash;help                    display this help message and exit
+  -k, &mdash;keep-tokens             change password only if expired
+  -i, &mdash;inactive INACTIVE       set password inactive after expiration</p>
+
+<pre><code>                            to INACTIVE
+</code></pre>
+
+<p>  -l, &mdash;lock                    lock the password of the named account
+  -n, &mdash;mindays MIN_DAYS        set minimum number of days before password</p>
+
+<pre><code>                            change to MIN_DAYS
+</code></pre>
+
+<p>  -q, &mdash;quiet                   quiet mode
+  -r, &mdash;repository REPOSITORY   change password in REPOSITORY repository
+  -R, &mdash;root CHROOT_DIR         directory to chroot into
+  -S, &mdash;status                  report password status on the named account
+  -u, &mdash;unlock                  unlock the password of the named account
+  -w, &mdash;warndays WARN_DAYS      set expiration warning days to WARN_DAYS
+  -x, &mdash;maxdays MAX_DAYS        set maximum number of days before password</p>
+
+<pre><code>                            change to MAX_DAYS
+</code></pre>
+
+<p>```</p>
+
+<h2>文件相关</h2>
+
+<ul>
+<li><code>/etc/group</code>：用户组的配置文件，包括用户和用户组信息</li>
+</ul>
+
+
+<p>```</p>
+
+<h1>每条记录包含四项内容，以分号隔开</h1>
+
+<ol>
+<li>用户组名称</li>
+<li>用户组密码，<code>x</code>值表示未设置密码</li>
+<li>GID，用户组 ID</li>
+<li>用户列表，多个用户之间以逗号分隔；字段为空表示 GID 值为本用户组 GID 值的用户（可以通过<code>/etc/passwd</code>查看）</li>
+</ol>
+
+
+<p>```</p>
+
+<ul>
+<li><code>/etc/shadow</code>：</li>
+<li><code>/etc/passwd</code>：用户信息配置文件</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

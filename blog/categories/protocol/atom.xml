@@ -4,7 +4,7 @@
   <title><![CDATA[分类：protocol | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/protocol/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-05-21T03:21:50+08:00</updated>
+  <updated>2014-07-01T15:16:51+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -70,13 +70,13 @@
 
 <p>GPL/LGPL 都保障原作者的知识产权，避免有人利用开源代码复制并开发类似的产品。</p>
 
-<h2>CPAL（Common Public Attribution License）</h2>
-
-<p>CPAL 本质上其是由 Mozilla 公共许可证（MPL）加入新的条款构成的。该许可证要求开发者对软件进行标记。</p>
-
 <h2>MIT（MIT）</h2>
 
 <p>MIT 是和 BSD 一样宽范的许可协议，作者只想保留版权，而无任何其他了限制。也就是说，你必须在你的发行版里包含原许可协议的声明，无论你是以二进制发布的还是以源代码发布的。</p>
+
+<h2>CPAL（Common Public Attribution License）</h2>
+
+<p>CPAL 本质上其是由 Mozilla 公共许可证（MPL）加入新的条款构成的。该许可证要求开发者对软件进行标记。</p>
 
 <h2>MPL（The Mozilla Public License）</h2>
 

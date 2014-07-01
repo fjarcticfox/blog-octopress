@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>储性能瓶颈的成因、定位与排查【转】 - 逆水行舟</title>
+  <meta name="author" content="Longgen">
+
+  
+  <meta name="description" content="企业数据存储性能瓶颈常常会发生在端口，控制器和磁盘，难点在于找出引起拥塞的单元，往往需要应用多重工具以及丰富的经验来查找并解决。
+本文详细阐述存储瓶颈发生最常见的四种情况，可能发生的拥塞点，需要监控的参数指标，以及部署存储系统的最佳实践。 数据存储瓶颈的四个常见场景 当多个用户同时访问某一业务应用 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.longgen.me/blog/2014/07/01/cun-chu-xing-neng-ping-jing-de-cheng-yin-%2C-ding-wei-yu-pai-cha">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="逆水行舟" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48617955-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">逆水行舟</a></h1>
+  
+    <h2>Do what you say, say what you do</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.longgen.me" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">首页</a></li>
+  <li><a href="/blog/archives">归档</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">储性能瓶颈的成因、定位与排查【转】</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-01T13:13:05+08:00" pubdate data-updated="true">Jul 1<span>st</span>, 2014</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>企业数据存储性能瓶颈常常会发生在端口，控制器和磁盘，难点在于找出引起拥塞的单元，往往需要应用多重工具以及丰富的经验来查找并解决。
+本文详细阐述存储瓶颈发生最常见的四种情况，可能发生的拥塞点，需要监控的参数指标，以及部署存储系统的最佳实践。</p>
+
+<!-- more -->
+
+
+<h2>数据存储瓶颈的四个常见场景</h2>
+
+<ul>
+<li>当多个用户同时访问某一业务应用，无论是邮件服务器，企业资源规划（ERP）系统或数据库，数据请求会累积在队列中。单个 I/O 的响应时间开始增长，短暂延时开始转变成为漫长的等待。</li>
+</ul>
+
+
+<p>这类响应时间敏感型应用的特征是，很多随机请求，读取比写入更多，I/O 较小。最好的方法是：将负载分布在多块磁盘上，否则可能造成性能瓶颈。</p>
+
+<p>如果应用增加了更多用户，或应用IOPS请求增加，则可能需要在 RAID 组中添加更多磁盘，或数据可能需要跨越更多磁盘，在更多层级做条带化。</p>
+
+<p>存储在这样的情况下往往首先被怀疑，但大多数情况下并非存储引发，原因可能在于网络、应用或服务器。</p>
+
+<ul>
+<li>带宽敏感型应用——如数据备份，视频流或安全登录，这类应用当多个用户同时访问大型文件或数据流时可能造成瓶颈。
+定位这一问题存储管理员应当从备份服务器开始一路向下检查至磁盘，原因可能存在于这一通路的任何地方。</li>
+</ul>
+
+
+<p>问题不一定发生在存储，可能是由于备份应用创建的方式或是磁带系统的工作方式引起的。如果瓶颈定位于存储，那么可能是由于服务 I/O 的磁盘数量不足，在控制器造成争用，或是阵列前端口带宽不足。</p>
+
+<p>性能调优需要针对不同应用程序负载来完成。针对大型文件和流数据的调优并不适合于小型文件，反之亦然。这也就是为什么在大多数存储系统中往往做一个平衡，需要用户尝试并找出系统的折中。用户通常需要优化吞吐量或 IOPS，但并不需要对两者同时优化。</p>
+
+<ul>
+<li>RAID 组中的磁盘故障。特别是在 RAID 5 中会造成性能的下降，因为系统需要重建校验数据。相比数据读写操作，重建会对性能造成更大影响。</li>
+</ul>
+
+
+<p>即便坏盘是造成故障的根源，但控制器还是可能成为瓶颈，因为在重建过程中它需要不停地服务数据。当重建完成时，性能才会恢复正常。</p>
+
+<ul>
+<li>部署了一种新的应用，而卷存在于处理繁忙邮件系统的同一磁盘。如果新的应用变得繁忙，邮件系统性能将会遭受影响。额外的流量最终会将磁盘完全覆盖。</li>
+</ul>
+
+
+<h2>存储瓶颈常发区域</h2>
+
+<ul>
+<li>存储区域网络（Storage-area network, SAN）/阵列前端口</li>
+</ul>
+
+
+<p>存储部署于集中化SAN环境时，需考虑服务器和SAN之间的潜在网络瓶颈。例如，运行多部虚拟机的整合服务器可能不具备支持工作负载要求的足够网络端口。添加网络端口或转移网络密集型工作负载至其他服务器可解决这一问题。如前所述，对于带宽集中型应用，需考虑NFS有多少Fiber Channel 端口, or iSCSI 端口 or Ethernet 端口，需要用户站在带宽的角度来考量整个架构。</p>
+
+<p>可能发生的问题包括：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>* 如果阵列中端口数量不够，就会发生过饱和/过度使用
+</span><span class='line'>* 虚拟服务器环境下的过量预定
+</span><span class='line'>* 端口间负载不均衡
+</span><span class='line'>* 交换机间链路争用/流量负荷过重
+</span><span class='line'>* 如某一HBA端口负载过重将导致HBA拥塞。使用虚拟机会导致问题更加严重
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>存储控制器</li>
+</ul>
+
+
+<p>一个标准的主动——被动或主动——主动控制器都有一个性能极限。接近这条上限取决于用户有多少块磁盘，因为每块磁盘的IOPS和吞吐量是固定的。</p>
+
+<p>可能出现的问题包括：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>* 控制器I/O过饱和，使得从缓存到阵列能够处理的IOPS受到限制
+</span><span class='line'>* 吞吐量“淹没“处理器
+</span><span class='line'>* CPU过载/处理器功率不足
+</span><span class='line'>* 性能无法跟上SSD
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Cache</li>
+</ul>
+
+
+<p>由于服务器内存和CPU远比机械磁盘快得多，需为磁盘添加高速内存以缓存读写数据。例如，写入磁盘的数据存储在缓存中直到磁盘能够跟上，同时磁盘中的读数据放入缓存中直到能被主机读取。Cache比磁盘快1000倍，因此将数据写入和读出Cache对性能影响巨大。智能缓存算法能够预测你需要查找的数据，你是否会对此数据频繁访问，甚至是将访问频繁的随机数据放在缓存中。</p>
+
+<p>可能发生的问题包括：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>* Cache memory不足
+</span><span class='line'>* Cache写入过载，引起性能降低
+</span><span class='line'>* 频繁访问顺序性数据引起cache超负荷
+</span><span class='line'>* Cache中需要持续不断地写入新数据，因此如果cache总是在refill，将无法从cache获益
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>磁盘</li>
+</ul>
+
+
+<p>磁盘瓶颈与磁盘转速有关, 慢速磁盘会引入较多延时。存储性能问题的排查首先考虑的因素就是磁盘速度，同时有多少块磁盘可进行并发读写。而另一因素是磁盘接口。采用更快的接口能够缓解磁盘瓶颈，但更重要的是在快速接口与相应更大的缓存大小以及转速之间取得平衡。同样，应避免将快速和慢速磁盘混入同一接口，因为慢速磁盘将会造成快速接口与快速磁盘的性能浪费。</p>
+
+<p>可能引发的问题包括：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>* 过多应用命中磁盘
+</span><span class='line'>* 磁盘数量不足以满足应用所需的IOPS或吞吐量
+</span><span class='line'>* 磁盘速度过慢无法满足性能需求及支持繁重工作负荷
+</span><span class='line'>* Disk group往往是classic存储架构的潜在性能瓶颈，这种结构下RAID最多配置在16块磁盘。Thin结构通常每个LUN拥有更多磁盘，从而数据分布于更多spindle，因增加的并发性而减少了成为瓶颈的可能。
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>需要监控的指标</h2>
+
+<p>曾经一度存储厂商们强调的是IOPS和吞吐量，但现在重点逐渐转变成为响应时间。也就是说，不是数据移动的速度有多快，而在于对请求的响应速度有多快。</p>
+
+<p>正常情况下，15,000 rpm Fibre Channel磁盘响应时间为4ms，SAS磁盘响应时间约为5ms至6ms，SATA为10ms，而SSD少于1ms。如果发现Fibre Channel磁盘响应时间为12ms，或SSD响应时间变成5ms，那么就说明可能产生了争用，可能芯片发生了故障。</p>
+
+<p>除了响应时间，其他需要监控的指标包括：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>* 队列长度，队列中一次积累的请求数量，平均磁盘队列长度
+</span><span class='line'>* 平均I/O大小千字节数
+</span><span class='line'>* IOPS （读和写，随机和顺序，整体平均IOPS）
+</span><span class='line'>* 每秒百万字节吞吐量
+</span><span class='line'>* 读写所占比例
+</span><span class='line'>* 容量（空闲，使用和保留）
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>数据存储性能最佳实践</h2>
+
+<p>性能调优和改进的方式有很多种，用户当然可以通过添加磁盘，端口，多核处理器，内存来改善，但问题是：性价比，以及对业务是否实用。本文建议的方式是在预算范围内找寻性能最大化的解决方案。另外一个需要考虑的方面是环境并非一尘不变，系统部署方案要能够适应环境的改变需求。</p>
+
+<p>首先需要考虑刷数据的性能特征，需要了解IO工作情况是怎样的。是否是cache友好型？是否是CPU集中型？业务数据很大数量很少，还是很小但数量很多？另外一方面就是构成存储环境的组件。包括应用，存储系统本身，网络。。。瓶颈可能在哪里，改善哪里最有效？</p>
+
+<p>以下是一些常规建议：</p>
+
+<ol>
+<li><p>不要仅仅根据空闲空间来分配存储，而需要结合考虑性能需求，确保为吞吐量或IOPS分配足够多的磁盘。</p></li>
+<li><p>在磁盘间均衡分布应用负载，以减少热点地区的产生。</p></li>
+<li><p>理解应用负载类型，并针对负载选择匹配的RAID类型。例如，写密集型应用建议使用RAID 1而不是RAID 5。因为当写入RAID 5时，需要计算校验位，需耗费较多时间。而RAID 1，写入两块磁盘速度快得多，无需计算。</p></li>
+<li><p>磁盘类型（Fibre Channel, SAS, SATA）与期望性能相匹配。对于关键业务应用部署高性能磁盘，例如15,000 rpm Fibre Channel。</p></li>
+<li><p>对于I/O密集型应用考虑采用SSD，但并不适用于写性能重要型应用。只要没有达到控制器瓶颈，SSD对读性能提升显著，但对写性能提升并没有明显效果。</p></li>
+<li><p>采用端对端的监控工具，特别是虚拟服务器环境。虚拟端与物理端之间有一道防火墙，所以，需要穿透防火墙进行端到端的监控。</p></li>
+<li><p>有些性能分析工具涵盖从应用到磁盘，有些仅局限于存储系统本身。由于性能是一个连锁反应包含很多变量，所以需要全面地分析数据。</p></li>
+<li><p>以数据仅写入磁盘外部扇区的方式格式化磁盘。因减少数据定位时间而在高I/O环境下提升性能。负面作用是相当一部分磁盘容量未能得以使用。</p></li>
+</ol>
+
+
+<h2>参考资料</h2>
+
+<ol>
+<li><a href="https://community.emc.com/docs/DOC-34921">存储性能瓶颈的成因、定位与排查</a></li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Longgen</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-01T13:13:05+08:00" pubdate data-updated="true">Jul 1<span>st</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/storage/'>storage</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.longgen.me/blog/2014/07/01/cun-chu-xing-neng-ping-jing-de-cheng-yin-%2C-ding-wei-yu-pai-cha/" data-via="fjarcticfox" data-counturl="http://blog.longgen.me/blog/2014/07/01/cun-chu-xing-neng-ping-jing-de-cheng-yin-%2C-ding-wei-yu-pai-cha/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/07/01/android-kai-fa-chang-yong-ku/" title="Previous Post: Android 开发常用库">&laquo; Android 开发常用库</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>最新文章</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/01/cun-chu-xing-neng-ping-jing-de-cheng-yin-%2C-ding-wei-yu-pai-cha/">储性能瓶颈的成因、定位与排查【转】</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/01/android-kai-fa-chang-yong-ku/">Android 开发常用库</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/27/ubuntu-yong-hu-%2C-zu-%2C-quan-xian-de-guan-li/">Ubuntu 用户、组、权限的管理</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi/">Ubuntu SSH 服务开启</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/">Ubuntu 软件安装与卸载</a>
+      </li>
+    
+  </ul>
+</section>
+<section> 
+  <h1>文章分类</h1> 
+  <ul id="categories"> 
+    <li class='category'><a href='/blog/categories/c/'>C (1)</a></li>
+<li class='category'><a href='/blog/categories/android/'>android (4)</a></li>
+<li class='category'><a href='/blog/categories/blog/'>blog (1)</a></li>
+<li class='category'><a href='/blog/categories/command/'>command (1)</a></li>
+<li class='category'><a href='/blog/categories/eclipse/'>eclipse (1)</a></li>
+<li class='category'><a href='/blog/categories/github/'>github (1)</a></li>
+<li class='category'><a href='/blog/categories/github-pages/'>github pages (1)</a></li>
+<li class='category'><a href='/blog/categories/group/'>group (1)</a></li>
+<li class='category'><a href='/blog/categories/homebrew/'>homebrew (1)</a></li>
+<li class='category'><a href='/blog/categories/install/'>install (1)</a></li>
+<li class='category'><a href='/blog/categories/ios/'>ios (4)</a></li>
+<li class='category'><a href='/blog/categories/ipad/'>ipad (1)</a></li>
+<li class='category'><a href='/blog/categories/iphone/'>iphone (1)</a></li>
+<li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
+<li class='category'><a href='/blog/categories/library/'>library (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (2)</a></li>
+<li class='category'><a href='/blog/categories/markdown/'>markdown (1)</a></li>
+<li class='category'><a href='/blog/categories/maven/'>maven (1)</a></li>
+<li class='category'><a href='/blog/categories/nexus/'>nexus (1)</a></li>
+<li class='category'><a href='/blog/categories/objective-c/'>objective-c (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/open-source/'>open source (1)</a></li>
+<li class='category'><a href='/blog/categories/opengl-es/'>opengl es (4)</a></li>
+<li class='category'><a href='/blog/categories/operation-system/'>operation system (2)</a></li>
+<li class='category'><a href='/blog/categories/permission/'>permission (1)</a></li>
+<li class='category'><a href='/blog/categories/pow/'>pow (1)</a></li>
+<li class='category'><a href='/blog/categories/protocol/'>protocol (1)</a></li>
+<li class='category'><a href='/blog/categories/software/'>software (1)</a></li>
+<li class='category'><a href='/blog/categories/sourcetree/'>sourcetree (1)</a></li>
+<li class='category'><a href='/blog/categories/ssh/'>ssh (1)</a></li>
+<li class='category'><a href='/blog/categories/storage/'>storage (1)</a></li>
+<li class='category'><a href='/blog/categories/ubuntu/'>ubuntu (4)</a></li>
+<li class='category'><a href='/blog/categories/uninstall/'>uninstall (1)</a></li>
+<li class='category'><a href='/blog/categories/user/'>user (1)</a></li>
+<li class='category'><a href='/blog/categories/xcode/'>xcode (1)</a></li>
+<li class='category'><a href='/blog/categories/开发环境/'>开发环境 (2)</a></li>
+ 
+  </ul> 
+</section>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/fjarcticfox">@fjarcticfox</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'fjarcticfox',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/fjarcticfox?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/fjarcticfox">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/100396039005337701113?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Longgen -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'longgen';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.longgen.me/blog/2014/07/01/cun-chu-xing-neng-ping-jing-de-cheng-yin-%2C-ding-wei-yu-pai-cha/';
+        var disqus_url = 'http://blog.longgen.me/blog/2014/07/01/cun-chu-xing-neng-ping-jing-de-cheng-yin-%2C-ding-wei-yu-pai-cha/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

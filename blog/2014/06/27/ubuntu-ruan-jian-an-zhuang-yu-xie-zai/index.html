@@ -1,0 +1,717 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Ubuntu 软件安装与卸载 - 逆水行舟</title>
+  <meta name="author" content="Longgen">
+
+  
+  <meta name="description" content="软件包的安装、卸载 软件包的安装 APT 方式 1
+2
+3
+4
+5
+6
+7
+8
+# 普通安装
+apt-get install softname1 softname2 ...; # 修复安装（-f Atemp to correct broken dependencies）
+apt-get -f &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.longgen.me/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="逆水行舟" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48617955-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">逆水行舟</a></h1>
+  
+    <h2>Do what you say, say what you do</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.longgen.me" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">首页</a></li>
+  <li><a href="/blog/archives">归档</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Ubuntu 软件安装与卸载</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-27T11:56:37+08:00" pubdate data-updated="true">Jun 27<span>th</span>, 2014</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><!-- more -->
+
+
+<h2>软件包的安装、卸载</h2>
+
+<h3>软件包的安装</h3>
+
+<ul>
+<li>APT 方式</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># 普通安装</span>
+</span><span class='line'>apt-get install softname1 softname2 ...;
+</span><span class='line'>
+</span><span class='line'><span class="c"># 修复安装（-f Atemp to correct broken dependencies）</span>
+</span><span class='line'>apt-get -f install softname1 softname2 ...;
+</span><span class='line'>
+</span><span class='line'><span class="c"># 重新安装</span>
+</span><span class='line'>apt-get --reinstall install softname1 softname2 ...;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Dpkg 方式</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># 普通安装</span>
+</span><span class='line'>dpkg -i package_name.deb
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>源码安装（.tar、tar.gz、tar.bz2、tar.Z）</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># 首先解压源码压缩包，通过 tar 命令来完成</span>
+</span><span class='line'>tar zxf xx.tar.gz
+</span><span class='line'>tar zxf xx.tar.Z
+</span><span class='line'>tar zxf xx.tgz
+</span><span class='line'>bunzip2 xx.bz2
+</span><span class='line'>tar xf xx.tar
+</span><span class='line'>
+</span><span class='line'><span class="c"># 进入到解压出的目录中，查看README之类的说明文件，或使用`ls -F --color`或`ls -F`命令查看下可执行文件，可执行文件会以*号的尾部标识。一般依次执行一下操作即可完成安装：</span>
+</span><span class='line'>./configure
+</span><span class='line'>make
+</span><span class='line'>sudo make install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>软件包的卸载</h3>
+
+<ul>
+<li>APT 方式</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># 移除式卸载（移除软件包，当尾部有+时，表示安装）</span>
+</span><span class='line'>apt-get remove softname1 softname2 ...;
+</span><span class='line'>
+</span><span class='line'><span class="c"># 清除式卸载（卸载同时，清除配置）</span>
+</span><span class='line'>apt-get --purge remove softname1 softname2 ...;
+</span><span class='line'>
+</span><span class='line'><span class="c"># 清除式卸载（卸载同时，清除配置）</span>
+</span><span class='line'>apt-get purge softname1 softname2 ...;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Dpkg 方式</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># 移除式卸载</span>
+</span><span class='line'>dpkg -r pkg1 pkg2 ...;
+</span><span class='line'>
+</span><span class='line'><span class="c"># 清除式卸载</span>
+</span><span class='line'>dpkg -P pkg1 pkg2 ...;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>查看是否安装某软件包</h2>
+
+<ul>
+<li>Dpkg 使用文本文件来作为数据库，通常在<code>/var/lib/dpkg</code>目录下。通常在<code>status</code>文件中存储软件状态和控制信息，在<code>info/</code>目录下备份控制文件，并在其下的<code>.list</code>文件中记录安装文件清单，其下<code>.md5sums</code>保存文件的 MD5 编码。</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>dpkg -l
+</span><span class='line'><span class="nv">Desired</span><span class="o">=</span>Unknown/Install/Remove/Purge/Hold
+</span><span class='line'>| <span class="nv">Status</span><span class="o">=</span>Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+</span><span class='line'>|/ Err?<span class="o">=(</span>none<span class="o">)</span>/Reinst-required <span class="o">(</span>Status,Err: <span class="nv">uppercase</span><span class="o">=</span>bad<span class="o">)</span>
+</span><span class='line'><span class="o">||</span>/ Name                                   Version                  Architecture             Description
+</span><span class='line'>+++-<span class="o">======================================</span>-<span class="o">========================</span>-<span class="o">========================</span>-<span class="o">==================================================================================</span>
+</span><span class='line'>ii  account-plugin-aim                     3.8.6-0ubuntu9           amd64                    Messaging account plugin <span class="k">for </span>AIM
+</span><span class='line'>ii  account-plugin-facebook                0.11+14.04.20140409.1-0u all                      GNOME Control Center account plugin <span class="k">for </span>single signon - facebook
+</span><span class='line'>ii  account-plugin-flickr                  0.11+14.04.20140409.1-0u all                      GNOME Control Center account plugin <span class="k">for </span>single signon - flickr
+</span><span class='line'>ii  account-plugin-google                  0.11+14.04.20140409.1-0u all                      GNOME Control Center account plugin <span class="k">for </span>single signon
+</span><span class='line'>ii  account-plugin-jabber                  3.8.6-0ubuntu9           amd64                    Messaging account plugin <span class="k">for </span>Jabber/XMPP
+</span><span class='line'>......
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>以上每条记录对应一个软件包，每条记录前三个字符表示软件包的状态标识，后边依次是软件包名称、版本号和简单描述</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># 第一个字符为期望值，它包括：</span>
+</span><span class='line'>
+</span><span class='line'>    * u 状态未知，这意味着软件包未安装，并且用户也未发出安装请求
+</span><span class='line'>    * i 用户请求安装软件包
+</span><span class='line'>    * r 用户请求卸载软件包
+</span><span class='line'>    * p 用户请求清除软件包
+</span><span class='line'>    * h 用户请求保持软件包版本锁定
+</span><span class='line'>
+</span><span class='line'><span class="c"># 第二个字符为软件包当前状态，包括：</span>
+</span><span class='line'>
+</span><span class='line'>    * n 软件包未安装
+</span><span class='line'>    * i 软件包安装并完成配置
+</span><span class='line'>    * c 软件包以前安装过，现在删除了，但是它的配置文件还留在系统中
+</span><span class='line'>    * u 软件包被解包，但还未配置
+</span><span class='line'>    * f 试图配置软件包，但是失败了
+</span><span class='line'>    * h 软件包安装，但是没有安装成功
+</span><span class='line'>
+</span><span class='line'><span class="c"># 第三个字符为错误状态，包括</span>
+</span><span class='line'>
+</span><span class='line'>    * 空 表示没有问题
+</span><span class='line'>    * h 软件包被强制保持，因为有其他软件包依赖需求，无法升级
+</span><span class='line'>    * r 软件包被破坏，可能需要重新安装才能正常使用（包括删除）
+</span><span class='line'>    * x 软件包被破坏，并且被强制保持
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>其他查询方式</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># 通配符模糊查询</span>
+</span><span class='line'>dpkg -l nano*
+</span><span class='line'>
+</span><span class='line'><span class="c"># 查询系统中属于 nano 的文件</span>
+</span><span class='line'>dpkg --listfiles nano
+</span><span class='line'><span class="c"># 或</span>
+</span><span class='line'>dpkg-query -L nano
+</span><span class='line'>
+</span><span class='line'><span class="c"># 查看软件nano的详细信息</span>
+</span><span class='line'>dpkg -s nano
+</span><span class='line'><span class="c"># 或</span>
+</span><span class='line'>dpkg-query -s nano
+</span><span class='line'>
+</span><span class='line'><span class="c"># 查看系统中软件包状态，支持模糊查询</span>
+</span><span class='line'>dpkg -l
+</span><span class='line'><span class="c"># 或</span>
+</span><span class='line'>dpkg-query -l
+</span><span class='line'>
+</span><span class='line'><span class="c"># 查看某个文件的归属包</span>
+</span><span class='line'>dpkg -S nano
+</span><span class='line'><span class="c"># 或</span>
+</span><span class='line'>dpkg-query -S nano
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>其他命令</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>apt-cache search <span class="c"># package 搜索包</span>
+</span><span class='line'>apt-cache show <span class="c"># package 获取包的相关信息，如说明、大小、版本等</span>
+</span><span class='line'>apt-get install <span class="c"># package 安装包，下载软件包及其所有的依赖包，同时进行包的安装或升级。如果某个包被设置了 hold，将不会被升级</span>
+</span><span class='line'>apt-get --reinstall install <span class="c"># package --reinstall 重新安装包</span>
+</span><span class='line'>apt-get -f install <span class="c"># package 强制安装，-f 即 --fix-missing</span>
+</span><span class='line'>apt-get remove <span class="c"># package 删除包以及任何依赖这个包的其他包</span>
+</span><span class='line'>apt-get remove --purge <span class="c"># package 删除包，同时删除配置文件等</span>
+</span><span class='line'>apt-get autoremove --purge <span class="c"># package 删除包及其依赖的软件包和配置文件等，只对6.10有效</span>
+</span><span class='line'>apt-get update <span class="c"># 更新源</span>
+</span><span class='line'>apt-get upgrade <span class="c"># 更新已安装的包为最新可用版本，不会安装新的或移除老的包，如果一个包改变了依赖关系而需要安装一个新的包，那么它将不会被升级，而是标识为 hold。建议同时使用 -u 选项，能看到哪些包将会被升级</span>
+</span><span class='line'>apt-get dist-upgrade <span class="c"># 升级系统，和 apt-get upgrade 类似，但是会安装和移除包来满足依赖关系，具有一定危险性</span>
+</span><span class='line'>apt-get dselect-upgrade <span class="c"># 使用 dselect 升级</span>
+</span><span class='line'>apt-cache depends <span class="c"># package 了解使用依赖</span>
+</span><span class='line'>apt-cache rdepends <span class="c"># package 了解某个具体的依赖，查看该包被哪些包依赖</span>
+</span><span class='line'>apt-cache showpkg <span class="c"># 显示 package 更多信息以及和其他包的关系</span>
+</span><span class='line'>apt-get build-dep <span class="c"># package 安装相关的编译环境</span>
+</span><span class='line'>apt-get <span class="nb">source</span> <span class="c"># package 下载该包的源码</span>
+</span><span class='line'>apt-get clean <span class="c"># 清理下载文件的存档</span>
+</span><span class='line'>apt-get autoclean <span class="c"># 只清理过时的包</span>
+</span><span class='line'>apt-get check <span class="c"># 检查是否有损坏的依赖</span>
+</span><span class='line'>dpkg -S filename <span class="c"># 查找 filename 属于哪个软件包</span>
+</span><span class='line'>apt-file search filename <span class="c"># 查找 filename 属于哪个软件包</span>
+</span><span class='line'>apt-file list packagename <span class="c"># 列出软件包的内容</span>
+</span><span class='line'>apt-file update <span class="c"># 更新 apt-file 的数据库</span>
+</span><span class='line'>
+</span><span class='line'>dpkg --info packagename <span class="c"># 列出软件包解包后的包名称</span>
+</span><span class='line'>dpkg -l <span class="c">## 列出当前系统中所有的包，可以和参数 less 一起使用在分屏查看（类似于 rpm -qa）</span>
+</span><span class='line'>dpkg -l | grep -i packagename <span class="c"># 查看系统中与 packagename 相关联得包</span>
+</span><span class='line'>dpkg -s <span class="c"># 查询已经安装的包的详细信息</span>
+</span><span class='line'>dpkg -L <span class="c"># 查询系统中已安装的软件包所安装的位置（类似于 rpm -ql）</span>
+</span><span class='line'>dpkg -S <span class="c"># 查询系统中某个文件属于哪个软件包（类似于 rpm -qf）</span>
+</span><span class='line'>dpkg -I <span class="c"># 查询 deb 包的详细信息，在一个软件包下载到本地之后看看是否需要安装</span>
+</span><span class='line'>dpkg -i <span class="c"># 手动安装软件包（这个命令不能解决软件包之前的依赖性问题），如果在安装某一个软件包的时候遇到了软件依赖的问题，可以用 apt-get -f install 在解决依赖性问题</span>
+</span><span class='line'>dpkg -r <span class="c"># 卸载软件包，不是完全的卸载，它的配置文件还在</span>
+</span><span class='line'>dpkg -P <span class="c"># 全部卸载（但是还是不能解决软件包的依赖性问题）</span>
+</span><span class='line'>dpkg -reconfigure <span class="c"># 重新配置</span>
+</span><span class='line'>dpkg-reconfigure --frontend<span class="o">=</span>dialog debconf <span class="c"># 如果安装时选错了，可以改回来</span>
+</span><span class='line'>dpkg -c <span class="c"># 列出内容</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>参考资料</h2>
+
+<ol>
+<li><a href="http://www.cnblogs.com/forward/archive/2012/01/10/2318483.html">ubuntu 安装和查看已安装</a></li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Longgen</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-27T11:56:37+08:00" pubdate data-updated="true">Jun 27<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/command/'>command</a>, <a class='category' href='/blog/categories/install/'>install</a>, <a class='category' href='/blog/categories/operation-system/'>operation system</a>, <a class='category' href='/blog/categories/software/'>software</a>, <a class='category' href='/blog/categories/ubuntu/'>ubuntu</a>, <a class='category' href='/blog/categories/uninstall/'>uninstall</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.longgen.me/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/" data-via="fjarcticfox" data-counturl="http://blog.longgen.me/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/06/23/google-analytics-zai-ye-mian-zhong-de-shi-yong/" title="Previous Post: Google Analytics 在页面中的使用">&laquo; Google Analytics 在页面中的使用</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi/" title="Next Post: Ubuntu SSH 服务开启">Ubuntu SSH 服务开启 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>最新文章</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/01/cun-chu-xing-neng-ping-jing-de-cheng-yin-%2C-ding-wei-yu-pai-cha/">储性能瓶颈的成因、定位与排查【转】</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/01/android-kai-fa-chang-yong-ku/">Android 开发常用库</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/27/ubuntu-yong-hu-%2C-zu-%2C-quan-xian-de-guan-li/">Ubuntu 用户、组、权限的管理</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi/">Ubuntu SSH 服务开启</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/">Ubuntu 软件安装与卸载</a>
+      </li>
+    
+  </ul>
+</section>
+<section> 
+  <h1>文章分类</h1> 
+  <ul id="categories"> 
+    <li class='category'><a href='/blog/categories/c/'>C (1)</a></li>
+<li class='category'><a href='/blog/categories/android/'>android (4)</a></li>
+<li class='category'><a href='/blog/categories/blog/'>blog (1)</a></li>
+<li class='category'><a href='/blog/categories/command/'>command (1)</a></li>
+<li class='category'><a href='/blog/categories/eclipse/'>eclipse (1)</a></li>
+<li class='category'><a href='/blog/categories/github/'>github (1)</a></li>
+<li class='category'><a href='/blog/categories/github-pages/'>github pages (1)</a></li>
+<li class='category'><a href='/blog/categories/group/'>group (1)</a></li>
+<li class='category'><a href='/blog/categories/homebrew/'>homebrew (1)</a></li>
+<li class='category'><a href='/blog/categories/install/'>install (1)</a></li>
+<li class='category'><a href='/blog/categories/ios/'>ios (4)</a></li>
+<li class='category'><a href='/blog/categories/ipad/'>ipad (1)</a></li>
+<li class='category'><a href='/blog/categories/iphone/'>iphone (1)</a></li>
+<li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
+<li class='category'><a href='/blog/categories/library/'>library (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (2)</a></li>
+<li class='category'><a href='/blog/categories/markdown/'>markdown (1)</a></li>
+<li class='category'><a href='/blog/categories/maven/'>maven (1)</a></li>
+<li class='category'><a href='/blog/categories/nexus/'>nexus (1)</a></li>
+<li class='category'><a href='/blog/categories/objective-c/'>objective-c (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/open-source/'>open source (1)</a></li>
+<li class='category'><a href='/blog/categories/opengl-es/'>opengl es (4)</a></li>
+<li class='category'><a href='/blog/categories/operation-system/'>operation system (2)</a></li>
+<li class='category'><a href='/blog/categories/permission/'>permission (1)</a></li>
+<li class='category'><a href='/blog/categories/pow/'>pow (1)</a></li>
+<li class='category'><a href='/blog/categories/protocol/'>protocol (1)</a></li>
+<li class='category'><a href='/blog/categories/software/'>software (1)</a></li>
+<li class='category'><a href='/blog/categories/sourcetree/'>sourcetree (1)</a></li>
+<li class='category'><a href='/blog/categories/ssh/'>ssh (1)</a></li>
+<li class='category'><a href='/blog/categories/storage/'>storage (1)</a></li>
+<li class='category'><a href='/blog/categories/ubuntu/'>ubuntu (4)</a></li>
+<li class='category'><a href='/blog/categories/uninstall/'>uninstall (1)</a></li>
+<li class='category'><a href='/blog/categories/user/'>user (1)</a></li>
+<li class='category'><a href='/blog/categories/xcode/'>xcode (1)</a></li>
+<li class='category'><a href='/blog/categories/开发环境/'>开发环境 (2)</a></li>
+ 
+  </ul> 
+</section>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/fjarcticfox">@fjarcticfox</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'fjarcticfox',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/fjarcticfox?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/fjarcticfox">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/100396039005337701113?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Longgen -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'longgen';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.longgen.me/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/';
+        var disqus_url = 'http://blog.longgen.me/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

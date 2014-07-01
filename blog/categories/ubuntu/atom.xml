@@ -4,7 +4,7 @@
   <title><![CDATA[分类：ubuntu | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-05-21T03:21:50+08:00</updated>
+  <updated>2014-07-01T15:16:51+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -12,6 +12,532 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 用户、组、权限的管理]]></title>
+    <link href="http://blog.longgen.me/blog/2014/06/27/ubuntu-yong-hu-%2C-zu-%2C-quan-xian-de-guan-li/"/>
+    <updated>2014-06-27T12:43:51+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/06/27/ubuntu-yong-hu-,-zu-,-quan-xian-de-guan-li</id>
+    <content type="html"><![CDATA[<p>以下命令基于 Ubuntu 14.04版本。</p>
+
+<h2>组管理</h2>
+
+<p>```sh</p>
+
+<p>groups &mdash;help
+Usage: groups [OPTION]&hellip; [USERNAME]&hellip;
+Print group memberships for each USERNAME or, if no USERNAME is specified, for
+the current process (which may differ if the groups database has changed).</p>
+
+<pre><code>  --help     display this help and exit
+  --version  output version information and exit
+</code></pre>
+
+<p>Report groups bugs to <a href="&#109;&#97;&#x69;&#108;&#x74;&#x6f;&#58;&#98;&#x75;&#x67;&#x2d;&#99;&#111;&#x72;&#101;&#117;&#x74;&#x69;&#108;&#x73;&#64;&#103;&#x6e;&#117;&#46;&#x6f;&#114;&#x67;">&#x62;&#117;&#x67;&#45;&#99;&#111;&#114;&#x65;&#x75;&#x74;&#105;&#x6c;&#115;&#x40;&#x67;&#110;&#x75;&#x2e;&#111;&#114;&#x67;</a>
+GNU coreutils home page: <a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>
+General help using GNU software: <a href="http://www.gnu.org/gethelp/">http://www.gnu.org/gethelp/</a>
+Report groups translation bugs to <a href="http://translationproject.org/team/">http://translationproject.org/team/</a>
+For complete documentation, run: info coreutils &lsquo;groups invocation&rsquo;</p>
+
+<p>```</p>
+
+<p>```sh</p>
+
+<p>gpasswd &mdash;help
+Usage: gpasswd [option] GROUP</p>
+
+<p>Options:
+  -a, &mdash;add USER                add USER to GROUP
+  -d, &mdash;delete USER             remove USER from GROUP
+  -h, &mdash;help                    display this help message and exit
+  -Q, &mdash;root CHROOT_DIR         directory to chroot into
+  -r, &mdash;remove-password         remove the GROUP&rsquo;s password
+  -R, &mdash;restrict                restrict access to GROUP to its members
+  -M, &mdash;members USER,&hellip;        set the list of members of GROUP
+  -A, &mdash;administrators ADMIN,&hellip;</p>
+
+<pre><code>                            set the list of administrators for GROUP
+</code></pre>
+
+<p>Except for the -A and -M options, the options cannot be combined.</p>
+
+<p>```</p>
+
+<h2>用户管理</h2>
+
+<p>```sh</p>
+
+<p>useradd -h
+Usage: useradd [options] LOGIN</p>
+
+<pre><code>   useradd -D
+   useradd -D [options]
+</code></pre>
+
+<p>Options:
+  -b, &mdash;base-dir BASE_DIR       base directory for the home directory of the</p>
+
+<pre><code>                            new account
+</code></pre>
+
+<p>  -c, &mdash;comment COMMENT         GECOS field of the new account
+  -d, &mdash;home-dir HOME_DIR       home directory of the new account
+  -D, &mdash;defaults                print or change default useradd configuration
+  -e, &mdash;expiredate EXPIRE_DATE  expiration date of the new account
+  -f, &mdash;inactive INACTIVE       password inactivity period of the new account
+  -g, &mdash;gid GROUP               name or ID of the primary group of the new</p>
+
+<pre><code>                            account
+</code></pre>
+
+<p>  -G, &mdash;groups GROUPS           list of supplementary groups of the new</p>
+
+<pre><code>                            account
+</code></pre>
+
+<p>  -h, &mdash;help                    display this help message and exit
+  -k, &mdash;skel SKEL_DIR           use this alternative skeleton directory
+  -K, &mdash;key KEY=VALUE           override /etc/login.defs defaults
+  -l, &mdash;no-log-init             do not add the user to the lastlog and</p>
+
+<pre><code>                            faillog databases
+</code></pre>
+
+<p>  -m, &mdash;create-home             create the user&rsquo;s home directory
+  -M, &mdash;no-create-home          do not create the user&rsquo;s home directory
+  -N, &mdash;no-user-group           do not create a group with the same name as</p>
+
+<pre><code>                            the user
+</code></pre>
+
+<p>  -o, &mdash;non-unique              allow to create users with duplicate</p>
+
+<pre><code>                            (non-unique) UID
+</code></pre>
+
+<p>  -p, &mdash;password PASSWORD       encrypted password of the new account
+  -r, &mdash;system                  create a system account
+  -R, &mdash;root CHROOT_DIR         directory to chroot into
+  -s, &mdash;shell SHELL             login shell of the new account
+  -u, &mdash;uid UID                 user ID of the new account
+  -U, &mdash;user-group              create a group with the same name as the user
+  -Z, &mdash;selinux-user SEUSER     use a specific SEUSER for the SELinux user mapping</p>
+
+<p>```</p>
+
+<p>```sh</p>
+
+<p>adduser [&mdash;home DIR] [&mdash;shell SHELL] [&mdash;no-create-home] [&mdash;uid ID]
+[&mdash;firstuid ID] [&mdash;lastuid ID] [&mdash;gecos GECOS] [&mdash;ingroup GROUP | &mdash;gid ID]
+[&mdash;disabled-password] [&mdash;disabled-login] [&mdash;encrypt-home] USER
+   Add a normal user</p>
+
+<p>adduser &mdash;system [&mdash;home DIR] [&mdash;shell SHELL] [&mdash;no-create-home] [&mdash;uid ID]
+[&mdash;gecos GECOS] [&mdash;group | &mdash;ingroup GROUP | &mdash;gid ID] [&mdash;disabled-password]
+[&mdash;disabled-login] USER
+   Add a system user</p>
+
+<p>adduser &mdash;group [&mdash;gid ID] GROUP
+addgroup [&mdash;gid ID] GROUP
+   Add a user group</p>
+
+<p>addgroup &mdash;system [&mdash;gid ID] GROUP
+   Add a system group</p>
+
+<p>adduser USER GROUP
+   Add an existing user to an existing group</p>
+
+<p>general options:
+  &mdash;quiet | -q      don&rsquo;t give process information to stdout
+  &mdash;force-badname   allow usernames which do not match the</p>
+
+<pre><code>                NAME_REGEX[_SYSTEM] configuration variable
+</code></pre>
+
+<p>  &mdash;help | -h       usage message
+  &mdash;version | -v    version number and copyright
+  &mdash;conf | -c FILE  use FILE as configuration file</p>
+
+<p>```</p>
+
+<h2>密码管理</h2>
+
+<p>```sh</p>
+
+<p>passwd &mdash;help
+Usage: passwd [options] [LOGIN]</p>
+
+<p>Options:
+  -a, &mdash;all                     report password status on all accounts
+  -d, &mdash;delete                  delete the password for the named account
+  -e, &mdash;expire                  force expire the password for the named account
+  -h, &mdash;help                    display this help message and exit
+  -k, &mdash;keep-tokens             change password only if expired
+  -i, &mdash;inactive INACTIVE       set password inactive after expiration</p>
+
+<pre><code>                            to INACTIVE
+</code></pre>
+
+<p>  -l, &mdash;lock                    lock the password of the named account
+  -n, &mdash;mindays MIN_DAYS        set minimum number of days before password</p>
+
+<pre><code>                            change to MIN_DAYS
+</code></pre>
+
+<p>  -q, &mdash;quiet                   quiet mode
+  -r, &mdash;repository REPOSITORY   change password in REPOSITORY repository
+  -R, &mdash;root CHROOT_DIR         directory to chroot into
+  -S, &mdash;status                  report password status on the named account
+  -u, &mdash;unlock                  unlock the password of the named account
+  -w, &mdash;warndays WARN_DAYS      set expiration warning days to WARN_DAYS
+  -x, &mdash;maxdays MAX_DAYS        set maximum number of days before password</p>
+
+<pre><code>                            change to MAX_DAYS
+</code></pre>
+
+<p>```</p>
+
+<h2>文件相关</h2>
+
+<ul>
+<li><code>/etc/group</code>：用户组的配置文件，包括用户和用户组信息</li>
+</ul>
+
+
+<p>```</p>
+
+<h1>每条记录包含四项内容，以分号隔开</h1>
+
+<ol>
+<li>用户组名称</li>
+<li>用户组密码，<code>x</code>值表示未设置密码</li>
+<li>GID，用户组 ID</li>
+<li>用户列表，多个用户之间以逗号分隔；字段为空表示 GID 值为本用户组 GID 值的用户（可以通过<code>/etc/passwd</code>查看）</li>
+</ol>
+
+
+<p>```</p>
+
+<ul>
+<li><code>/etc/shadow</code>：</li>
+<li><code>/etc/passwd</code>：用户信息配置文件</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu SSH 服务开启]]></title>
+    <link href="http://blog.longgen.me/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi/"/>
+    <updated>2014-06-27T12:31:02+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi</id>
+    <content type="html"><![CDATA[<h2>开启 SSH 服务</h2>
+
+<ul>
+<li>openssh-client，客户端，用于登陆其他服务器，ubuntu 默认已经安装，如果未安装则执行以下命令：</li>
+</ul>
+
+
+<p>```sh</p>
+
+<p>sudo apt-get install openssh-client</p>
+
+<p>```</p>
+
+<ul>
+<li>openssh-server，服务端，本机对外开放 SSH 服务</li>
+</ul>
+
+
+<p>```sh</p>
+
+<h1>安装 openssh-server</h1>
+
+<p>sudo apt-get install openssh-server</p>
+
+<h1>确认 ssh server 是否启动，sshd 表示 ssh server 启动成功</h1>
+
+<p>ps -e | grep ssh</p>
+
+<h1>启动 ssh server 服务，ssh server 的配置文件位于 <code>/etc/ssh/sshd_config</code>，在这里可以定义 SSH 的服务端口，默认为22</h1>
+
+<p>sudo /etc/init.d/ssh start</p>
+
+<h1>或</h1>
+
+<p>service ssh start</p>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 软件安装与卸载]]></title>
+    <link href="http://blog.longgen.me/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/"/>
+    <updated>2014-06-27T11:56:37+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai</id>
+    <content type="html"><![CDATA[<!-- more -->
+
+
+<h2>软件包的安装、卸载</h2>
+
+<h3>软件包的安装</h3>
+
+<ul>
+<li>APT 方式</li>
+</ul>
+
+
+<p>```sh</p>
+
+<h1>普通安装</h1>
+
+<p>apt-get install softname1 softname2 &hellip;;</p>
+
+<h1>修复安装（-f Atemp to correct broken dependencies）</h1>
+
+<p>apt-get -f install softname1 softname2 &hellip;;</p>
+
+<h1>重新安装</h1>
+
+<p>apt-get &mdash;reinstall install softname1 softname2 &hellip;;</p>
+
+<p>```</p>
+
+<ul>
+<li>Dpkg 方式</li>
+</ul>
+
+
+<p>```sh</p>
+
+<h1>普通安装</h1>
+
+<p>dpkg -i package_name.deb</p>
+
+<p>```</p>
+
+<ul>
+<li>源码安装（.tar、tar.gz、tar.bz2、tar.Z）</li>
+</ul>
+
+
+<p>```sh</p>
+
+<h1>首先解压源码压缩包，通过 tar 命令来完成</h1>
+
+<p>tar zxf xx.tar.gz
+tar zxf xx.tar.Z
+tar zxf xx.tgz
+bunzip2 xx.bz2
+tar xf xx.tar</p>
+
+<h1>进入到解压出的目录中，查看README之类的说明文件，或使用<code>ls -F --color</code>或<code>ls -F</code>命令查看下可执行文件，可执行文件会以*号的尾部标识。一般依次执行一下操作即可完成安装：</h1>
+
+<p>./configure
+make
+sudo make install</p>
+
+<p>```</p>
+
+<h3>软件包的卸载</h3>
+
+<ul>
+<li>APT 方式</li>
+</ul>
+
+
+<p>```sh</p>
+
+<h1>移除式卸载（移除软件包，当尾部有+时，表示安装）</h1>
+
+<p>apt-get remove softname1 softname2 &hellip;;</p>
+
+<h1>清除式卸载（卸载同时，清除配置）</h1>
+
+<p>apt-get &mdash;purge remove softname1 softname2 &hellip;;</p>
+
+<h1>清除式卸载（卸载同时，清除配置）</h1>
+
+<p>apt-get purge softname1 softname2 &hellip;;</p>
+
+<p>```</p>
+
+<ul>
+<li>Dpkg 方式</li>
+</ul>
+
+
+<p>```sh</p>
+
+<h1>移除式卸载</h1>
+
+<p>dpkg -r pkg1 pkg2 &hellip;;</p>
+
+<h1>清除式卸载</h1>
+
+<p>dpkg -P pkg1 pkg2 &hellip;;</p>
+
+<p>```</p>
+
+<h2>查看是否安装某软件包</h2>
+
+<ul>
+<li>Dpkg 使用文本文件来作为数据库，通常在<code>/var/lib/dpkg</code>目录下。通常在<code>status</code>文件中存储软件状态和控制信息，在<code>info/</code>目录下备份控制文件，并在其下的<code>.list</code>文件中记录安装文件清单，其下<code>.md5sums</code>保存文件的 MD5 编码。</li>
+</ul>
+
+
+<p>```sh</p>
+
+<p>dpkg -l
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                                   Version                  Architecture             Description
++++&ndash;======================================&ndash;========================&ndash;========================&ndash;==================================================================================
+ii  account-plugin-aim                     3.8.6-0ubuntu9           amd64                    Messaging account plugin for AIM
+ii  account-plugin-facebook                0.11+14.04.20140409.1-0u all                      GNOME Control Center account plugin for single signon &ndash; facebook
+ii  account-plugin-flickr                  0.11+14.04.20140409.1-0u all                      GNOME Control Center account plugin for single signon &ndash; flickr
+ii  account-plugin-google                  0.11+14.04.20140409.1-0u all                      GNOME Control Center account plugin for single signon
+ii  account-plugin-jabber                  3.8.6-0ubuntu9           amd64                    Messaging account plugin for Jabber/XMPP
+&hellip;&hellip;</p>
+
+<p>```</p>
+
+<ul>
+<li>以上每条记录对应一个软件包，每条记录前三个字符表示软件包的状态标识，后边依次是软件包名称、版本号和简单描述</li>
+</ul>
+
+
+<p>```</p>
+
+<h1>第一个字符为期望值，它包括：</h1>
+
+<pre><code>* u 状态未知，这意味着软件包未安装，并且用户也未发出安装请求
+* i 用户请求安装软件包
+* r 用户请求卸载软件包
+* p 用户请求清除软件包
+* h 用户请求保持软件包版本锁定
+</code></pre>
+
+<h1>第二个字符为软件包当前状态，包括：</h1>
+
+<pre><code>* n 软件包未安装
+* i 软件包安装并完成配置
+* c 软件包以前安装过，现在删除了，但是它的配置文件还留在系统中
+* u 软件包被解包，但还未配置
+* f 试图配置软件包，但是失败了
+* h 软件包安装，但是没有安装成功
+</code></pre>
+
+<h1>第三个字符为错误状态，包括</h1>
+
+<pre><code>* 空 表示没有问题
+* h 软件包被强制保持，因为有其他软件包依赖需求，无法升级
+* r 软件包被破坏，可能需要重新安装才能正常使用（包括删除）
+* x 软件包被破坏，并且被强制保持
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>其他查询方式</li>
+</ul>
+
+
+<p>```sh</p>
+
+<h1>通配符模糊查询</h1>
+
+<p>dpkg -l nano*</p>
+
+<h1>查询系统中属于 nano 的文件</h1>
+
+<p>dpkg &mdash;listfiles nano</p>
+
+<h1>或</h1>
+
+<p>dpkg-query -L nano</p>
+
+<h1>查看软件nano的详细信息</h1>
+
+<p>dpkg -s nano</p>
+
+<h1>或</h1>
+
+<p>dpkg-query -s nano</p>
+
+<h1>查看系统中软件包状态，支持模糊查询</h1>
+
+<p>dpkg -l</p>
+
+<h1>或</h1>
+
+<p>dpkg-query -l</p>
+
+<h1>查看某个文件的归属包</h1>
+
+<p>dpkg -S nano</p>
+
+<h1>或</h1>
+
+<p>dpkg-query -S nano</p>
+
+<p>```</p>
+
+<h2>其他命令</h2>
+
+<p>```</p>
+
+<p>apt-cache search # package 搜索包
+apt-cache show # package 获取包的相关信息，如说明、大小、版本等
+apt-get install # package 安装包，下载软件包及其所有的依赖包，同时进行包的安装或升级。如果某个包被设置了 hold，将不会被升级
+apt-get &mdash;reinstall install # package &mdash;reinstall 重新安装包
+apt-get -f install # package 强制安装，-f 即 &mdash;fix-missing
+apt-get remove # package 删除包以及任何依赖这个包的其他包
+apt-get remove &mdash;purge # package 删除包，同时删除配置文件等
+apt-get autoremove &mdash;purge # package 删除包及其依赖的软件包和配置文件等，只对6.10有效
+apt-get update # 更新源
+apt-get upgrade # 更新已安装的包为最新可用版本，不会安装新的或移除老的包，如果一个包改变了依赖关系而需要安装一个新的包，那么它将不会被升级，而是标识为 hold。建议同时使用 -u 选项，能看到哪些包将会被升级
+apt-get dist-upgrade # 升级系统，和 apt-get upgrade 类似，但是会安装和移除包来满足依赖关系，具有一定危险性
+apt-get dselect-upgrade # 使用 dselect 升级
+apt-cache depends # package 了解使用依赖
+apt-cache rdepends # package 了解某个具体的依赖，查看该包被哪些包依赖
+apt-cache showpkg # 显示 package 更多信息以及和其他包的关系
+apt-get build-dep # package 安装相关的编译环境
+apt-get source # package 下载该包的源码
+apt-get clean # 清理下载文件的存档
+apt-get autoclean # 只清理过时的包
+apt-get check # 检查是否有损坏的依赖
+dpkg -S filename # 查找 filename 属于哪个软件包
+apt-file search filename # 查找 filename 属于哪个软件包
+apt-file list packagename # 列出软件包的内容
+apt-file update # 更新 apt-file 的数据库</p>
+
+<p>dpkg &mdash;info packagename # 列出软件包解包后的包名称
+dpkg -l ## 列出当前系统中所有的包，可以和参数 less 一起使用在分屏查看（类似于 rpm -qa）
+dpkg -l | grep -i packagename # 查看系统中与 packagename 相关联得包
+dpkg -s # 查询已经安装的包的详细信息
+dpkg -L # 查询系统中已安装的软件包所安装的位置（类似于 rpm -ql）
+dpkg -S # 查询系统中某个文件属于哪个软件包（类似于 rpm -qf）
+dpkg -I # 查询 deb 包的详细信息，在一个软件包下载到本地之后看看是否需要安装
+dpkg -i # 手动安装软件包（这个命令不能解决软件包之前的依赖性问题），如果在安装某一个软件包的时候遇到了软件依赖的问题，可以用 apt-get -f install 在解决依赖性问题
+dpkg -r # 卸载软件包，不是完全的卸载，它的配置文件还在
+dpkg -P # 全部卸载（但是还是不能解决软件包的依赖性问题）
+dpkg -reconfigure # 重新配置
+dpkg-reconfigure &mdash;frontend=dialog debconf # 如果安装时选错了，可以改回来
+dpkg -c # 列出内容</p>
+
+<p>```</p>
+
+<h2>参考资料</h2>
+
+<ol>
+<li><a href="http://www.cnblogs.com/forward/archive/2012/01/10/2318483.html">ubuntu 安装和查看已安装</a></li>
+</ol>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ubuntu 11.04 下使用 Nexus 搭建 Maven 仓库]]></title>

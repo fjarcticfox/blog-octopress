@@ -9,9 +9,8 @@
   <meta name="author" content="Longgen">
 
   
-  <meta name="description" content="仓库管理器优点 时间及带宽的节省，加速组织内部项目构建。
-可控制 Maven 下载的机制，为组织的总体架构和政策实施提供了依赖方面的控制（例如，避免不小心添加 GPL 许可证的依赖等等）。
-为开发人员和部门之间提供一种共享内部项目构件的快照版本和发布版本的机制， &hellip;">
+  <meta name="description" content="企业数据存储性能瓶颈常常会发生在端口，控制器和磁盘，难点在于找出引起拥塞的单元，往往需要应用多重工具以及丰富的经验来查找并解决。
+本文详细阐述存储瓶颈发生最常见的四种情况，可能发生的拥塞点，需要监控的参数指标，以及部署存储系统的最佳实践。 ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,6 +85,689 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/07/01/cun-chu-xing-neng-ping-jing-de-cheng-yin-%2C-ding-wei-yu-pai-cha/">储性能瓶颈的成因、定位与排查【转】</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-01T13:13:05+08:00" pubdate data-updated="true">Jul 1<span>st</span>, 2014</time>
+        
+           | <a href="/blog/2014/07/01/cun-chu-xing-neng-ping-jing-de-cheng-yin-%2C-ding-wei-yu-pai-cha/#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me/blog/2014/07/01/cun-chu-xing-neng-ping-jing-de-cheng-yin-%2C-ding-wei-yu-pai-cha/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>企业数据存储性能瓶颈常常会发生在端口，控制器和磁盘，难点在于找出引起拥塞的单元，往往需要应用多重工具以及丰富的经验来查找并解决。
+本文详细阐述存储瓶颈发生最常见的四种情况，可能发生的拥塞点，需要监控的参数指标，以及部署存储系统的最佳实践。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/07/01/cun-chu-xing-neng-ping-jing-de-cheng-yin-%2C-ding-wei-yu-pai-cha/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/01/android-kai-fa-chang-yong-ku/">Android 开发常用库</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-01T11:30:43+08:00" pubdate data-updated="true">Jul 1<span>st</span>, 2014</time>
+        
+           | <a href="/blog/2014/07/01/android-kai-fa-chang-yong-ku/#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me/blog/2014/07/01/android-kai-fa-chang-yong-ku/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Android 开发过程中，恰当的使用一些比较成熟的库，能够大大提高开发效率。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/07/01/android-kai-fa-chang-yong-ku/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/27/ubuntu-yong-hu-%2C-zu-%2C-quan-xian-de-guan-li/">Ubuntu 用户、组、权限的管理</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-27T12:43:51+08:00" pubdate data-updated="true">Jun 27<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/06/27/ubuntu-yong-hu-%2C-zu-%2C-quan-xian-de-guan-li/#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me/blog/2014/06/27/ubuntu-yong-hu-%2C-zu-%2C-quan-xian-de-guan-li/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>以下命令基于 Ubuntu 14.04版本。</p>
+
+<h2>组管理</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>groups --help
+</span><span class='line'>Usage: groups <span class="o">[</span>OPTION<span class="o">]</span>... <span class="o">[</span>USERNAME<span class="o">]</span>...
+</span><span class='line'>Print group memberships <span class="k">for </span>each USERNAME or, <span class="k">if </span>no USERNAME is specified, <span class="k">for</span>
+</span><span class='line'>the current process <span class="o">(</span>which may differ <span class="k">if </span>the groups database has changed<span class="o">)</span>.
+</span><span class='line'>      --help     display this <span class="nb">help </span>and <span class="nb">exit</span>
+</span><span class='line'>      --version  output version information and <span class="nb">exit</span>
+</span><span class='line'>
+</span><span class='line'>Report groups bugs to bug-coreutils@gnu.org
+</span><span class='line'>GNU coreutils home page: &lt;http://www.gnu.org/software/coreutils/&gt;
+</span><span class='line'>General <span class="nb">help </span>using GNU software: &lt;http://www.gnu.org/gethelp/&gt;
+</span><span class='line'>Report groups translation bugs to &lt;http://translationproject.org/team/&gt;
+</span><span class='line'>For <span class="nb">complete </span>documentation, run: info coreutils <span class="s1">&#39;groups invocation&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>gpasswd --help
+</span><span class='line'>Usage: gpasswd <span class="o">[</span>option<span class="o">]</span> GROUP
+</span><span class='line'>
+</span><span class='line'>Options:
+</span><span class='line'>  -a, --add USER                add USER to GROUP
+</span><span class='line'>  -d, --delete USER             remove USER from GROUP
+</span><span class='line'>  -h, --help                    display this <span class="nb">help </span>message and <span class="nb">exit</span>
+</span><span class='line'>  -Q, --root CHROOT_DIR         directory to chroot into
+</span><span class='line'>  -r, --remove-password         remove the GROUP<span class="err">&#39;</span>s password
+</span><span class='line'>  -R, --restrict                restrict access to GROUP to its members
+</span><span class='line'>  -M, --members USER,...        <span class="nb">set </span>the list of members of GROUP
+</span><span class='line'>  -A, --administrators ADMIN,...
+</span><span class='line'>                                <span class="nb">set </span>the list of administrators <span class="k">for </span>GROUP
+</span><span class='line'>Except <span class="k">for </span>the -A and -M options, the options cannot be combined.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>用户管理</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>useradd -h
+</span><span class='line'>Usage: useradd <span class="o">[</span>options<span class="o">]</span> LOGIN
+</span><span class='line'>       useradd -D
+</span><span class='line'>       useradd -D <span class="o">[</span>options<span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'>Options:
+</span><span class='line'>  -b, --base-dir BASE_DIR       base directory <span class="k">for </span>the home directory of the
+</span><span class='line'>                                new account
+</span><span class='line'>  -c, --comment COMMENT         GECOS field of the new account
+</span><span class='line'>  -d, --home-dir HOME_DIR       home directory of the new account
+</span><span class='line'>  -D, --defaults                print or change default useradd configuration
+</span><span class='line'>  -e, --expiredate EXPIRE_DATE  expiration date of the new account
+</span><span class='line'>  -f, --inactive INACTIVE       password inactivity period of the new account
+</span><span class='line'>  -g, --gid GROUP               name or ID of the primary group of the new
+</span><span class='line'>                                account
+</span><span class='line'>  -G, --groups GROUPS           list of supplementary groups of the new
+</span><span class='line'>                                account
+</span><span class='line'>  -h, --help                    display this <span class="nb">help </span>message and <span class="nb">exit</span>
+</span><span class='line'>  -k, --skel SKEL_DIR           use this alternative skeleton directory
+</span><span class='line'>  -K, --key <span class="nv">KEY</span><span class="o">=</span>VALUE           override /etc/login.defs defaults
+</span><span class='line'>  -l, --no-log-init             <span class="k">do </span>not add the user to the lastlog and
+</span><span class='line'>                                faillog databases
+</span><span class='line'>  -m, --create-home             create the user<span class="s1">&#39;s home directory</span>
+</span><span class='line'><span class="s1">  -M, --no-create-home          do not create the user&#39;</span>s home directory
+</span><span class='line'>  -N, --no-user-group           <span class="k">do </span>not create a group with the same name as
+</span><span class='line'>                                the user
+</span><span class='line'>  -o, --non-unique              allow to create users with duplicate
+</span><span class='line'>                                <span class="o">(</span>non-unique<span class="o">)</span> UID
+</span><span class='line'>  -p, --password PASSWORD       encrypted password of the new account
+</span><span class='line'>  -r, --system                  create a system account
+</span><span class='line'>  -R, --root CHROOT_DIR         directory to chroot into
+</span><span class='line'>  -s, --shell SHELL             login shell of the new account
+</span><span class='line'>  -u, --uid UID                 user ID of the new account
+</span><span class='line'>  -U, --user-group              create a group with the same name as the user
+</span><span class='line'>  -Z, --selinux-user SEUSER     use a specific SEUSER <span class="k">for </span>the SELinux user mapping
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>adduser <span class="o">[</span>--home DIR<span class="o">]</span> <span class="o">[</span>--shell SHELL<span class="o">]</span> <span class="o">[</span>--no-create-home<span class="o">]</span> <span class="o">[</span>--uid ID<span class="o">]</span>
+</span><span class='line'><span class="o">[</span>--firstuid ID<span class="o">]</span> <span class="o">[</span>--lastuid ID<span class="o">]</span> <span class="o">[</span>--gecos GECOS<span class="o">]</span> <span class="o">[</span>--ingroup GROUP | --gid ID<span class="o">]</span>
+</span><span class='line'><span class="o">[</span>--disabled-password<span class="o">]</span> <span class="o">[</span>--disabled-login<span class="o">]</span> <span class="o">[</span>--encrypt-home<span class="o">]</span> USER
+</span><span class='line'>   Add a normal user
+</span><span class='line'>
+</span><span class='line'>adduser --system <span class="o">[</span>--home DIR<span class="o">]</span> <span class="o">[</span>--shell SHELL<span class="o">]</span> <span class="o">[</span>--no-create-home<span class="o">]</span> <span class="o">[</span>--uid ID<span class="o">]</span>
+</span><span class='line'><span class="o">[</span>--gecos GECOS<span class="o">]</span> <span class="o">[</span>--group | --ingroup GROUP | --gid ID<span class="o">]</span> <span class="o">[</span>--disabled-password<span class="o">]</span>
+</span><span class='line'><span class="o">[</span>--disabled-login<span class="o">]</span> USER
+</span><span class='line'>   Add a system user
+</span><span class='line'>
+</span><span class='line'>adduser --group <span class="o">[</span>--gid ID<span class="o">]</span> GROUP
+</span><span class='line'>addgroup <span class="o">[</span>--gid ID<span class="o">]</span> GROUP
+</span><span class='line'>   Add a user group
+</span><span class='line'>
+</span><span class='line'>addgroup --system <span class="o">[</span>--gid ID<span class="o">]</span> GROUP
+</span><span class='line'>   Add a system group
+</span><span class='line'>
+</span><span class='line'>adduser USER GROUP
+</span><span class='line'>   Add an existing user to an existing group
+</span><span class='line'>
+</span><span class='line'>general options:
+</span><span class='line'>  --quiet | -q      don<span class="err">&#39;</span>t give process information to stdout
+</span><span class='line'>  --force-badname   allow usernames which <span class="k">do </span>not match the
+</span><span class='line'>                    NAME_REGEX<span class="o">[</span>_SYSTEM<span class="o">]</span> configuration variable
+</span><span class='line'>  --help | -h       usage message
+</span><span class='line'>  --version | -v    version number and copyright
+</span><span class='line'>  --conf | -c FILE  use FILE as configuration file
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>密码管理</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>passwd --help
+</span><span class='line'>Usage: passwd <span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>LOGIN<span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'>Options:
+</span><span class='line'>  -a, --all                     report password status on all accounts
+</span><span class='line'>  -d, --delete                  delete the password <span class="k">for </span>the named account
+</span><span class='line'>  -e, --expire                  force expire the password <span class="k">for </span>the named account
+</span><span class='line'>  -h, --help                    display this <span class="nb">help </span>message and <span class="nb">exit</span>
+</span><span class='line'>  -k, --keep-tokens             change password only <span class="k">if </span>expired
+</span><span class='line'>  -i, --inactive INACTIVE       <span class="nb">set </span>password inactive after expiration
+</span><span class='line'>                                to INACTIVE
+</span><span class='line'>  -l, --lock                    lock the password of the named account
+</span><span class='line'>  -n, --mindays MIN_DAYS        <span class="nb">set </span>minimum number of days before password
+</span><span class='line'>                                change to MIN_DAYS
+</span><span class='line'>  -q, --quiet                   quiet mode
+</span><span class='line'>  -r, --repository REPOSITORY   change password in REPOSITORY repository
+</span><span class='line'>  -R, --root CHROOT_DIR         directory to chroot into
+</span><span class='line'>  -S, --status                  report password status on the named account
+</span><span class='line'>  -u, --unlock                  unlock the password of the named account
+</span><span class='line'>  -w, --warndays WARN_DAYS      <span class="nb">set </span>expiration warning days to WARN_DAYS
+</span><span class='line'>  -x, --maxdays MAX_DAYS        <span class="nb">set </span>maximum number of days before password
+</span><span class='line'>                                change to MAX_DAYS
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>文件相关</h2>
+
+<ul>
+<li><code>/etc/group</code>：用户组的配置文件，包括用户和用户组信息</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># 每条记录包含四项内容，以分号隔开</span>
+</span><span class='line'>1. 用户组名称
+</span><span class='line'>2. 用户组密码，<span class="sb">`</span>x<span class="sb">`</span>值表示未设置密码
+</span><span class='line'>3. GID，用户组 ID
+</span><span class='line'>4. 用户列表，多个用户之间以逗号分隔；字段为空表示 GID 值为本用户组 GID 值的用户（可以通过<span class="sb">`</span>/etc/passwd<span class="sb">`</span>查看）
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><code>/etc/shadow</code>：</li>
+<li><code>/etc/passwd</code>：用户信息配置文件</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi/">Ubuntu SSH 服务开启</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-27T12:31:02+08:00" pubdate data-updated="true">Jun 27<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi/#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>开启 SSH 服务</h2>
+
+<ul>
+<li>openssh-client，客户端，用于登陆其他服务器，ubuntu 默认已经安装，如果未安装则执行以下命令：</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install openssh-client
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>openssh-server，服务端，本机对外开放 SSH 服务</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># 安装 openssh-server</span>
+</span><span class='line'>sudo apt-get install openssh-server
+</span><span class='line'>
+</span><span class='line'><span class="c"># 确认 ssh server 是否启动，sshd 表示 ssh server 启动成功</span>
+</span><span class='line'>ps -e | grep ssh
+</span><span class='line'>
+</span><span class='line'><span class="c"># 启动 ssh server 服务，ssh server 的配置文件位于 `/etc/ssh/sshd_config`，在这里可以定义 SSH 的服务端口，默认为22</span>
+</span><span class='line'>sudo /etc/init.d/ssh start
+</span><span class='line'><span class="c"># 或</span>
+</span><span class='line'>service ssh start
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/">Ubuntu 软件安装与卸载</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-27T11:56:37+08:00" pubdate data-updated="true">Jun 27<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/23/google-analytics-zai-ye-mian-zhong-de-shi-yong/">Google Analytics 在页面中的使用</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-23T09:17:10+08:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2014</time>
+        
+           | <a href="/blog/2014/06/23/google-analytics-zai-ye-mian-zhong-de-shi-yong/#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me/blog/2014/06/23/google-analytics-zai-ye-mian-zhong-de-shi-yong/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/02/c-primer-plus/">C Primer Plus</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-02T09:26:15+08:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2014</time>
+        
+           | <a href="/blog/2014/06/02/c-primer-plus/#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me/blog/2014/06/02/c-primer-plus/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/06/02/c-primer-plus/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/31/cao-zuo-xi-tong-yuan-li-%2C-she-ji-yu-ying-yong/">操作系统原理、设计与应用</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-31T12:28:16+08:00" pubdate data-updated="true">May 31<span>st</span>, 2014</time>
+        
+           | <a href="/blog/2014/05/31/cao-zuo-xi-tong-yuan-li-%2C-she-ji-yu-ying-yong/#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me/blog/2014/05/31/cao-zuo-xi-tong-yuan-li-%2C-she-ji-yu-ying-yong/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/05/31/cao-zuo-xi-tong-yuan-li-%2C-she-ji-yu-ying-yong/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/30/eclipse-pei-zhi-you-hua/">Eclipse 配置及优化</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-30T17:34:25+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/04/30/eclipse-pei-zhi-you-hua/#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me/blog/2014/04/30/eclipse-pei-zhi-you-hua/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/04/30/eclipse-pei-zhi-you-hua/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2014/04/30/ubuntu-11-dot-04-xia-shi-yong-nexus-da-jian-maven-cang-ku/">Ubuntu 11.04 下使用 Nexus 搭建 Maven 仓库</a></h1>
     
     
@@ -132,410 +814,9 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/10/linux-chang-yong-ming-ling/">Linux 常用命令</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-10T21:20:11+08:00" pubdate data-updated="true">Apr 10<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/10/linux-chang-yong-ming-ling/#disqus_thread"
-             data-disqus-identifier="http://blog.longgen.me/blog/2014/04/10/linux-chang-yong-ming-ling/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"></div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/10/linux-chang-yong-ming-ling/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/10/linux-cha-kan-xi-tong-pei-zhi-chang-yong-ming-ling/">Linux 查看系统配置常用命令</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-10T12:47:27+08:00" pubdate data-updated="true">Apr 10<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/10/linux-cha-kan-xi-tong-pei-zhi-chang-yong-ming-ling/#disqus_thread"
-             data-disqus-identifier="http://blog.longgen.me/blog/2014/04/10/linux-cha-kan-xi-tong-pei-zhi-chang-yong-ming-ling/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"></div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/10/linux-cha-kan-xi-tong-pei-zhi-chang-yong-ming-ling/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/10/kai-yuan-xie-yi-jian-jie/">开源协议简介</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-10T12:42:15+08:00" pubdate data-updated="true">Apr 10<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/04/10/kai-yuan-xie-yi-jian-jie/#disqus_thread"
-             data-disqus-identifier="http://blog.longgen.me/blog/2014/04/10/kai-yuan-xie-yi-jian-jie/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://www.opensource.org/licenses/alphabetical">Open Source Initiative 组织批准的开源协议</a>中，我们常见的有：BSD、GPL、LGPL、MIT 等。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/04/10/kai-yuan-xie-yi-jian-jie/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/29/pow-an-zhuang-pei-zhi-ji-shi-yong/">Pow 安装配置及使用</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-29T01:48:36+08:00" pubdate data-updated="true">Mar 29<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/03/29/pow-an-zhuang-pei-zhi-ji-shi-yong/#disqus_thread"
-             data-disqus-identifier="http://blog.longgen.me/blog/2014/03/29/pow-an-zhuang-pei-zhi-ji-shi-yong/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Pow，Mac OS X 上零配置的 Rack Server。它使得开发 Rails 及 Rack 应用更为简便。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/03/29/pow-an-zhuang-pei-zhi-ji-shi-yong/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/26/xcode-shi-yong-ji-qiao/">Xcode 使用技巧</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-26T16:52:01+08:00" pubdate data-updated="true">Mar 26<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/03/26/xcode-shi-yong-ji-qiao/#disqus_thread"
-             data-disqus-identifier="http://blog.longgen.me/blog/2014/03/26/xcode-shi-yong-ji-qiao/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"></div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/03/26/xcode-shi-yong-ji-qiao/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/23/objective-c-xue-xi/">Objective-C 学习</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-23T17:01:01+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2014</time>
-        
-           | <a href="/blog/2014/03/23/objective-c-xue-xi/#disqus_thread"
-             data-disqus-identifier="http://blog.longgen.me/blog/2014/03/23/objective-c-xue-xi/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1>1 简介</h1>
-
-<h2>1.1 预备知识</h2>
-
-<ul>
-<li>具备 C 类似编程语言的经验，对于不具备语言基础的，可以先阅读 Dava Mark 写的《Learn C On the Mac》
-。</li>
-</ul>
-
-
-<h2>1.2 历史背景</h2>
-
-<ul>
-<li>20世纪80年代早期，Brad Cox 结合 C 语言及 Smalltakl 语言形成了 Objective-C。</li>
-</ul>
-
-
-<h2>1.3 内容简介</h2>
-
-<p>Objective-C 是 C 语言的一个扩展集。Objective-C 以 C 语言为基础，扩展了许多特性。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/03/23/objective-c-xue-xi/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/23/markdown-yu-fa-ce-shi/">本博客 Markdown 语法测试</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-23T15:18:12+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2014</time>
-        
-           | <a href="/blog/2014/03/23/markdown-yu-fa-ce-shi/#disqus_thread"
-             data-disqus-identifier="http://blog.longgen.me/blog/2014/03/23/markdown-yu-fa-ce-shi/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&gt;&gt; 仅支持六级标题（pre code效果）
-</span><span class='line'>
-</span><span class='line'># 1. 一级标题
-</span><span class='line'>
-</span><span class='line'>## 1.1. 二级标题
-</span><span class='line'>
-</span><span class='line'>### 1.1.1. 三级标题
-</span><span class='line'>
-</span><span class='line'>#### 1.1.1.1. 四级标题
-</span><span class='line'>
-</span><span class='line'>##### 1.1.1.1.1. 五级标题
-</span><span class='line'>
-</span><span class='line'>###### 1.1.1.1.1.1. 六级标题</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/03/23/markdown-yu-fa-ce-shi/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/19/mac-os-x-xia-octopress-plus-github-pages-fa-bu-bo-ke/">Mac OS X 下 Octopress + GitHub Pages 发布博客</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-19T23:22:03+08:00" pubdate data-updated="true">Mar 19<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/03/19/mac-os-x-xia-octopress-plus-github-pages-fa-bu-bo-ke/#disqus_thread"
-             data-disqus-identifier="http://blog.longgen.me/blog/2014/03/19/mac-os-x-xia-octopress-plus-github-pages-fa-bu-bo-ke/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h1>前言</h1>
-
-<h2>优点</h2>
-
-<ul>
-<li>广泛的使用者及相关文档</li>
-<li>Octopress 整合了丰富的第三方插件</li>
-<li>内置支持 Gitub、Twitter、Google Plus One、Pinboard、Delicious、Disqus Comments、Google Analytics、Facebook</li>
-<li>源码版本信息完全自己通过 github 控制，可定制高度个性化的个人博客</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/03/19/mac-os-x-xia-octopress-plus-github-pages-fa-bu-bo-ke/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">文章归档</a>
     
@@ -548,23 +829,23 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/04/30/ubuntu-11-dot-04-xia-shi-yong-nexus-da-jian-maven-cang-ku/">Ubuntu 11.04 下使用 Nexus 搭建 Maven 仓库</a>
+        <a href="/blog/2014/07/01/cun-chu-xing-neng-ping-jing-de-cheng-yin-%2C-ding-wei-yu-pai-cha/">储性能瓶颈的成因、定位与排查【转】</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/04/10/linux-chang-yong-ming-ling/">Linux 常用命令</a>
+        <a href="/blog/2014/07/01/android-kai-fa-chang-yong-ku/">Android 开发常用库</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/04/10/linux-cha-kan-xi-tong-pei-zhi-chang-yong-ming-ling/">Linux 查看系统配置常用命令</a>
+        <a href="/blog/2014/06/27/ubuntu-yong-hu-%2C-zu-%2C-quan-xian-de-guan-li/">Ubuntu 用户、组、权限的管理</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/04/10/kai-yuan-xie-yi-jian-jie/">开源协议简介</a>
+        <a href="/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi/">Ubuntu SSH 服务开启</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/03/29/pow-an-zhuang-pei-zhi-ji-shi-yong/">Pow 安装配置及使用</a>
+        <a href="/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/">Ubuntu 软件安装与卸载</a>
       </li>
     
   </ul>
@@ -572,11 +853,21 @@
 <section> 
   <h1>文章分类</h1> 
   <ul id="categories"> 
-    <li class='category'><a href='/blog/categories/blog/'>blog (1)</a></li>
+    <li class='category'><a href='/blog/categories/c/'>C (1)</a></li>
+<li class='category'><a href='/blog/categories/android/'>android (4)</a></li>
+<li class='category'><a href='/blog/categories/blog/'>blog (1)</a></li>
+<li class='category'><a href='/blog/categories/command/'>command (1)</a></li>
+<li class='category'><a href='/blog/categories/eclipse/'>eclipse (1)</a></li>
 <li class='category'><a href='/blog/categories/github/'>github (1)</a></li>
 <li class='category'><a href='/blog/categories/github-pages/'>github pages (1)</a></li>
+<li class='category'><a href='/blog/categories/group/'>group (1)</a></li>
 <li class='category'><a href='/blog/categories/homebrew/'>homebrew (1)</a></li>
+<li class='category'><a href='/blog/categories/install/'>install (1)</a></li>
+<li class='category'><a href='/blog/categories/ios/'>ios (4)</a></li>
+<li class='category'><a href='/blog/categories/ipad/'>ipad (1)</a></li>
+<li class='category'><a href='/blog/categories/iphone/'>iphone (1)</a></li>
 <li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
+<li class='category'><a href='/blog/categories/library/'>library (1)</a></li>
 <li class='category'><a href='/blog/categories/linux/'>linux (2)</a></li>
 <li class='category'><a href='/blog/categories/markdown/'>markdown (1)</a></li>
 <li class='category'><a href='/blog/categories/maven/'>maven (1)</a></li>
@@ -584,10 +875,20 @@
 <li class='category'><a href='/blog/categories/objective-c/'>objective-c (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/open-source/'>open source (1)</a></li>
+<li class='category'><a href='/blog/categories/opengl-es/'>opengl es (4)</a></li>
+<li class='category'><a href='/blog/categories/operation-system/'>operation system (2)</a></li>
+<li class='category'><a href='/blog/categories/permission/'>permission (1)</a></li>
 <li class='category'><a href='/blog/categories/pow/'>pow (1)</a></li>
 <li class='category'><a href='/blog/categories/protocol/'>protocol (1)</a></li>
-<li class='category'><a href='/blog/categories/ubuntu/'>ubuntu (1)</a></li>
+<li class='category'><a href='/blog/categories/software/'>software (1)</a></li>
+<li class='category'><a href='/blog/categories/sourcetree/'>sourcetree (1)</a></li>
+<li class='category'><a href='/blog/categories/ssh/'>ssh (1)</a></li>
+<li class='category'><a href='/blog/categories/storage/'>storage (1)</a></li>
+<li class='category'><a href='/blog/categories/ubuntu/'>ubuntu (4)</a></li>
+<li class='category'><a href='/blog/categories/uninstall/'>uninstall (1)</a></li>
+<li class='category'><a href='/blog/categories/user/'>user (1)</a></li>
 <li class='category'><a href='/blog/categories/xcode/'>xcode (1)</a></li>
+<li class='category'><a href='/blog/categories/开发环境/'>开发环境 (2)</a></li>
  
   </ul> 
 </section>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：ssh | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/ssh/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-07-01T15:16:51+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu SSH 服务开启]]></title>
+    <link href="http://blog.longgen.me/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi/"/>
+    <updated>2014-06-27T12:31:02+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi</id>
+    <content type="html"><![CDATA[<h2>开启 SSH 服务</h2>
+
+<ul>
+<li>openssh-client，客户端，用于登陆其他服务器，ubuntu 默认已经安装，如果未安装则执行以下命令：</li>
+</ul>
+
+
+<p>```sh</p>
+
+<p>sudo apt-get install openssh-client</p>
+
+<p>```</p>
+
+<ul>
+<li>openssh-server，服务端，本机对外开放 SSH 服务</li>
+</ul>
+
+
+<p>```sh</p>
+
+<h1>安装 openssh-server</h1>
+
+<p>sudo apt-get install openssh-server</p>
+
+<h1>确认 ssh server 是否启动，sshd 表示 ssh server 启动成功</h1>
+
+<p>ps -e | grep ssh</p>
+
+<h1>启动 ssh server 服务，ssh server 的配置文件位于 <code>/etc/ssh/sshd_config</code>，在这里可以定义 SSH 的服务端口，默认为22</h1>
+
+<p>sudo /etc/init.d/ssh start</p>
+
+<h1>或</h1>
+
+<p>service ssh start</p>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>
