@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "储性能瓶颈的成因、定位与排查【转】"
+title: "【转】储性能瓶颈的成因、定位与排查"
 date: 2014-07-01 13:13:05 +0800
 comments: true
 categories: [storage]
