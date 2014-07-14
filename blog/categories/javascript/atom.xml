@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：javascript | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-07-14T15:15:17+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Javascript 获取 IP 地址方法]]></title>
+    <link href="http://blog.longgen.me/blog/2014/07/04/javascript-huo-qu-ip-di-zhi-fang-fa/"/>
+    <updated>2014-07-04T00:11:15+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/07/04/javascript-huo-qu-ip-di-zhi-fang-fa</id>
+    <content type="html"><![CDATA[<p>Javascript 获取客户端 IP 的方法如下：</p>
+
+<!-- more -->
+
+
+<p>```html</p>
+
+<h1>一</h1>
+
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+
+
+<script type="text/<A class="infotextkey" href="http://www.jbxue.com/jb/js/" target=_blank>javascript</A>">document.write(returnCitySN["cip"]+','+returnCitySN["cname"])</script>
+
+
+<h1>二</h1>
+
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+
+
+<script type="text/<A class="infotextkey" href="http://www.jbxue.com/jb/js/" target=_blank>javascript</A>">document.write(returnCitySN["cip"]+','+returnCitySN["cname"])</script>
+
+
+<h1>三</h1>
+
+<script type="text/javascript" src="http://fw.qq.com/ipaddress" charset="gb2312"></script>
+
+
+<p>$(document).ready(function() {$(&ldquo;#ip&rdquo;).val(IPData[0]);$(&ldquo;#add&rdquo;).val(IPData[2]);})</p>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>

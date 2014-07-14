@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：nodejs | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/nodejs/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-07-14T15:15:17+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[NodeJS 安装、配置及使用]]></title>
+    <link href="http://blog.longgen.me/blog/2014/07/14/nodejs-an-zhuang-%2C-pei-zhi-ji-shi-yong/"/>
+    <updated>2014-07-14T09:40:39+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/07/14/nodejs-an-zhuang-,-pei-zhi-ji-shi-yong</id>
+    <content type="html"><![CDATA[<!-- more -->
+
+
+<h2>Windows 下安装及配置 NodeJS</h2>
+
+<p>直接通过 <a href="http://www.nodejs.org/">NodeJS 主页</a> 中的 INSTALL 按钮下载并安装。当前 NodeJS 最新版本为 v0.10.29。配置环境变量NODEJS_HOME，并加入path。</p>
+
+<ul>
+<li>Windows 下安装 Postgresql Module</li>
+</ul>
+
+
+<p>1）安装 node-gyp Module</p>
+
+<p>```sh</p>
+
+<p>npm install node-gyp</p>
+
+<p>```</p>
+
+<p>2）node-gyp（0.13.1）的执行需要依赖 Python 以及 vc++。根据 node-gyp 的 <code>README.md</code> 文件选择合适的 <a href="https://www.python.org/downloads/release/python-273/">Python（v2.7.3）</a>版本安装。。根据操作系统版本及 <code>README.md</code> 说明，选择合适的 <a href="http://go.microsoft.com/?linkid=9816758">vc++ （Win7 下，选择 vc++ 2012）</a>版本安装。</p>
+
+<p>3）安装 pg Module</p>
+
+<p>```sh</p>
+
+<p>npm install pg</p>
+
+<p>```</p>
+
+<h2>使用</h2>
+
+<h2>参考资料</h2>
+
+<ol>
+<li><a href="http://www.nodejs.org/">NodeJS 主页</a></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

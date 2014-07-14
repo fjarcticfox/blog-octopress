@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：restful | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/restful/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-07-14T15:15:17+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[【转】RESTful API 设计指南]]></title>
+    <link href="http://blog.longgen.me/blog/2014/07/09/%5B%28zhuan-%29%5D-restful-api-she-ji-zhi-nan/"/>
+    <updated>2014-07-09T19:30:23+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/07/09/[(zhuan-)]-restful-api-she-ji-zhi-nan</id>
+    <content type="html"><![CDATA[<p>网络应用程序，分为前端和后端两个部分。当前的发展趋势，就是前端设备层出不穷（手机、平板、桌面电脑、其他专用设备……）。
+因此，必须有一种统一的机制，方便不同的前端设备与后端进行通信。这导致 API 构架的流行，甚至出现<a href="http://www.google.com.hk/search?spm=0.0.0.0.hQSkUs&amp;q=API+first">“API First”</a>的设计思想。<a href="http://en.wikipedia.org/wiki/Representational_state_transfer?spm=0.0.0.0.hQSkUs">RESTful API</a>是目前比较成熟的一套互联网应用程序的 API 设计理论。我以前写过一篇<a href="http://www.ruanyifeng.com/blog/2011/09/restful.html?spm=0.0.0.0.hQSkUs">《理解 RESTful 架构》</a>，探讨如何理解这个概念。</p>
+
+<p>今天，我将介绍 RESTful API 的设计细节，探讨如何设计一套合理、好用的 API。我的主要参考资料是这篇<a href="http://codeplanet.io/principles-good-restful-api-design/?spm=0.0.0.0.hQSkUs">《Principles of good RESTful API Design》</a>。</p>
+
+<!-- more -->
+
+
+<p><img src="/images/blog/rest_api_01.jpg" alt="rest_api" /></p>
+
+<h2>协议</h2>
+
+<p>API 与用户的通信协议，总是使用 HTTPs 协议。</p>
+
+<h2>域名</h2>
+
+<p>应该尽量将 API 部署在专用域名之下。</p>
+
+<p>```sh</p>
+
+<p><a href="https://api.example.com">https://api.example.com</a></p>
+
+<p>```</p>
+
+<p>如果确定 API 很简单，不会有进一步扩展，可以考虑放在主域名下。</p>
+
+<p>```sh</p>
+
+<p><a href="https://example.org/api/">https://example.org/api/</a></p>
+
+<p>```</p>
+
+<h2>版本（Versioning）</h2>
+
+<p>应该将 API 的版本号放入URL。</p>
+
+<p>```sh</p>
+
+<p><a href="https://api.example.com/v1/">https://api.example.com/v1/</a></p>
+
+<p>```</p>
+
+<p>另一种做法是，将版本号放在 HTTP 头信息中，但不如放入 URL 方便和直观。</p>
+
+<h2>路径（Endpoint）</h2>
+
+<p>路径又称”终点”（endpoint），表示API的具体网址。</p>
+
+<p>在 RESTful 架构中，每个网址代表一种资源（resource），所以网址中不能有动词，只能有名词，而且所用的名词往往与数据库的表格名对应。一般来说，数据库中的表都是同种记录的”集合”（collection），所以 API 中的名词也应该使用复数。
+举例来说，有一个 API 提供动物园（zoo）的信息，还包括各种动物和雇员的信息，则它的路径应该设计成下面这样。</p>
+
+<p>```sh</p>
+
+<p><a href="https://api.example.com/v1/zoos">https://api.example.com/v1/zoos</a>
+<a href="https://api.example.com/v1/animals">https://api.example.com/v1/animals</a>
+<a href="https://api.example.com/v1/employees">https://api.example.com/v1/employees</a></p>
+
+<p>```</p>
+
+<h2>HTTP 动词</h2>
+
+<p>对于资源的具体操作类型，由 HTTP 动词表示。</p>
+
+<p>```sh</p>
+
+<h1>常用的 HTTP 动词有下面五个（括号里是对应的 SQL 命令）。</h1>
+
+<p>GET（SELECT）：从服务器取出资源（一项或多项）。
+POST（CREATE）：在服务器新建一个资源。
+PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）。
+PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）。
+DELETE（DELETE）：从服务器删除资源。</p>
+
+<h1>还有两个不常用的HTTP动词。</h1>
+
+<p>HEAD：获取资源的元数据。
+OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的。</p>
+
+<h1>下面是一些例子。</h1>
+
+<p>GET /zoos：列出所有动物园
+POST /zoos：新建一个动物园
+GET /zoos/ID：获取某个指定动物园的信息
+PUT /zoos/ID：更新某个指定动物园的信息（提供该动物园的全部信息）
+PATCH /zoos/ID：更新某个指定动物园的信息（提供该动物园的部分信息）
+DELETE /zoos/ID：删除某个动物园
+GET /zoos/ID/animals：列出某个指定动物园的所有动物
+DELETE /zoos/ID/animals/ID：删除某个指定动物园的指定动物</p>
+
+<p>```</p>
+
+<h2>过滤信息（Filtering）</h2>
+
+<p>如果记录数量很多，服务器不可能都将它们返回给用户。API 应该提供参数，过滤返回结果。</p>
+
+<p>```sh</p>
+
+<h1>下面是一些常见的参数。</h1>
+
+<p>?limit=10：指定返回记录的数量
+?offset=10：指定返回记录的开始位置。
+?sortby=name&amp;order=asc：指定返回结果按照哪个属性排序，以及排序顺序。
+?animal_type_id=1：指定筛选条件</p>
+
+<h1>参数的设计允许存在冗余，即允许 API 路径和 URL 参数偶尔有重复。比如，GET /zoo/ID/animals 与 GET /animals?zoo_id=ID 的含义是相同的。</h1>
+
+<p>```</p>
+
+<h2>状态码（Status Codes）</h2>
+
+<p>服务器向用户返回的状态码和提示信息，常见的有以下一些（方括号中是该状态码对应的 HTTP 动词）。</p>
+
+<ul>
+<li>200 OK – [GET]：服务器成功返回用户请求的数据，该操作是幂等的（Idempotent）。</li>
+<li>201 CREATED – [POST/PUT/PATCH]：用户新建或修改数据成功。</li>
+<li>204 NO CONTENT – [DELETE]：用户删除数据成功。</li>
+<li>400 INVALID REQUEST – [POST/PUT/PATCH]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作，该操作是幂等的。。</li>
+<li>404 NOT FOUND – [*]：用户发出的请求针对的是不存在的记录，服务器没有进行操作，该操作是幂等的。</li>
+<li>500 INTERNAL SERVER ERROR – [*]：服务器发生错误，用户将无法判断发出的请求是否成功。</li>
+</ul>
+
+
+<p>状态码的完全列表参见<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html?spm=0.0.0.0.hQSkUs">这里</a>。</p>
+
+<h2>错误处理（Error handling）</h2>
+
+<p>如果状态码是 4xx，就应该向用户返回出错信息。一般来说，返回的信息中将 error 作为键名，出错信息作为键值即可。</p>
+
+<p>```json</p>
+
+<p>{</p>
+
+<pre><code>error: "Invalid API key"
+</code></pre>
+
+<p>}</p>
+
+<p>```</p>
+
+<h2>返回结果</h2>
+
+<p>针对不同操作，服务器向用户返回的结果应该符合以下规范。</p>
+
+<ul>
+<li>GET /collection：返回资源对象的列表（数组）</li>
+<li>GET /collection/resource：返回单个资源对象</li>
+<li>POST /collection：返回新生成的资源对象</li>
+<li>PUT /collection/resource：返回完整的资源对象</li>
+<li>PATCH /collection/resource：返回完整的资源对象</li>
+<li>DELETE /collection/resource：返回一个空文档</li>
+</ul>
+
+
+<h2>Hypermedia API</h2>
+
+<p>RESTful API最好做到 Hypermedia，即返回结果中提供链接，连向其他 API 方法，使得用户不查文档，也知道下一步应该做什么。</p>
+
+<p>比如，当用户向 api.example.com 的根目录发出请求，会得到这样一个文档。</p>
+
+<p>```json</p>
+
+<p>{&ldquo;link&rdquo;: {
+  &ldquo;rel&rdquo;:   &ldquo;collection <a href="https://www.example.com/zoos">https://www.example.com/zoos</a>&rdquo;,
+  &ldquo;href&rdquo;:  &ldquo;<a href="https://api.example.com/zoos">https://api.example.com/zoos</a>&rdquo;,
+  &ldquo;title&rdquo;: &ldquo;List of zoos&rdquo;,
+  &ldquo;type&rdquo;:  &ldquo;application/vnd.yourformat+json&rdquo;
+}}</p>
+
+<p>```</p>
+
+<p>上面代码表示，文档中有一个 link 属性，用户读取这个属性就知道下一步该调用什么 API 了。rel 表示这个 API 与当前网址的关系（collection 关系，并给出该 collection 的网址），href 表示 API 的路径，title 表示 API 的标题，type 表示返回类型。</p>
+
+<p>Hypermedia API 的设计被称为 HATEOAS。Github 的 API 就是这种设计，访问 <a href="https://api.github.com/">https://api.github.com/</a> 会得到一个所有可用 API 的网址列表。</p>
+
+<p>```json</p>
+
+<p>{
+  &ldquo;current_user_url&rdquo;: &ldquo;<a href="https://api.github.com/user">https://api.github.com/user</a>&rdquo;,
+  &ldquo;authorizations_url&rdquo;: &ldquo;<a href="https://api.github.com/authorizations">https://api.github.com/authorizations</a>&rdquo;,
+  // &hellip;
+}</p>
+
+<p>```</p>
+
+<p>从上面可以看到，如果想获取当前用户的信息，应该去访问<a href="https://api.github.com/user">https://api.github.com/user</a>，然后就得到了下面结果。</p>
+
+<p>```json</p>
+
+<p>{
+  &ldquo;message&rdquo;: &ldquo;Requires authentication&rdquo;,
+  &ldquo;documentation_url&rdquo;: &ldquo;<a href="https://developer.github.com/v3">https://developer.github.com/v3</a>&rdquo;
+}</p>
+
+<p>```</p>
+
+<p>上面代码表示，服务器给出了提示信息，以及文档的网址。</p>
+
+<h2>其他</h2>
+
+<ul>
+<li>API 的身份认证应该使用 OAuth 2.0 框架。</li>
+<li>服务器返回的数据格式，应该尽量使用 JSON，避免使用 XML。</li>
+</ul>
+
+
+<h2>参考资料</h2>
+
+<ol>
+<li><a href="http://www.google.com.hk/search?spm=0.0.0.0.hQSkUs&amp;q=API+first">RESTful API 设计指南</a></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

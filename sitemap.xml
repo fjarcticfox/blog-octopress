@@ -70,7 +70,47 @@
         <loc>
             http://blog.longgen.me/blog/2014/07/01/cun-chu-xing-neng-ping-jing-de-cheng-yin-%2C-ding-wei-yu-pai-cha/
         </loc>
-        <lastmod>2014-07-01T13:39:24+08:00</lastmod>
+        <lastmod>2014-07-07T15:39:13+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://blog.longgen.me/blog/2014/07/03/%5B%28zhuan-%29%5D-linux-tcpdump-ming-ling-xiang-jie/
+        </loc>
+        <lastmod>2014-07-07T15:40:05+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/07/04/javascript-huo-qu-ip-di-zhi-fang-fa/</loc>
+        <lastmod>2014-07-04T00:17:51+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://blog.longgen.me/blog/2014/07/04/%5B%28zhuan-%29%5D-ssh-yuan-li-yu-yun-yong/
+        </loc>
+        <lastmod>2014-07-07T16:15:53+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://blog.longgen.me/blog/2014/07/07/%5B%28zhuan-%29%5D-tu-pian-fu-wu-jia-gou-yan-jin/
+        </loc>
+        <lastmod>2014-07-08T01:49:53+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://blog.longgen.me/blog/2014/07/09/postgis-an-zhuang-%2C-pei-zhi-ji-shi-yong/
+        </loc>
+        <lastmod>2014-07-14T09:41:35+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://blog.longgen.me/blog/2014/07/09/%5B%28zhuan-%29%5D-restful-api-she-ji-zhi-nan/
+        </loc>
+        <lastmod>2014-07-09T21:01:44+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://blog.longgen.me/blog/2014/07/14/nodejs-an-zhuang-%2C-pei-zhi-ji-shi-yong/
+        </loc>
+        <lastmod>2014-07-14T12:34:45+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/about/</loc>
@@ -78,11 +118,11 @@
     </url>
     <url>
         <loc>http://blog.longgen.me/blog/archives/</loc>
-        <lastmod>2014-07-01T13:39:24+08:00</lastmod>
+        <lastmod>2014-07-14T12:34:45+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/</loc>
-        <lastmod>2014-07-01T13:39:24+08:00</lastmod>
+        <lastmod>2014-07-14T12:34:45+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/robots.txt</loc>

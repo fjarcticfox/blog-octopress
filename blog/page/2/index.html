@@ -9,7 +9,13 @@
   <meta name="author" content="Longgen">
 
   
-  <meta name="description" content="">
+  <meta name="description" content="开启 SSH 服务 openssh-client，客户端，用于登陆其他服务器，ubuntu 默认已经安装，如果未安装则执行以下命令： 1
+sudo apt-get install openssh-client openssh-server，服务端，本机对外开放 SSH 服务 1
+2
+3
+4
+5
+6 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +84,215 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi/">Ubuntu SSH 服务开启</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-27T12:31:02+08:00" pubdate data-updated="true">Jun 27<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi/#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>开启 SSH 服务</h2>
+
+<ul>
+<li>openssh-client，客户端，用于登陆其他服务器，ubuntu 默认已经安装，如果未安装则执行以下命令：</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install openssh-client
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>openssh-server，服务端，本机对外开放 SSH 服务</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># 安装 openssh-server</span>
+</span><span class='line'>sudo apt-get install openssh-server
+</span><span class='line'>
+</span><span class='line'><span class="c"># 确认 ssh server 是否启动，sshd 表示 ssh server 启动成功</span>
+</span><span class='line'>ps -e | grep ssh
+</span><span class='line'>
+</span><span class='line'><span class="c"># 启动 ssh server 服务，ssh server 的配置文件位于 `/etc/ssh/sshd_config`，在这里可以定义 SSH 的服务端口，默认为22</span>
+</span><span class='line'>sudo /etc/init.d/ssh start
+</span><span class='line'><span class="c"># 或</span>
+</span><span class='line'>service ssh start
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/">Ubuntu 软件安装与卸载</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-27T11:56:37+08:00" pubdate data-updated="true">Jun 27<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"></div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/23/google-analytics-zai-ye-mian-zhong-de-shi-yong/">Google Analytics 在页面中的使用</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-23T09:17:10+08:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2014</time>
+        
+           | <a href="/blog/2014/06/23/google-analytics-zai-ye-mian-zhong-de-shi-yong/#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me/blog/2014/06/23/google-analytics-zai-ye-mian-zhong-de-shi-yong/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/30/ubuntu-11-dot-04-xia-shi-yong-nexus-da-jian-maven-cang-ku/">Ubuntu 11.04 下使用 Nexus 搭建 Maven 仓库</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-30T10:03:33+08:00" pubdate data-updated="true">Apr 30<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/04/30/ubuntu-11-dot-04-xia-shi-yong-nexus-da-jian-maven-cang-ku/#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me/blog/2014/04/30/ubuntu-11-dot-04-xia-shi-yong-nexus-da-jian-maven-cang-ku/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>仓库管理器优点</h2>
+
+<ol>
+<li>时间及带宽的节省，加速组织内部项目构建。</li>
+<li>可控制 Maven 下载的机制，为组织的总体架构和政策实施提供了依赖方面的控制（例如，避免不小心添加 GPL 许可证的依赖等等）。</li>
+<li>为开发人员和部门之间提供一种共享内部项目构件的快照版本和发布版本的机制，避免组织内的每个成员单独下载并构建各自的内部项目。</li>
+</ol>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/04/30/ubuntu-11-dot-04-xia-shi-yong-nexus-da-jian-maven-cang-ku/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -256,45 +471,6 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/03/28/ios-kai-fa-bi-ji/">IOS 开发笔记</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-28T10:19:33+08:00" pubdate data-updated="true">Mar 28<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/03/28/ios-kai-fa-bi-ji/#disqus_thread"
-             data-disqus-identifier="http://blog.longgen.me/blog/2014/03/28/ios-kai-fa-bi-ji/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
       <h1 class="entry-title"><a href="/blog/2014/03/26/xcode-shi-yong-ji-qiao/">Xcode 使用技巧</a></h1>
     
     
@@ -337,7 +513,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/03/25/sourcetree-gong-ju/">SourceTree 工具</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/03/23/objective-c-xue-xi/">Objective-C 学习</a></h1>
     
     
       <p class="meta">
@@ -353,168 +529,42 @@
   
 
 
-<time datetime="2014-03-25T15:28:00+08:00" pubdate data-updated="true">Mar 25<span>th</span>, 2014</time>
+<time datetime="2014-03-23T17:01:01+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2014</time>
         
-           | <a href="/blog/2014/03/25/sourcetree-gong-ju/#disqus_thread"
-             data-disqus-identifier="http://blog.longgen.me/blog/2014/03/25/sourcetree-gong-ju/">Comments</a>
+           | <a href="/blog/2014/03/23/objective-c-xue-xi/#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me/blog/2014/03/23/objective-c-xue-xi/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h2>本地文件和服务器文件冲突解决办法</h2>
+  <div class="entry-content"><h1>1 简介</h1>
+
+<h2>1.1 预备知识</h2>
 
 <ul>
-<li>Dsicard Hunk 服务器覆盖本地冲突文件</li>
-<li>Stage Hunk 本地覆盖服务器冲突文件</li>
-<li>Discard Selected 服务器覆盖本地冲突文件中选中行代码</li>
-<li>Stage Selected 本地覆盖服务器冲突文件中选中行代码</li>
+<li>具备 C 类似编程语言的经验，对于不具备语言基础的，可以先阅读 Dava Mark 写的《Learn C On the Mac》
+。</li>
 </ul>
 
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/03/25/sourcetree-gong-ju/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/25/ios-7-iphone-slash-ipad-ying-yong-kai-fa-ji-zhu-xiang-jie/">IOS 7 iPhone/iPad 应用开发技术详解</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-25T14:57:42+08:00" pubdate data-updated="true">Mar 25<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/03/25/ios-7-iphone-slash-ipad-ying-yong-kai-fa-ji-zhu-xiang-jie/#disqus_thread"
-             data-disqus-identifier="http://blog.longgen.me/blog/2014/03/25/ios-7-iphone-slash-ipad-ying-yong-kai-fa-ji-zhu-xiang-jie/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"></div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/03/25/ios-7-iphone-slash-ipad-ying-yong-kai-fa-ji-zhu-xiang-jie/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/25/android-kai-fa-huan-jing-da-jian/">Android 开发环境搭建</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-25T10:54:13+08:00" pubdate data-updated="true">Mar 25<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/03/25/android-kai-fa-huan-jing-da-jian/#disqus_thread"
-             data-disqus-identifier="http://blog.longgen.me/blog/2014/03/25/android-kai-fa-huan-jing-da-jian/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>基于 Android Studio 搭建</h2>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/03/25/android-kai-fa-huan-jing-da-jian/">阅读全文 &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/25/opengl-es%28ios%2Candroid%29kai-fa-huan-jing-da-jian/">OpenGL ES（IOS，Android）开发环境搭建</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-03-25T10:13:36+08:00" pubdate data-updated="true">Mar 25<span>th</span>, 2014</time>
-        
-           | <a href="/blog/2014/03/25/opengl-es%28ios%2Candroid%29kai-fa-huan-jing-da-jian/#disqus_thread"
-             data-disqus-identifier="http://blog.longgen.me/blog/2014/03/25/opengl-es%28ios%2Candroid%29kai-fa-huan-jing-da-jian/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>Mac 下开发环境搭建</h2>
-
-<h3>基于 Eclipse 搭建</h3>
+<h2>1.2 历史背景</h2>
 
 <ul>
-<li>Eclipse 下载地址：<a href="http://www.eclipse.org/downloads/">http://www.eclipse.org/downloads/</a></li>
+<li>20世纪80年代早期，Brad Cox 结合 C 语言及 Smalltakl 语言形成了 Objective-C。</li>
 </ul>
 
 
+<h2>1.3 内容简介</h2>
+
+<p>Objective-C 是 C 语言的一个扩展集。Objective-C 以 C 语言为基础，扩展了许多特性。</p>
+
 </div>
   
   
     <footer>
-      <a rel="full-article" href="/blog/2014/03/25/opengl-es%28ios%2Candroid%29kai-fa-huan-jing-da-jian/">阅读全文 &rarr;</a>
+      <a rel="full-article" href="/blog/2014/03/23/objective-c-xue-xi/">阅读全文 &rarr;</a>
     </footer>
   
 
@@ -538,23 +588,23 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/07/01/cun-chu-xing-neng-ping-jing-de-cheng-yin-%2C-ding-wei-yu-pai-cha/">储性能瓶颈的成因、定位与排查【转】</a>
+        <a href="/blog/2014/07/14/nodejs-an-zhuang-%2C-pei-zhi-ji-shi-yong/">NodeJS 安装、配置及使用</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/07/01/android-kai-fa-chang-yong-ku/">Android 开发常用库</a>
+        <a href="/blog/2014/07/09/%5B%28zhuan-%29%5D-restful-api-she-ji-zhi-nan/">【转】RESTful API 设计指南</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/06/27/ubuntu-yong-hu-%2C-zu-%2C-quan-xian-de-guan-li/">Ubuntu 用户、组、权限的管理</a>
+        <a href="/blog/2014/07/09/postgis-an-zhuang-%2C-pei-zhi-ji-shi-yong/">PostGIS 安装、配置及使用</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi/">Ubuntu SSH 服务开启</a>
+        <a href="/blog/2014/07/07/%5B%28zhuan-%29%5D-tu-pian-fu-wu-jia-gou-yan-jin/">【转】图片服务架构演进</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/">Ubuntu 软件安装与卸载</a>
+        <a href="/blog/2014/07/04/%5B%28zhuan-%29%5D-ssh-yuan-li-yu-yun-yong/">【转】SSH 原理与运用</a>
       </li>
     
   </ul>
@@ -562,42 +612,44 @@
 <section> 
   <h1>文章分类</h1> 
   <ul id="categories"> 
-    <li class='category'><a href='/blog/categories/c/'>C (1)</a></li>
-<li class='category'><a href='/blog/categories/android/'>android (4)</a></li>
+    <li class='category'><a href='/blog/categories/android/'>android (1)</a></li>
+<li class='category'><a href='/blog/categories/architecture/'>architecture (1)</a></li>
 <li class='category'><a href='/blog/categories/blog/'>blog (1)</a></li>
-<li class='category'><a href='/blog/categories/command/'>command (1)</a></li>
-<li class='category'><a href='/blog/categories/eclipse/'>eclipse (1)</a></li>
+<li class='category'><a href='/blog/categories/command/'>command (2)</a></li>
+<li class='category'><a href='/blog/categories/database/'>database (1)</a></li>
 <li class='category'><a href='/blog/categories/github/'>github (1)</a></li>
 <li class='category'><a href='/blog/categories/github-pages/'>github pages (1)</a></li>
 <li class='category'><a href='/blog/categories/group/'>group (1)</a></li>
 <li class='category'><a href='/blog/categories/homebrew/'>homebrew (1)</a></li>
 <li class='category'><a href='/blog/categories/install/'>install (1)</a></li>
-<li class='category'><a href='/blog/categories/ios/'>ios (4)</a></li>
-<li class='category'><a href='/blog/categories/ipad/'>ipad (1)</a></li>
-<li class='category'><a href='/blog/categories/iphone/'>iphone (1)</a></li>
+<li class='category'><a href='/blog/categories/ip/'>ip (1)</a></li>
+<li class='category'><a href='/blog/categories/javascript/'>javascript (1)</a></li>
 <li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
 <li class='category'><a href='/blog/categories/library/'>library (1)</a></li>
-<li class='category'><a href='/blog/categories/linux/'>linux (2)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (3)</a></li>
 <li class='category'><a href='/blog/categories/markdown/'>markdown (1)</a></li>
 <li class='category'><a href='/blog/categories/maven/'>maven (1)</a></li>
 <li class='category'><a href='/blog/categories/nexus/'>nexus (1)</a></li>
+<li class='category'><a href='/blog/categories/nodejs/'>nodejs (1)</a></li>
 <li class='category'><a href='/blog/categories/objective-c/'>objective-c (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/open-source/'>open source (1)</a></li>
-<li class='category'><a href='/blog/categories/opengl-es/'>opengl es (4)</a></li>
-<li class='category'><a href='/blog/categories/operation-system/'>operation system (2)</a></li>
+<li class='category'><a href='/blog/categories/operation-system/'>operation system (1)</a></li>
 <li class='category'><a href='/blog/categories/permission/'>permission (1)</a></li>
+<li class='category'><a href='/blog/categories/picture/'>picture (1)</a></li>
+<li class='category'><a href='/blog/categories/postgis/'>postgis (1)</a></li>
+<li class='category'><a href='/blog/categories/postgresql/'>postgresql (1)</a></li>
 <li class='category'><a href='/blog/categories/pow/'>pow (1)</a></li>
 <li class='category'><a href='/blog/categories/protocol/'>protocol (1)</a></li>
+<li class='category'><a href='/blog/categories/restful/'>restful (1)</a></li>
 <li class='category'><a href='/blog/categories/software/'>software (1)</a></li>
-<li class='category'><a href='/blog/categories/sourcetree/'>sourcetree (1)</a></li>
-<li class='category'><a href='/blog/categories/ssh/'>ssh (1)</a></li>
+<li class='category'><a href='/blog/categories/ssh/'>ssh (2)</a></li>
 <li class='category'><a href='/blog/categories/storage/'>storage (1)</a></li>
+<li class='category'><a href='/blog/categories/tcpdump/'>tcpdump (1)</a></li>
 <li class='category'><a href='/blog/categories/ubuntu/'>ubuntu (4)</a></li>
 <li class='category'><a href='/blog/categories/uninstall/'>uninstall (1)</a></li>
 <li class='category'><a href='/blog/categories/user/'>user (1)</a></li>
 <li class='category'><a href='/blog/categories/xcode/'>xcode (1)</a></li>
-<li class='category'><a href='/blog/categories/开发环境/'>开发环境 (2)</a></li>
  
   </ul> 
 </section>
@@ -657,7 +709,8 @@
   </div>
   <footer role="contentinfo"><p>
   Copyright &copy; 2014 - Longgen -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> -
+  <span class="credit"><a href="https://www.upyun.com/index.html">静态数据由 UPYUN 托管</a></span> 
 </p>
 
 </footer>

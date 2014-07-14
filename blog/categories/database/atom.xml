@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：database | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/database/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-07-14T15:15:17+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[PostGIS 安装、配置及使用]]></title>
+    <link href="http://blog.longgen.me/blog/2014/07/09/postgis-an-zhuang-%2C-pei-zhi-ji-shi-yong/"/>
+    <updated>2014-07-09T10:39:21+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/07/09/postgis-an-zhuang-,-pei-zhi-ji-shi-yong</id>
+    <content type="html"><![CDATA[<p>本文主要介绍目前为止最新版本 PostGIS 及 PostgreSQL 的安装、配置及使用。</p>
+
+<!-- more -->
+
+
+<h2>Windows 下安装及配置</h2>
+
+<p>Windows 下 Postgresql 安装包提供 Application Stack Builder 方式安装插件（包括 PostGIS 插件），所以 Windows 下安装仅需下载 Postgresql 并进行相关操作</p>
+
+<p>Postgresql 下载地址：&lt;></p>
+
+<h2>Linux 下安装及配置</h2>
+]]></content>
+  </entry>
+  
+</feed>
