@@ -4,7 +4,7 @@
   <title><![CDATA[分类：nodejs | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/nodejs/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-07-14T15:15:17+08:00</updated>
+  <updated>2014-08-14T11:20:04+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -26,7 +26,7 @@
 <p>直接通过 <a href="http://www.nodejs.org/">NodeJS 主页</a> 中的 INSTALL 按钮下载并安装。当前 NodeJS 最新版本为 v0.10.29。配置环境变量NODEJS_HOME，并加入path。</p>
 
 <ul>
-<li>Windows 下安装 Postgresql Module</li>
+<li>Windows 下安装 PostgreSQL 的 pg Module，可用于 NodeJS 连接 PostgreSQL 数据库</li>
 </ul>
 
 
@@ -34,17 +34,36 @@
 
 <p>```sh</p>
 
+<h1>nodejs 目录下执行</h1>
+
 <p>npm install node-gyp</p>
 
 <p>```</p>
 
 <p>2）node-gyp（0.13.1）的执行需要依赖 Python 以及 vc++。根据 node-gyp 的 <code>README.md</code> 文件选择合适的 <a href="https://www.python.org/downloads/release/python-273/">Python（v2.7.3）</a>版本安装。。根据操作系统版本及 <code>README.md</code> 说明，选择合适的 <a href="http://go.microsoft.com/?linkid=9816758">vc++ （Win7 下，选择 vc++ 2012）</a>版本安装。</p>
 
-<p>3）安装 pg Module</p>
+<p>3）安装 pg Module。安装 PostgreSQL 的 Module 之前，请确认 PostgreSQL 的环境变量已经配置好。否则会出现 pg_config 命令无法执行的错误。</p>
 
 <p>```sh</p>
 
+<h1>nodejs 目录下执行</h1>
+
 <p>npm install pg</p>
+
+<p>```</p>
+
+<ul>
+<li>Windows 下安装 PostgreSQL 的 pg.js Module，可用于 NodeJS 连接 PostgreSQL 数据库</li>
+</ul>
+
+
+<p>1）安装 pg.js Module 仅需执行以下操作</p>
+
+<p>```sh</p>
+
+<h1>nodejs 目录下执行</h1>
+
+<p>npm install pg.js</p>
 
 <p>```</p>
 

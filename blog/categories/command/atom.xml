@@ -4,7 +4,7 @@
   <title><![CDATA[分类：command | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/command/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-07-14T15:15:17+08:00</updated>
+  <updated>2014-08-14T11:20:04+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -12,6 +12,111 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Homebrew 命令详解]]></title>
+    <link href="http://blog.longgen.me/blog/2014/07/20/homebrew-ming-ling-xiang-jie/"/>
+    <updated>2014-07-20T16:31:49+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/07/20/homebrew-ming-ling-xiang-jie</id>
+    <content type="html"><![CDATA[<p>Homebrew 是 OS X 上的 package 管理工具，用于添加 OS X 中缺失的 package。</p>
+
+<!-- more -->
+
+
+<h2>获取 Homebrew</h2>
+
+<p>```sh</p>
+
+<h1>打开终端窗口, 执行以下脚本。</h1>
+
+<p>$ ruby -e &ldquo;$(curl -fsSL <a href="https://raw.github.com/Homebrew/homebrew/go/install">https://raw.github.com/Homebrew/homebrew/go/install</a>)&rdquo;</p>
+
+<h1>脚本会解释它的作用，然后在您的确认下执行安装。高级安装选项请看 <a href="https://github.com/Homebrew/homebrew/wiki/Installation">这里</a>（需要10.5）。</h1>
+
+<p>```</p>
+
+<h2>使用命令</h2>
+
+<p>```sh</p>
+
+<h1>Homebrew installs <a href="https://github.com/Homebrew/homebrew/tree/master/Library/Formula">the stuff you need</a> that Apple didn’t.</h1>
+
+<p>$ brew install wget</p>
+
+<p>```</p>
+
+<h2>安装目录</h2>
+
+<p>Homebrew 会将 packages 安装到独立目录，然后 symlinks 其中文件到目录 <code>/usr/local</code>.</p>
+
+<p>```sh</p>
+
+<p>$ cd /usr/local
+$ find Cellar
+Cellar/wget/1.15
+Cellar/wget/1.15/bin/wget
+Cellar/wget/1.15/share/man/man1/wget.1</p>
+
+<p>$ ls -l bin
+bin/wget &ndash;> ../Cellar/wget/1.15/bin/wget</p>
+
+<p>```</p>
+
+<p>Homebrew 的所有文件均会被安装到预定义目录下，另外，你可以将 Homebrew 的安装目录设置在你喜欢的任何地方。</p>
+
+<h2>创建自己的 Homebrew 上的 packages</h2>
+
+<p>```sh</p>
+
+<p>$ brew create <a href="http://foo.com/bar-1.0.tgz">http://foo.com/bar-1.0.tgz</a>
+Created /usr/local/Library/Formula/bar.rb</p>
+
+<p>```</p>
+
+<h2>维护自己的 packages</h2>
+
+<p>Homebrew 基于 git、ruby，所以依据掌握的知识，你可以便捷的撤回你的修改或者合并上游的更新。</p>
+
+<p>```sh</p>
+
+<h1>打开编辑</h1>
+
+<p>$ brew edit wget # opens in $EDITOR!</p>
+
+<p>```</p>
+
+<p>Homebrew 的 formulae 都是简单的 Ruby 脚本。</p>
+
+<p>```sh</p>
+
+<p>require &ldquo;formula&rdquo;</p>
+
+<p>class Wget &lt; Formula
+  homepage &ldquo;<a href="http://www.gnu.org/software/wget/">http://www.gnu.org/software/wget/</a>&rdquo;
+  url &ldquo;<a href="http://ftp.gnu.org/gnu/wget/wget-1.15.tar.gz">http://ftp.gnu.org/gnu/wget/wget-1.15.tar.gz</a>&rdquo;
+  sha1 &ldquo;f3c925f19dfe5ed386daae4f339175c108c50574&rdquo;</p>
+
+<p>  def install</p>
+
+<pre><code>system "./configure", "--prefix=#{prefix}"
+system "make", "install"
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>```</p>
+
+<p>Homebrew 使 OS X 更完美。使用 gem 来安装 gems、用 brew 来搞定那些依赖包。</p>
+
+<h2>参考资料</h2>
+
+<ol>
+<li><a href="http://brew.sh/index.html">Homebrew &mdash; The missing package manager for OS X</a></li>
+</ol>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[【转】Linux Tcpdump 命令详解]]></title>
@@ -598,7 +703,7 @@ records). &lsquo;*'表示权威服务器回答标志被设置(nt: 从而addition
 比如对单一的一个SMB数据包, 将产生一屏幕或更多的信息, 所以此选项, 确有需要才使用.</p>
 
 <p>关于SMB数据包格式的信息, 以及每个域的含义可以参看www.cifs.org 或者samba.org 镜像站点的pub/samba/specs/ 目录. linux 上的SMB 补丁
-(nt | rt: patch)由 Andrew Tridgell (<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#116;&#x72;&#x69;&#x64;&#103;&#x65;&#64;&#115;&#97;&#x6d;&#x62;&#x61;&#46;&#111;&#114;&#x67;">&#116;&#x72;&#x69;&#x64;&#103;&#101;&#64;&#115;&#x61;&#109;&#98;&#x61;&#x2e;&#x6f;&#114;&#x67;</a>)提供.</p>
+(nt | rt: patch)由 Andrew Tridgell (<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x74;&#114;&#105;&#x64;&#x67;&#101;&#64;&#x73;&#97;&#x6d;&#x62;&#x61;&#46;&#111;&#114;&#x67;">&#116;&#114;&#x69;&#x64;&#103;&#101;&#64;&#x73;&#x61;&#x6d;&#98;&#x61;&#x2e;&#111;&#x72;&#103;</a>)提供.</p>
 
 <p>NFS 请求和回应</p>
 

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：npm | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/npm/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-08-14T11:20:04+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Npm 命令详解]]></title>
+    <link href="http://blog.longgen.me/blog/2014/07/20/npm-ming-ling-xiang-jie/"/>
+    <updated>2014-07-20T15:57:15+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/07/20/npm-ming-ling-xiang-jie</id>
+    <content type="html"><![CDATA[<p>NPM（Node Packaged Modules），是一个用于管理基于 node.js 编写的 package 的命令行工具。类似于 gem 与 ruby 的关系。</p>
+
+<!-- more -->
+
+
+<h2>npm 获取配置信息的 6 种方式，优先级由高到低。</h2>
+
+<p>```sh</p>
+
+<h1>命令行参数，将 proxy</h1>
+
+<p>```</p>
+
+<h2>npm 常用命令</h2>
+
+<p>```sh</p>
+
+<h1>查看用户本身配置文件路径</h1>
+
+<p>npm config get userconfig   # defaults to ~/.npmrc</p>
+
+<h1>查看全局用户配置文件路径</h1>
+
+<p>npm config get globalconfig # defaults to /usr/local/etc/npmrc</p>
+
+<h1>内置配置文件，在 npm 安装目录下的 npmrc 文件夹中</h1>
+
+<h1>设置 npm 配置</h1>
+
+<p>npm config set <key> <value> [&mdash;global]
+npm config get <key>
+npm config delete <key>
+npm config list
+npm config edit
+npm get <key>
+npm set <key> <value> [&mdash;global]</p>
+
+<h1>在设置配置属性时属性值默认是被存储于用户配置文件中，如果加上 &mdash;global，则被存储在全局配置文件中。</h1>
+
+<h1>查看 npm 的所有配置属性（包括默认配置）</h1>
+
+<p>npm config ls -l</p>
+
+<h1>查看 npm 的各种配置的含义</h1>
+
+<p>npm help config</p>
+
+<h1>为 npm 设置代理</h1>
+
+<p>npm config set proxy <a href="http://server:port">http://server:port</a>
+npm config set https-proxy <a href="http://server:port">http://server:port</a></p>
+
+<h1>如果代理需要认证的话可以这样来设置</h1>
+
+<p>npm config set proxy <a href="http://username:password@server:port">http://username:password@server:port</a>
+npm config set https-proxy <a href="http://username:pawword@server:port">http://username:pawword@server:port</a></p>
+
+<h1>如果代理不支持 https 的话需要修改 npm 存放 package 的网站地址</h1>
+
+<p>npm config set registry &ldquo;<a href="http://registry.npmjs.org/">http://registry.npmjs.org/</a>&rdquo;</p>
+
+<h1>卸载</h1>
+
+<p>sudo npm uninstall npm -g</p>
+
+<h1>或者，如果上面的命令失败了</h1>
+
+<p>sudo make uninstall</p>
+
+<p>```</p>
+
+<h2>注意事项</h2>
+
+<p>~/.npm 为 cache 目录，用于避免重复下载相同的 package。若不需要，可以执行以下命令清空</p>
+
+<p>```</p>
+
+<p>npm cache clean</p>
+
+<p>```</p>
+
+<h2>参考资料</h2>
+
+<ol>
+<li><a href="https://github.com/npm/npm">npm &mdash; node package manager</a></li>
+<li><a href="https://www.npmjs.org/doc/">npm-index</a></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

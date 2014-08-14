@@ -4,7 +4,7 @@
   <title><![CDATA[分类：permission | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/permission/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-07-14T15:15:17+08:00</updated>
+  <updated>2014-08-14T11:20:04+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -20,6 +20,9 @@
     <id>http://blog.longgen.me/blog/2014/06/27/ubuntu-yong-hu-,-zu-,-quan-xian-de-guan-li</id>
     <content type="html"><![CDATA[<p>以下命令基于 Ubuntu 14.04版本。</p>
 
+<!-- more -->
+
+
 <h2>组管理</h2>
 
 <p>```sh</p>
@@ -33,7 +36,7 @@ the current process (which may differ if the groups database has changed).</p>
   --version  output version information and exit
 </code></pre>
 
-<p>Report groups bugs to <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#98;&#x75;&#x67;&#45;&#x63;&#x6f;&#x72;&#101;&#x75;&#x74;&#x69;&#108;&#115;&#x40;&#x67;&#110;&#117;&#x2e;&#111;&#x72;&#103;">&#98;&#117;&#103;&#45;&#x63;&#x6f;&#x72;&#x65;&#117;&#116;&#x69;&#x6c;&#x73;&#x40;&#x67;&#110;&#117;&#x2e;&#111;&#114;&#103;</a>
+<p>Report groups bugs to <a href="&#109;&#97;&#105;&#x6c;&#x74;&#x6f;&#58;&#x62;&#x75;&#x67;&#x2d;&#99;&#x6f;&#x72;&#x65;&#x75;&#116;&#x69;&#x6c;&#115;&#64;&#103;&#x6e;&#x75;&#x2e;&#111;&#114;&#x67;">&#98;&#x75;&#103;&#x2d;&#x63;&#111;&#114;&#101;&#x75;&#116;&#x69;&#x6c;&#x73;&#64;&#x67;&#x6e;&#x75;&#x2e;&#111;&#x72;&#103;</a>
 GNU coreutils home page: <a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>
 General help using GNU software: <a href="http://www.gnu.org/gethelp/">http://www.gnu.org/gethelp/</a>
 Report groups translation bugs to <a href="http://translationproject.org/team/">http://translationproject.org/team/</a>

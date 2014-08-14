@@ -9,7 +9,7 @@
   <meta name="author" content="Longgen">
 
   
-  <meta name="description" content="Windows 下安装及配置 NodeJS 直接通过 NodeJS 主页 中的 INSTALL 按钮下载并安装。当前 NodeJS 最新版本为 v0.10.29。配置环境变量NODEJS_HOME，并加入path。 Windows 下安装 Postgresql Module 1）安装 node- &hellip;">
+  <meta name="description" content="Windows 下安装及配置 NodeJS 直接通过 NodeJS 主页 中的 INSTALL 按钮下载并安装。当前 NodeJS 最新版本为 v0.10.29。配置环境变量NODEJS_HOME，并加入path。 Windows 下安装 PostgreSQL 的 pg Module，可用于 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -115,23 +115,41 @@
 <p>直接通过 <a href="http://www.nodejs.org/">NodeJS 主页</a> 中的 INSTALL 按钮下载并安装。当前 NodeJS 最新版本为 v0.10.29。配置环境变量NODEJS_HOME，并加入path。</p>
 
 <ul>
-<li>Windows 下安装 Postgresql Module</li>
+<li>Windows 下安装 PostgreSQL 的 pg Module，可用于 NodeJS 连接 PostgreSQL 数据库</li>
 </ul>
 
 
 <p>1）安装 node-gyp Module</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>npm install node-gyp
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># nodejs 目录下执行</span>
+</span><span class='line'>npm install node-gyp
 </span></code></pre></td></tr></table></div></figure>
 
 
 <p>2）node-gyp（0.13.1）的执行需要依赖 Python 以及 vc++。根据 node-gyp 的 <code>README.md</code> 文件选择合适的 <a href="https://www.python.org/downloads/release/python-273/">Python（v2.7.3）</a>版本安装。。根据操作系统版本及 <code>README.md</code> 说明，选择合适的 <a href="http://go.microsoft.com/?linkid=9816758">vc++ （Win7 下，选择 vc++ 2012）</a>版本安装。</p>
 
-<p>3）安装 pg Module</p>
+<p>3）安装 pg Module。安装 PostgreSQL 的 Module 之前，请确认 PostgreSQL 的环境变量已经配置好。否则会出现 pg_config 命令无法执行的错误。</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>npm install pg
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># nodejs 目录下执行</span>
+</span><span class='line'>npm install pg
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Windows 下安装 PostgreSQL 的 pg.js Module，可用于 NodeJS 连接 PostgreSQL 数据库</li>
+</ul>
+
+
+<p>1）安装 pg.js Module 仅需执行以下操作</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># nodejs 目录下执行</span>
+</span><span class='line'>npm install pg.js
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -195,6 +213,8 @@
         <a class="basic-alignment left" href="/blog/2014/07/09/%5B%28zhuan-%29%5D-restful-api-she-ji-zhi-nan/" title="Previous Post: 【转】RESTful API 设计指南">&laquo; 【转】RESTful API 设计指南</a>
       
       
+        <a class="basic-alignment right" href="/blog/2014/07/14/icon-fonts-xiang-jie/" title="Next Post: Icon Fonts 详解">Icon Fonts 详解 &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -214,23 +234,23 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/07/14/nodejs-an-zhuang-%2C-pei-zhi-ji-shi-yong/">NodeJS 安装、配置及使用</a>
+        <a href="/blog/2014/08/05/sonar-dai-ma-zhi-liang-guan-li-ping-tai/">Sonar 代码质量管理平台</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/07/09/%5B%28zhuan-%29%5D-restful-api-she-ji-zhi-nan/">【转】RESTful API 设计指南</a>
+        <a href="/blog/2014/07/20/homebrew-ming-ling-xiang-jie/">Homebrew 命令详解</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/07/09/postgis-an-zhuang-%2C-pei-zhi-ji-shi-yong/">PostGIS 安装、配置及使用</a>
+        <a href="/blog/2014/07/20/npm-ming-ling-xiang-jie/">Npm 命令详解</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/07/07/%5B%28zhuan-%29%5D-tu-pian-fu-wu-jia-gou-yan-jin/">【转】图片服务架构演进</a>
+        <a href="/blog/2014/07/17/gradle-an-zhuang-pei-zhi-ji-shi-yong/">Gradle 安装配置及使用</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/07/04/%5B%28zhuan-%29%5D-ssh-yuan-li-yu-yun-yong/">【转】SSH 原理与运用</a>
+        <a href="/blog/2014/07/14/icon-fonts-xiang-jie/">Icon Fonts 详解</a>
       </li>
     
   </ul>
@@ -241,13 +261,15 @@
     <li class='category'><a href='/blog/categories/android/'>android (1)</a></li>
 <li class='category'><a href='/blog/categories/architecture/'>architecture (1)</a></li>
 <li class='category'><a href='/blog/categories/blog/'>blog (1)</a></li>
-<li class='category'><a href='/blog/categories/command/'>command (2)</a></li>
+<li class='category'><a href='/blog/categories/command/'>command (3)</a></li>
 <li class='category'><a href='/blog/categories/database/'>database (1)</a></li>
+<li class='category'><a href='/blog/categories/eclipse/'>eclipse (2)</a></li>
 <li class='category'><a href='/blog/categories/github/'>github (1)</a></li>
 <li class='category'><a href='/blog/categories/github-pages/'>github pages (1)</a></li>
+<li class='category'><a href='/blog/categories/gradle/'>gradle (1)</a></li>
 <li class='category'><a href='/blog/categories/group/'>group (1)</a></li>
-<li class='category'><a href='/blog/categories/homebrew/'>homebrew (1)</a></li>
-<li class='category'><a href='/blog/categories/install/'>install (1)</a></li>
+<li class='category'><a href='/blog/categories/homebrew/'>homebrew (2)</a></li>
+<li class='category'><a href='/blog/categories/icon-fonts/'>icon fonts (1)</a></li>
 <li class='category'><a href='/blog/categories/ip/'>ip (1)</a></li>
 <li class='category'><a href='/blog/categories/javascript/'>javascript (1)</a></li>
 <li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
@@ -257,6 +279,7 @@
 <li class='category'><a href='/blog/categories/maven/'>maven (1)</a></li>
 <li class='category'><a href='/blog/categories/nexus/'>nexus (1)</a></li>
 <li class='category'><a href='/blog/categories/nodejs/'>nodejs (1)</a></li>
+<li class='category'><a href='/blog/categories/npm/'>npm (1)</a></li>
 <li class='category'><a href='/blog/categories/objective-c/'>objective-c (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
 <li class='category'><a href='/blog/categories/open-source/'>open source (1)</a></li>
@@ -269,11 +292,11 @@
 <li class='category'><a href='/blog/categories/protocol/'>protocol (1)</a></li>
 <li class='category'><a href='/blog/categories/restful/'>restful (1)</a></li>
 <li class='category'><a href='/blog/categories/software/'>software (1)</a></li>
+<li class='category'><a href='/blog/categories/sonar/'>sonar (1)</a></li>
 <li class='category'><a href='/blog/categories/ssh/'>ssh (2)</a></li>
 <li class='category'><a href='/blog/categories/storage/'>storage (1)</a></li>
 <li class='category'><a href='/blog/categories/tcpdump/'>tcpdump (1)</a></li>
 <li class='category'><a href='/blog/categories/ubuntu/'>ubuntu (4)</a></li>
-<li class='category'><a href='/blog/categories/uninstall/'>uninstall (1)</a></li>
 <li class='category'><a href='/blog/categories/user/'>user (1)</a></li>
 <li class='category'><a href='/blog/categories/xcode/'>xcode (1)</a></li>
  

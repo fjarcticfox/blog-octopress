@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：eclipse | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/eclipse/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-08-14T11:20:04+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Gradle 安装配置及使用]]></title>
+    <link href="http://blog.longgen.me/blog/2014/07/17/gradle-an-zhuang-pei-zhi-ji-shi-yong/"/>
+    <updated>2014-07-17T14:37:42+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/07/17/gradle-an-zhuang-pei-zhi-ji-shi-yong</id>
+    <content type="html"><![CDATA[<!-- more -->
+
+
+<h2>简介</h2>
+
+<p>Gradle 版本：2.0，支持新特性如下：</p>
+
+<ul>
+<li>更新至 Groovy 2.3.2</li>
+<li>支持 Java 8</li>
+<li>解决 source 和 javadoc artifacts 的新 API</li>
+<li>可以通过 component metadata rules 使用 Ivy extra info</li>
+<li>可以通过 plugins.withId() 来整合插件</li>
+<li>支持 Ivy 以及 Maven repositories 使用 SFTP scheme</li>
+<li>Apache Maven POM profile 现在可以基于系统本身属性信息使用</li>
+<li>良好的细粒度控制 native 工具的参数传递</li>
+<li>简化了跨平台编译及个性化设置（GCC based toolchains）</li>
+<li>为 Ivy repositories 提供新的 &lsquo;ivy&rsquo; layout 支持</li>
+<li>代码质量工具的默认版本更新，以便与当前版本 Gradle 相匹配
+
+<blockquote><ul>
+<li>Checkstyle：5.7</li>
+<li>CodeNarc：0.21</li>
+<li>PMD：5.1.1(note that some rulesets were renamed in PMD 5, e.g. basic &ndash;> java-basic)</li>
+<li>Findbugs：2.0.3</li>
+<li>JaCoCo：0.7.1.201405082137</li>
+</ul>
+</blockquote></li>
+<li>Tooling API 改善</li>
+</ul>
+
+
+<p>更详细的信息，请参考 <a href="http://www.gradle.org/docs/">http://www.gradle.org/docs/</a> 对应版本的 Release Notes。</p>
+
+<h2>与 Eclipse Luna 整合</h2>
+
+<p>eclipse 版本：4.4.0（Luna）</p>
+
+<h2>环境配置</h2>
+
+<ul>
+<li>GRADLE_HOME：Gradle 安装目录</li>
+<li>path：加入 Gradle bin 目录</li>
+<li>GRADLE_OPTS：Gradle 参数选项</li>
+<li>JAVA_OPTS：Java 参数选项</li>
+</ul>
+
+
+<h2>eclipse 插件安装</h2>
+
+<h2>参考资料</h2>
+
+<ol>
+<li><a href="http://www.gradle.org/">Gradle 主页</a></li>
+<li><a href="http://www.gradle.org/downloads">Gradle 下载页</a></li>
+<li><a href="http://www.eclipse.org/downloads/">Eclipse 下载页</a></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Eclipse 配置及优化]]></title>
+    <link href="http://blog.longgen.me/blog/2014/04/30/eclipse-pei-zhi-you-hua/"/>
+    <updated>2014-04-30T17:34:25+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/04/30/eclipse-pei-zhi-you-hua</id>
+    <content type="html"><![CDATA[<!-- more -->
+
+
+<h2>Windows 环境配置</h2>
+
+<ol>
+<li>HOME</li>
+<li>JAVA_HOME</li>
+<li>PATH</li>
+</ol>
+
+
+<h2>eclipse 插件配置</h2>
+
+<ol>
+<li>安装 Eclipse Color Theme 插件，配置编辑器样式</li>
+<li>StartExplorer，跨平台的 eclipse 快捷打开文件所在文件夹的插件</li>
+<li>Subversive &ndash; SVN Team Provider 插件，</li>
+<li>Enide Studio 插件，Node.js，JavaScript 等开发插件</li>
+<li>UML Designer (Eclipse Kepler version) 3.0，UML 设计插件</li>
+</ol>
+
+
+<h2>eclipse 加速</h2>
+
+<ol>
+<li>validation 中，关闭 build 下的所有校验（可以保留Classpath Dependency Validator），只开启 manual 手工校验</li>
+<li>Plug-in Development > Target Platform > plug-in 中关闭无关或暂且不用的 plug-in</li>
+<li>Preferences > General > Startup and Shutdown 取消无关或暂且不用的 plug-ins</li>
+<li>将 Preferences 中的 Dashboard 调整为不随 eclipse 启动</li>
+</ol>
+
+
+<h2>编码配置</h2>
+
+<ol>
+<li>Preferences > General > Workspace 中 Text file encoding 改为 UTF-8</li>
+<li>Preferences > General > Content Types 中更改 Text 下的 Java Properties File、Java Source File、Javascript Source File、JSP 为 UTF-8，其余 content types 的编码可以根据需要进行调整</li>
+</ol>
+
+
+<h2>字体设置</h2>
+
+<ol>
+<li>Preferences > General > Appearance > Colors and Fonts 中 更改 Basic 下的 Text Font，建议字体：Consolas、Courier new、Inconsolata，脚本改为：中欧字符</li>
+</ol>
+
+
+<h2>快捷键设置</h2>
+
+<ol>
+<li>Preferences > General > Keys 中 Content Assist 快捷键更改为 alt + /</li>
+</ol>
+
+
+<h2>标签装饰</h2>
+
+<ol>
+<li>Preferences > General > Appearance > Label Decorations 设置各种标签装饰</li>
+</ol>
+
+
+<h2>Console 输出</h2>
+
+<ol>
+<li>Preferences > Run/Debug > Console 设置 Console buffer size(characters) 为 800000</li>
+</ol>
+
+
+<h2>编辑区配置</h2>
+
+<ol>
+<li>Preferences > General > Editors > Text Editors （或者在文件编辑区域左侧边，点击右键），勾选 Show Line Numbers 开启行号显示</li>
+</ol>
+
+
+<h2>拼写检查</h2>
+
+<ol>
+<li>Preferences > General > Editors > Text Editors > Spelling 中取消勾选 Enable spell checking，关闭拼写检查</li>
+</ol>
+
+
+<h2>代码风格及代码模板</h2>
+
+<ol>
+<li>Preferences > Java > Code Style > Formatter 中配置 Java 代码风格</li>
+<li>Preferences > Java > Code Style > Code Templates 中勾选 Automatically add comments for new methods and types 开启 comments</li>
+<li>Preferences > Java > Editor > Templates 中配置代码模板</li>
+</ol>
+
+
+<h2>常见警告解决办法</h2>
+
+<ul>
+<li>git 工具未安装：安装 git <a href="http://git-scm.com/">http://git-scm.com/</a> 工具，按说明配置 System Settings；或者取消警告消息</li>
+</ul>
+
+
+<p>```sh</p>
+
+<h1>错误消息</h1>
+
+<p>EGit couldn&rsquo;t detect the installation path &ldquo;gitPrefix&rdquo; of native Git. Hence EGit can&rsquo;t respect system level Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory. The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in this system level configuration. The Git installation location can be configured on the Team > Git > Configuration preference page&rsquo;s &lsquo;System Settings&rsquo; tab. This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+```</p>
+
+<ul>
+<li>HOME 环境变量未设置：设置 HOME 环境变量；或者取消告警消息</li>
+</ul>
+
+
+<p>```sh</p>
+
+<h1>错误消息</h1>
+
+<p>Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: &lsquo;C:\Documents and Settings\Wizard&rsquo;. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+```</p>
+
+<h2>常见错误解决办法</h2>
+]]></content>
+  </entry>
+  
+</feed>

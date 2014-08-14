@@ -4,7 +4,7 @@
   <title><![CDATA[分类：pow | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/pow/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-07-14T15:15:17+08:00</updated>
+  <updated>2014-08-14T11:20:04+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -78,6 +78,17 @@ pow --install-local
 sudo launchctl load -w /Library/LaunchDaemons/cx.pow.firewall.plist
 launchctl load -w ~/Library/LaunchAgents/cx.pow.powd.plist
 </code></pre>
+
+<p>```</p>
+
+<h2>使用方法</h2>
+
+<p>```sh</p>
+
+<h1>执行以下链接命令，之后可以用 <code>http://myapp.dev/</code> 地址访问该项目</h1>
+
+<p>cd ~/.pow
+$ ln -s ~/Projects/myapp</p>
 
 <p>```</p>
 ]]></content>

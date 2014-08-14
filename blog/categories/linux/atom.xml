@@ -4,7 +4,7 @@
   <title><![CDATA[分类：linux | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-07-14T15:15:17+08:00</updated>
+  <updated>2014-08-14T11:20:04+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -598,7 +598,7 @@ records). &lsquo;*'表示权威服务器回答标志被设置(nt: 从而addition
 比如对单一的一个SMB数据包, 将产生一屏幕或更多的信息, 所以此选项, 确有需要才使用.</p>
 
 <p>关于SMB数据包格式的信息, 以及每个域的含义可以参看www.cifs.org 或者samba.org 镜像站点的pub/samba/specs/ 目录. linux 上的SMB 补丁
-(nt | rt: patch)由 Andrew Tridgell (<a href="&#109;&#97;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#116;&#114;&#x69;&#100;&#103;&#101;&#x40;&#x73;&#97;&#x6d;&#x62;&#97;&#46;&#x6f;&#114;&#103;">&#x74;&#114;&#x69;&#100;&#103;&#101;&#x40;&#x73;&#97;&#x6d;&#x62;&#x61;&#46;&#111;&#114;&#103;</a>)提供.</p>
+(nt | rt: patch)由 Andrew Tridgell (<a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#x74;&#114;&#x69;&#100;&#x67;&#x65;&#x40;&#115;&#97;&#109;&#98;&#97;&#46;&#x6f;&#x72;&#103;">&#x74;&#114;&#x69;&#100;&#x67;&#x65;&#x40;&#x73;&#97;&#109;&#x62;&#x61;&#x2e;&#x6f;&#114;&#103;</a>)提供.</p>
 
 <p>NFS 请求和回应</p>
 
@@ -3101,7 +3101,7 @@ tecmint.com.        14400   IN  A   40.216.66.239
 
 <p>[avishek@tecmint ~]$ wall &ldquo;we will be going down for maintenance for one hour sharply at 03:30 pm&rdquo;</p>
 
-<p>Broadcast message from <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#114;&#x6f;&#111;&#116;&#x40;&#108;&#x6f;&#99;&#x61;&#x6c;&#x68;&#x6f;&#x73;&#x74;&#46;&#x6c;&#x6f;&#99;&#97;&#x6c;&#100;&#111;&#x6d;&#97;&#105;&#x6e;">&#x72;&#111;&#x6f;&#x74;&#64;&#x6c;&#111;&#99;&#97;&#x6c;&#104;&#x6f;&#x73;&#x74;&#46;&#x6c;&#111;&#99;&#97;&#x6c;&#x64;&#111;&#x6d;&#x61;&#x69;&#x6e;</a> (pts/0) (Sat Jun 29 14:44:02 2013):</p>
+<p>Broadcast message from <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#114;&#111;&#x6f;&#116;&#64;&#108;&#x6f;&#99;&#x61;&#x6c;&#x68;&#x6f;&#x73;&#x74;&#46;&#108;&#x6f;&#99;&#x61;&#108;&#x64;&#x6f;&#109;&#97;&#105;&#x6e;">&#x72;&#x6f;&#x6f;&#x74;&#64;&#x6c;&#x6f;&#x63;&#x61;&#x6c;&#x68;&#x6f;&#115;&#116;&#46;&#x6c;&#x6f;&#x63;&#97;&#108;&#x64;&#111;&#109;&#x61;&#105;&#110;</a> (pts/0) (Sat Jun 29 14:44:02 2013):</p>
 
 <p>we will be going down for maintenance for one hour sharply at 03:30 pm</p>
 

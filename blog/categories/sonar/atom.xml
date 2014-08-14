@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：sonar | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/sonar/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-08-14T11:20:04+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Sonar 代码质量管理平台]]></title>
+    <link href="http://blog.longgen.me/blog/2014/08/05/sonar-dai-ma-zhi-liang-guan-li-ping-tai/"/>
+    <updated>2014-08-05T03:28:52+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/08/05/sonar-dai-ma-zhi-liang-guan-li-ping-tai</id>
+    <content type="html"><![CDATA[<p>Sonar (SonarQube)是一个开源平台，用于管理源代码的质量。Sonar 不只是一个质量数据报告工具，更是代码质量管理平台。支持的语言包括：Java、PHP、C#、C、Cobol、PL/SQL、Flex 等。</p>
+
+<!-- more -->
+
+
+<p>主要特点：</p>
+
+<ul>
+<li>代码覆盖：通过单元测试，将会显示哪行代码被选中</li>
+<li>改善编码规则</li>
+<li>搜寻编码规则：按照名字，插件，激活级别和类别进行查询</li>
+<li>项目搜寻：按照项目的名字进行查询</li>
+<li>对比数据：比较同一张表中的任何测量的趋势</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：gradle | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/gradle/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-08-14T11:20:04+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Gradle 安装配置及使用]]></title>
+    <link href="http://blog.longgen.me/blog/2014/07/17/gradle-an-zhuang-pei-zhi-ji-shi-yong/"/>
+    <updated>2014-07-17T14:37:42+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/07/17/gradle-an-zhuang-pei-zhi-ji-shi-yong</id>
+    <content type="html"><![CDATA[<!-- more -->
+
+
+<h2>简介</h2>
+
+<p>Gradle 版本：2.0，支持新特性如下：</p>
+
+<ul>
+<li>更新至 Groovy 2.3.2</li>
+<li>支持 Java 8</li>
+<li>解决 source 和 javadoc artifacts 的新 API</li>
+<li>可以通过 component metadata rules 使用 Ivy extra info</li>
+<li>可以通过 plugins.withId() 来整合插件</li>
+<li>支持 Ivy 以及 Maven repositories 使用 SFTP scheme</li>
+<li>Apache Maven POM profile 现在可以基于系统本身属性信息使用</li>
+<li>良好的细粒度控制 native 工具的参数传递</li>
+<li>简化了跨平台编译及个性化设置（GCC based toolchains）</li>
+<li>为 Ivy repositories 提供新的 &lsquo;ivy&rsquo; layout 支持</li>
+<li>代码质量工具的默认版本更新，以便与当前版本 Gradle 相匹配
+
+<blockquote><ul>
+<li>Checkstyle：5.7</li>
+<li>CodeNarc：0.21</li>
+<li>PMD：5.1.1(note that some rulesets were renamed in PMD 5, e.g. basic &ndash;> java-basic)</li>
+<li>Findbugs：2.0.3</li>
+<li>JaCoCo：0.7.1.201405082137</li>
+</ul>
+</blockquote></li>
+<li>Tooling API 改善</li>
+</ul>
+
+
+<p>更详细的信息，请参考 <a href="http://www.gradle.org/docs/">http://www.gradle.org/docs/</a> 对应版本的 Release Notes。</p>
+
+<h2>与 Eclipse Luna 整合</h2>
+
+<p>eclipse 版本：4.4.0（Luna）</p>
+
+<h2>环境配置</h2>
+
+<ul>
+<li>GRADLE_HOME：Gradle 安装目录</li>
+<li>path：加入 Gradle bin 目录</li>
+<li>GRADLE_OPTS：Gradle 参数选项</li>
+<li>JAVA_OPTS：Java 参数选项</li>
+</ul>
+
+
+<h2>eclipse 插件安装</h2>
+
+<h2>参考资料</h2>
+
+<ol>
+<li><a href="http://www.gradle.org/">Gradle 主页</a></li>
+<li><a href="http://www.gradle.org/downloads">Gradle 下载页</a></li>
+<li><a href="http://www.eclipse.org/downloads/">Eclipse 下载页</a></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

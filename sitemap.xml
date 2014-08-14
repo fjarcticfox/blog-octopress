@@ -20,7 +20,7 @@
     </url>
     <url>
         <loc>http://blog.longgen.me/blog/2014/03/29/pow-an-zhuang-pei-zhi-ji-shi-yong/</loc>
-        <lastmod>2014-04-30T17:56:36+08:00</lastmod>
+        <lastmod>2014-07-20T14:48:46+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/blog/2014/04/10/kai-yuan-xie-yi-jian-jie/</loc>
@@ -43,6 +43,10 @@
         <lastmod>2014-04-30T17:57:20+08:00</lastmod>
     </url>
     <url>
+        <loc>http://blog.longgen.me/blog/2014/04/30/eclipse-pei-zhi-you-hua/</loc>
+        <lastmod>2014-08-11T17:11:25+08:00</lastmod>
+    </url>
+    <url>
         <loc>
             http://blog.longgen.me/blog/2014/06/23/google-analytics-zai-ye-mian-zhong-de-shi-yong/
         </loc>
@@ -50,7 +54,7 @@
     </url>
     <url>
         <loc>http://blog.longgen.me/blog/2014/06/27/ubuntu-ruan-jian-an-zhuang-yu-xie-zai/</loc>
-        <lastmod>2014-06-27T11:59:04+08:00</lastmod>
+        <lastmod>2014-07-21T17:15:59+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/blog/2014/06/27/ubuntu-ssh-fu-wu-kai-qi/</loc>
@@ -60,7 +64,7 @@
         <loc>
             http://blog.longgen.me/blog/2014/06/27/ubuntu-yong-hu-%2C-zu-%2C-quan-xian-de-guan-li/
         </loc>
-        <lastmod>2014-06-27T15:46:52+08:00</lastmod>
+        <lastmod>2014-07-17T15:44:53+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/blog/2014/07/01/android-kai-fa-chang-yong-ku/</loc>
@@ -98,7 +102,7 @@
         <loc>
             http://blog.longgen.me/blog/2014/07/09/postgis-an-zhuang-%2C-pei-zhi-ji-shi-yong/
         </loc>
-        <lastmod>2014-07-14T09:41:35+08:00</lastmod>
+        <lastmod>2014-07-14T16:39:07+08:00</lastmod>
     </url>
     <url>
         <loc>
@@ -110,7 +114,27 @@
         <loc>
             http://blog.longgen.me/blog/2014/07/14/nodejs-an-zhuang-%2C-pei-zhi-ji-shi-yong/
         </loc>
-        <lastmod>2014-07-14T12:34:45+08:00</lastmod>
+        <lastmod>2014-07-14T16:43:52+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/07/14/icon-fonts-xiang-jie/</loc>
+        <lastmod>2014-07-15T09:24:35+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/07/17/gradle-an-zhuang-pei-zhi-ji-shi-yong/</loc>
+        <lastmod>2014-08-08T17:13:38+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/07/20/npm-ming-ling-xiang-jie/</loc>
+        <lastmod>2014-07-29T15:35:06+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/07/20/homebrew-ming-ling-xiang-jie/</loc>
+        <lastmod>2014-07-21T00:01:07+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.longgen.me/blog/2014/08/05/sonar-dai-ma-zhi-liang-guan-li-ping-tai/</loc>
+        <lastmod>2014-08-05T03:30:17+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/about/</loc>
@@ -118,11 +142,11 @@
     </url>
     <url>
         <loc>http://blog.longgen.me/blog/archives/</loc>
-        <lastmod>2014-07-14T12:34:45+08:00</lastmod>
+        <lastmod>2014-08-11T17:11:25+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/</loc>
-        <lastmod>2014-07-14T12:34:45+08:00</lastmod>
+        <lastmod>2014-08-11T17:11:25+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.longgen.me/robots.txt</loc>
