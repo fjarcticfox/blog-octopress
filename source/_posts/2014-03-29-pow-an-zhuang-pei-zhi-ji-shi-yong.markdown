@@ -64,3 +64,13 @@ Pow，Mac OS X 上零配置的 Rack Server。它使得开发 Rails 及 Rack 应�
     launchctl load -w ~/Library/LaunchAgents/cx.pow.powd.plist
 
 ```
+
+## 使用方法
+
+```sh
+
+# 执行以下链接命令，之后可以用 `http://myapp.dev/` 地址访问该项目
+cd ~/.pow
+$ ln -s ~/Projects/myapp
+
+```

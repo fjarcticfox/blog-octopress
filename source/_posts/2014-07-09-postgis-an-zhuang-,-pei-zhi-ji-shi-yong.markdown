@@ -20,6 +20,11 @@ Postgresql 下载地址：<>
 ## Linux 下安装及配置
 
 
+## 从 shape 文件中将数据导入 PostGIS。
+
+需要注意，shape 文件目录不能包含中文名，shape 文件的编码一般设置为 GBK。
+
+
 
 
 [1]: http://www.postgresql.org/download

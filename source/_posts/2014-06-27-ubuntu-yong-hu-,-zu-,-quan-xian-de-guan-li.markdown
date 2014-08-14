@@ -8,6 +8,8 @@ categories: [ubuntu, user, group, permission]
 
 以下命令基于 Ubuntu 14.04版本。
 
+<!-- more -->
+
 ## 组管理
 
 ```sh

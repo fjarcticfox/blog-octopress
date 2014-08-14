@@ -3,7 +3,7 @@ layout: post
 title: "Ubuntu 软件安装与卸载"
 date: 2014-06-27 11:56:37 +0800
 comments: true
-categories: [ubuntu, operation system, command, software, install, uninstall]
+categories: [ubuntu, operation system, command, software]
 ---
 
 <!-- more -->
