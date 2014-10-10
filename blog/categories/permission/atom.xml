@@ -4,7 +4,7 @@
   <title><![CDATA[分类：permission | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/permission/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-10-10T16:04:47+08:00</updated>
+  <updated>2014-10-10T16:13:36+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -36,7 +36,7 @@ the current process (which may differ if the groups database has changed).</p>
   --version  output version information and exit
 </code></pre>
 
-<p>Report groups bugs to <a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#x62;&#117;&#103;&#x2d;&#99;&#111;&#114;&#x65;&#x75;&#x74;&#x69;&#108;&#x73;&#64;&#x67;&#x6e;&#x75;&#46;&#111;&#114;&#103;">&#x62;&#x75;&#103;&#x2d;&#x63;&#111;&#114;&#101;&#x75;&#x74;&#105;&#x6c;&#x73;&#x40;&#103;&#x6e;&#x75;&#x2e;&#x6f;&#x72;&#x67;</a>
+<p>Report groups bugs to <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#98;&#117;&#x67;&#x2d;&#99;&#111;&#114;&#x65;&#117;&#116;&#x69;&#x6c;&#115;&#64;&#103;&#110;&#x75;&#46;&#x6f;&#x72;&#x67;">&#98;&#x75;&#x67;&#45;&#99;&#x6f;&#114;&#101;&#x75;&#x74;&#105;&#x6c;&#115;&#x40;&#x67;&#110;&#x75;&#x2e;&#x6f;&#114;&#103;</a>
 GNU coreutils home page: <a href="http://www.gnu.org/software/coreutils/">http://www.gnu.org/software/coreutils/</a>
 General help using GNU software: <a href="http://www.gnu.org/gethelp/">http://www.gnu.org/gethelp/</a>
 Report groups translation bugs to <a href="http://translationproject.org/team/">http://translationproject.org/team/</a>

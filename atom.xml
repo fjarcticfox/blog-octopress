@@ -4,7 +4,7 @@
   <title><![CDATA[逆水行舟]]></title>
   <link href="http://blog.longgen.me/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-10-10T16:04:47+08:00</updated>
+  <updated>2014-10-10T16:13:36+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -19,6 +19,9 @@
     <updated>2014-10-09T16:23:56+08:00</updated>
     <id>http://blog.longgen.me/blog/2014/10/09/apache-storm-xiang-jie</id>
     <content type="html"><![CDATA[<p>Apache Storm 是一个免费、开源的分布式实时计算系统，相对于 Hadoop 适用于批处理而言，Storm 可以用于实时处理流式数据。</p>
+
+<!-- more -->
+
 
 <h2>发展历史</h2>
 
@@ -38,7 +41,7 @@
 </ul>
 
 
-<h2>适用场景</h2>
+<h2>适用场景mark</h2>
 
 <ul>
 <li>实时分析</li>
@@ -63,7 +66,10 @@
     <link href="http://blog.longgen.me/blog/2014/10/08/markdown-xiang-jie/"/>
     <updated>2014-10-08T14:48:56+08:00</updated>
     <id>http://blog.longgen.me/blog/2014/10/08/markdown-xiang-jie</id>
-    <content type="html"><![CDATA[<h2>相关工具</h2>
+    <content type="html"><![CDATA[<!-- more -->
+
+
+<h2>相关工具</h2>
 
 <h3><a href="https://github.com/jgm/pandoc">Pandoc</a></h3>
 
@@ -104,6 +110,9 @@
     <updated>2014-09-22T14:13:22+08:00</updated>
     <id>http://blog.longgen.me/blog/2014/09/22/http-chao-wen-ben-chuan-shu-xie-yi-xiang-jie</id>
     <content type="html"><![CDATA[<p>HTTP（HyperText Transfer Protocol，超文本传输协议）是互联网上应用最为广泛的一种网络协议。设计 HTTP 最初的目的是为了提供一种发布和接收 HTML 页面的方法。通过 HTTP 或者 HTTPS 协议请求的资源由统一资源标示符（Uniform Resource Identifiers，URI）来标识。</p>
+
+<!-- more -->
+
 
 <h2>版本</h2>
 
