@@ -45,6 +45,8 @@ eclipse 版本：4.4.0（Luna）
 
 ## eclipse 插件安装
 
+Eclipse 插件能自动生成 Eclipse IDE 相关的文件，以便该项目能导入 Eclipse 中。自动生成的文件包括 external dependencies（包含 associated source 以及 javadoc files），project dependencies 等。
+
 
 
 

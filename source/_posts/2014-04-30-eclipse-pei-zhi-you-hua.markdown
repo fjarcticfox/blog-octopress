@@ -18,11 +18,14 @@ published: true
 
 ## eclipse 插件配置
 
+安装方式：Help -> Install New Software -> Add -> Archive，或者通过 Help -> Eclipse Marketplace 来安装
+
 1. 安装 Eclipse Color Theme 插件，配置编辑器样式
 2. StartExplorer，跨平台的 eclipse 快捷打开文件所在文件夹的插件
-3. Subversive - SVN Team Provider 插件，
-4. Enide Studio 插件，Node.js，JavaScript 等开发插件
-5. UML Designer (Eclipse Kepler version) 3.0，UML 设计插件
+3. Subversive - SVN Team Provider 插件
+4. EGit - Git Team Provider 插件，用于 git 管理
+5. Enide Studio 插件，Node.js，JavaScript 等开发插件
+6. UML Designer (Eclipse Kepler version) 3.0，UML 设计插件
 
 ## eclipse 加速
 
@@ -66,6 +69,7 @@ published: true
 1. Preferences > Java > Code Style > Formatter 中配置 Java 代码风格
 2. Preferences > Java > Code Style > Code Templates 中勾选 Automatically add comments for new methods and types 开启 comments
 3. Preferences > Java > Editor > Templates 中配置代码模板
+4. Preferences > XML > XML Files > Editors 中 Formatting 块中 Line width（行宽） 更改为合适的值，例如：100
 
 ## 常见警告解决办法
 
@@ -85,6 +89,20 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+```
+
+* pom.xml 文件未设置 project.build.sourceEncoding 属性
+
+```sh
+# 错误消息
+Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+```
+
+```xml
+<!-- 解决办法：在 pom.xml 的 project 节点下增加如下内容 -->
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
 ```
 
 ## 常见错误解决办法
