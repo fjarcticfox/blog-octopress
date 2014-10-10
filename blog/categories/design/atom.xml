@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：design | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/design/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-10-10T16:04:47+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[中小企业建站方案及相关资源]]></title>
+    <link href="http://blog.longgen.me/blog/2014/08/31/zhong-xiao-qi-ye-jian-zhan-fang-an-ji-xiang-guan-zi-yuan/"/>
+    <updated>2014-08-31T14:37:43+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/08/31/zhong-xiao-qi-ye-jian-zhan-fang-an-ji-xiang-guan-zi-yuan</id>
+    <content type="html"><![CDATA[<!-- more -->
+
+
+<h2>域名注册</h2>
+
+<ul>
+<li>新网</li>
+<li>万网</li>
+<li>Godaddy</li>
+</ul>
+
+
+<h2>企业邮箱</h2>
+
+<ul>
+<li>Google Apps：可绑定 Gtalk 账号，国内屏蔽，无法使用</li>
+<li>Windows Live Domain</li>
+<li>腾讯 QQ 企业邮箱</li>
+<li>网易免费企业邮箱</li>
+</ul>
+
+
+<h2>建站工具</h2>
+
+<h3>第三方机构提供模板建站</h3>
+
+<p>特点：简单易用，搭建快速，但无法定制开发，有各种限制</p>
+
+<ul>
+<li>淘宝</li>
+<li>阿里巴巴</li>
+<li>百度有啊</li>
+<li>Google Sites</li>
+<li>万网建站平台</li>
+</ul>
+
+
+<h3>自建平台</h3>
+
+<p>特点：可以使用自己的域名，可定制开发，但需要建站知识丰富</p>
+
+<ul>
+<li>电子商务管理系统</li>
+</ul>
+
+
+<p>```
+osCommerce</p>
+
+<pre><code>* 免费开源
+* 在线商店解决方案
+* 有没落的趋势
+</code></pre>
+
+<p>Zen Cart</p>
+
+<pre><code>* 免费开源
+* 在线商店解决方案
+* 支持多语言、多货币
+</code></pre>
+
+<p>ECShop</p>
+
+<pre><code>* 开源
+* 在线商店解决方案
+* 插件和二次开发有一定优势
+* 与 Discuz 系列整合较好
+* 已被 ShopEx 收购
+</code></pre>
+
+<p>ShopEx</p>
+
+<pre><code>* 国内最早网店软件提供商之一
+* 功能全面，收购了 ECShop
+</code></pre>
+
+<p>HiShop
+PHPB2B
+Magento
+OpenChart
+```</p>
+
+<ul>
+<li>CMS（内容管理系统）</li>
+</ul>
+
+
+<p>```
+SupeSite
+DedeCMS
+KingCMS
+Drupal</p>
+
+<pre><code>* 开源
+* PHP
+* 支持多语言
+* 使用广泛，安全性好
+* 强大的定制能力和灵活性
+* 扩展能力强大，有丰富的第三方扩展支持
+* 站内搜索系统能对站内所有内容进行索引和搜索
+* 提供完善的站点管理和分析工具
+* 功能丰富，包括 Blog、协同协作平台、论坛、电子报、相册、文件的上传与下载、全文搜索、多角色权限管理、模块化、主题引擎、多语言支持等
+</code></pre>
+
+<p>WordPress</p>
+
+<pre><code>* 免费开源
+* PHP
+* 功能强大，可用于博客搭建、信息发布平台搭建
+</code></pre>
+
+<p>phpBB</p>
+
+<pre><code>* 开源
+* 可以在数分钟内建立一个论坛，功能可配置
+</code></pre>
+
+<p>Pligg</p>
+
+<pre><code>* 类似 Digg 的 Web 2.0 CMS 系统
+* PHP 开发
+</code></pre>
+
+<p>Gallery</p>
+
+<pre><code>* 免费开源
+* 图库相册软件
+* 基于 PHP、MySQL、PostgreSQL等
+* 功能强大
+* 扩展丰富
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>财务管理</li>
+</ul>
+
+
+<p>```
+Intuit</p>
+
+<pre><code>* 一条龙企业建站服务
+* 适合港台和外企使用
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>CRM（客户关系管理）</li>
+</ul>
+
+
+<p>```
+SalesForce</p>
+
+<pre><code>* Saas 类型的客户关系管理
+* 主要功能模块包括销售、Call Center（呼叫中心）、市场营销、社区等
+* 支持 App 应用
+* 可以安装第三方为 SalesForce 开发的应用程序
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>广告管理</li>
+</ul>
+
+
+<p>```
+OpenX（原名 phpAdsNew）</p>
+
+<pre><code>* PHP 开发
+* 广告管理与跟踪系统，能够管理每个广告主拥有的多种任何尺寸横幅广告
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>微博搭建</li>
+</ul>
+
+
+<p>```
+StatusNet（原名 Laconia）</p>
+
+<pre><code>* 免费开源，授权协议 AGPL
+* 微型博客系统，类似 Twitter
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>Wiki</li>
+</ul>
+
+
+<p>```
+MediaWiki</p>
+
+<pre><code>* 免费开源
+* PHP
+* 维基百科使用 MediaWiki 引擎
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>RSS</li>
+</ul>
+
+
+<p>```
+Gregarius</p>
+
+<pre><code>* 免费开源
+* RSS 聚合程序
+* 不错的用户体验，易于操作和管理，可当成 RSS 阅读器使用
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>应用托管平台</li>
+</ul>
+
+
+<p>```
+Google App Engine</p>
+
+<pre><code>* 只能使用 App Engine 提供的 API
+* 已被国内屏蔽
+</code></pre>
+
+<p>Sina App Engine</p>
+
+<pre><code>* 数据库访问、文件操作、网页抓取等都需要使用新浪提供的 API
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>虚拟主机管理系统</li>
+</ul>
+
+
+<p>```
+VHCS</p>
+
+<pre><code>* 支持中文
+* 支持服务管理员、代理商、最终客户三级管理
+* 具有用户管理、群发邮件、IP 地址管理、流量管理、服务状态查询、统计分析等功能
+* 内置客户服务系统
+</code></pre>
+
+<p>ISPConfig</p>
+
+<pre><code>* 三级管理
+* 反垃圾邮件
+* IPTable
+* 防火墙管理
+* 邮件扫描
+* Shell
+* 服务管理
+* 回收站
+</code></pre>
+
+<p>SysCP</p>
+
+<pre><code>* 三级管理
+* 内置客户服务
+* 其他功能比较少
+</code></pre>
+
+<p>DTC</p>
+
+<pre><code>* 支持中文
+* 主要用 PHP（或 perl），用 SH 控制 Apache 重新启动
+</code></pre>
+
+<p>ZPanel</p>
+
+<pre><code>* 支持Windows 下的 IIS 和 Apache
+</code></pre>
+
+<p>ISPMan</p>
+
+<pre><code>* 适合大型 IDC 使用
+* 分布式 ISP 实现方案
+* 实施该系统较为复杂
+* 功能较为强大，用户结构完善，有管理员、ISP 客户、销售商、ISP 管理员等
+</code></pre>
+
+<p>GNU Hosting Helper</p>
+
+<pre><code>* 适合大型 IDC 使用
+* 支持分布式管理，多台服务器只需要一个管理员控制面板和一个客户控制面板
+* 使用 Perl 编写
+* 功能非常强大，具有服务器、防火墙、邮件、域名、服务监控、客户支持等功能
+</code></pre>
+
+<p>```</p>
+
+<h2>网络营销推广</h2>
+
+<h3>搜索引擎</h3>
+
+<h3>网站联盟</h3>
+
+<h3>电子邮件</h3>
+
+<h3>免费产品</h3>
+
+<h3>社会化营销</h3>
+
+<ul>
+<li>博客营销</li>
+<li>微博营销</li>
+<li>SNS营销</li>
+</ul>
+
+
+<h3>定投广告</h3>
+
+<h2>参考资料</h2>
+
+<ol>
+<li><a href="http://weibo.com/p/1001603748826971262738">中小企业建站方案和资源</a></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

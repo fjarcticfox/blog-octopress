@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：资源 | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/zi-yuan/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-10-10T16:04:47+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[模板引擎资源]]></title>
+    <link href="http://blog.longgen.me/blog/2014/09/03/mo-ban-yin-qing-zi-yuan/"/>
+    <updated>2014-09-03T22:33:58+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/09/03/mo-ban-yin-qing-zi-yuan</id>
+    <content type="html"><![CDATA[<!-- more -->
+
+
+<h2>Java 模板引擎</h2>
+
+<ul>
+<li><a href="http://zh.wikipedia.org/wiki/AngularJS">Rythm</a></li>
+</ul>
+
+
+<p>专为 Java 程序员设计的模板引擎</p>
+
+<h2>参考资料</h2>
+
+<ol>
+<li><a href="http://zh.wikipedia.org/wiki/AngularJS">维基百科：AngularJS</a></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

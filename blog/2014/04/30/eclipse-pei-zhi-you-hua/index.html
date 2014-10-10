@@ -11,9 +11,7 @@
   
   <meta name="description" content="Windows 环境配置 HOME
 JAVA_HOME
-PATH eclipse 插件配置 安装 Eclipse Color Theme 插件，配置编辑器样式
-StartExplorer，跨平台的 eclipse 快捷打开文件所在文件夹的插件
-Subversive &ndash; SVN &hellip;">
+PATH eclipse 插件配置 安装方式：Help &ndash;> Install New Software &ndash;> Add &ndash;> Archive，或者通过 Help &ndash;> Eclipse &hellip;">
   <meta name="keywords" content="eclipse, 配置, 优化">
 
   <!-- http://t.co/dKP3o1e -->
@@ -125,10 +123,13 @@ Subversive &ndash; SVN &hellip;">
 
 <h2>eclipse 插件配置</h2>
 
+<p>安装方式：Help &ndash;> Install New Software &ndash;> Add &ndash;> Archive，或者通过 Help &ndash;> Eclipse Marketplace 来安装</p>
+
 <ol>
 <li>安装 Eclipse Color Theme 插件，配置编辑器样式</li>
 <li>StartExplorer，跨平台的 eclipse 快捷打开文件所在文件夹的插件</li>
-<li>Subversive &ndash; SVN Team Provider 插件，</li>
+<li>Subversive &ndash; SVN Team Provider 插件</li>
+<li>EGit &ndash; Git Team Provider 插件，用于 git 管理</li>
 <li>Enide Studio 插件，Node.js，JavaScript 等开发插件</li>
 <li>UML Designer (Eclipse Kepler version) 3.0，UML 设计插件</li>
 </ol>
@@ -200,6 +201,7 @@ Subversive &ndash; SVN &hellip;">
 <li>Preferences > Java > Code Style > Formatter 中配置 Java 代码风格</li>
 <li>Preferences > Java > Code Style > Code Templates 中勾选 Automatically add comments for new methods and types 开启 comments</li>
 <li>Preferences > Java > Editor > Templates 中配置代码模板</li>
+<li>Preferences > XML > XML Files > Editors 中 Formatting 块中 Line width（行宽） 更改为合适的值，例如：100</li>
 </ol>
 
 
@@ -234,6 +236,31 @@ Subversive &ndash; SVN &hellip;">
 </span><span class='line'>not correct please <span class="nb">set </span>the HOME environment variable and restart Eclipse. Otherwise Git <span class="k">for </span>Windows and
 </span><span class='line'>EGit might behave differently since they see different configuration options.
 </span><span class='line'>This warning can be switched off on the Team &gt; Git &gt; Confirmations and Warnings preference page.
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>pom.xml 文件未设置 project.build.sourceEncoding 属性</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># 错误消息</span>
+</span><span class='line'>Using platform encoding <span class="o">(</span>UTF-8 actually<span class="o">)</span> to copy filtered resources, i.e. build is platform dependent!
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='xml'><span class='line'><span class="c">&lt;!-- 解决办法：在 pom.xml 的 project 节点下增加如下内容 --&gt;</span>
+</span><span class='line'><span class="nt">&lt;properties&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
+</span><span class='line'><span class="nt">&lt;/properties&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -307,27 +334,27 @@ Subversive &ndash; SVN &hellip;">
 <aside class="sidebar">
   
     <section>
-  <h1>最新文章</h1>
+  <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2014/08/05/sonar-dai-ma-zhi-liang-guan-li-ping-tai/">Sonar 代码质量管理平台</a>
+        <a href="/blog/2014/10/09/apache-storm-xiang-jie/">Apache Storm 详解</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/07/20/homebrew-ming-ling-xiang-jie/">Homebrew 命令详解</a>
+        <a href="/blog/2014/10/08/markdown-xiang-jie/">Markdown 详解</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/07/20/npm-ming-ling-xiang-jie/">Npm 命令详解</a>
+        <a href="/blog/2014/09/22/http-chao-wen-ben-chuan-shu-xie-yi-xiang-jie/">HTTP 超文本传输协议详解</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/07/17/gradle-an-zhuang-pei-zhi-ji-shi-yong/">Gradle 安装配置及使用</a>
+        <a href="/blog/2014/09/09/chang-yong-jia-mi-suan-fa-xiang-jie/">常用加密算法详解</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2014/07/14/icon-fonts-xiang-jie/">Icon Fonts 详解</a>
+        <a href="/blog/2014/09/08/tu-pian-ge-shi-xiang-jie/">图片格式详解</a>
       </li>
     
   </ul>
@@ -336,10 +363,14 @@ Subversive &ndash; SVN &hellip;">
   <h1>文章分类</h1> 
   <ul id="categories"> 
     <li class='category'><a href='/blog/categories/android/'>android (1)</a></li>
+<li class='category'><a href='/blog/categories/angularjs/'>angularjs (1)</a></li>
+<li class='category'><a href='/blog/categories/apache/'>apache (1)</a></li>
 <li class='category'><a href='/blog/categories/architecture/'>architecture (1)</a></li>
 <li class='category'><a href='/blog/categories/blog/'>blog (1)</a></li>
 <li class='category'><a href='/blog/categories/command/'>command (3)</a></li>
 <li class='category'><a href='/blog/categories/database/'>database (1)</a></li>
+<li class='category'><a href='/blog/categories/design/'>design (1)</a></li>
+<li class='category'><a href='/blog/categories/docker/'>docker (1)</a></li>
 <li class='category'><a href='/blog/categories/eclipse/'>eclipse (2)</a></li>
 <li class='category'><a href='/blog/categories/github/'>github (1)</a></li>
 <li class='category'><a href='/blog/categories/github-pages/'>github pages (1)</a></li>
@@ -348,12 +379,13 @@ Subversive &ndash; SVN &hellip;">
 <li class='category'><a href='/blog/categories/homebrew/'>homebrew (2)</a></li>
 <li class='category'><a href='/blog/categories/icon-fonts/'>icon fonts (1)</a></li>
 <li class='category'><a href='/blog/categories/ip/'>ip (1)</a></li>
-<li class='category'><a href='/blog/categories/javascript/'>javascript (1)</a></li>
+<li class='category'><a href='/blog/categories/javascript/'>javascript (2)</a></li>
 <li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
 <li class='category'><a href='/blog/categories/library/'>library (1)</a></li>
 <li class='category'><a href='/blog/categories/linux/'>linux (3)</a></li>
-<li class='category'><a href='/blog/categories/markdown/'>markdown (1)</a></li>
-<li class='category'><a href='/blog/categories/maven/'>maven (1)</a></li>
+<li class='category'><a href='/blog/categories/markdown/'>markdown (2)</a></li>
+<li class='category'><a href='/blog/categories/maven/'>maven (2)</a></li>
+<li class='category'><a href='/blog/categories/mysql/'>mysql (1)</a></li>
 <li class='category'><a href='/blog/categories/nexus/'>nexus (1)</a></li>
 <li class='category'><a href='/blog/categories/nodejs/'>nodejs (1)</a></li>
 <li class='category'><a href='/blog/categories/npm/'>npm (1)</a></li>
@@ -370,12 +402,15 @@ Subversive &ndash; SVN &hellip;">
 <li class='category'><a href='/blog/categories/restful/'>restful (1)</a></li>
 <li class='category'><a href='/blog/categories/software/'>software (1)</a></li>
 <li class='category'><a href='/blog/categories/sonar/'>sonar (1)</a></li>
+<li class='category'><a href='/blog/categories/spring/'>spring (1)</a></li>
 <li class='category'><a href='/blog/categories/ssh/'>ssh (2)</a></li>
 <li class='category'><a href='/blog/categories/storage/'>storage (1)</a></li>
+<li class='category'><a href='/blog/categories/storm/'>storm (1)</a></li>
 <li class='category'><a href='/blog/categories/tcpdump/'>tcpdump (1)</a></li>
 <li class='category'><a href='/blog/categories/ubuntu/'>ubuntu (4)</a></li>
 <li class='category'><a href='/blog/categories/user/'>user (1)</a></li>
 <li class='category'><a href='/blog/categories/xcode/'>xcode (1)</a></li>
+<li class='category'><a href='/blog/categories/资源/'>资源 (1)</a></li>
  
   </ul> 
 </section>

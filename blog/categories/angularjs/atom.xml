@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：angularjs | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/angularjs/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-10-10T16:04:47+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[AngularJS 详解]]></title>
+    <link href="http://blog.longgen.me/blog/2014/09/03/angularjs-xiang-jie/"/>
+    <updated>2014-09-03T20:54:02+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/09/03/angularjs-xiang-jie</id>
+    <content type="html"><![CDATA[<p>AngularJS 是一款开源 JavaScript 函数库，由 Google 维护，用来协助单一页面应用程序运行的。它的目标是通过 MVC 模式功能增强基于浏览器的应用，使开发和测试变得更加容易。</p>
+
+<!-- more -->
+
+
+<h2>AngularJS 理念</h2>
+
+<ul>
+<li>声明式编程用于构建用户界面以及编写软件构建，指令式编程用来表示业务逻辑</li>
+<li>双向数据绑定来适应动态内容，双向的数据绑定允许模型和视图之间的自动同步</li>
+</ul>
+
+
+<h2>AngularJS 设计目标</h2>
+
+<ul>
+<li>将应用逻辑与对 DOM 的操作解耦，提高代码可测试性</li>
+<li>将应用程序的测试与应用程序的编写放在同等重要的位置</li>
+<li>应用程序的客户端与服务器端解耦，允许客户端和服务端的开发并行，并提高可复用性</li>
+<li>指导开发者完成构建应用程序的整个历程：用户界面设计、业务逻辑编写、测试</li>
+</ul>
+
+
+<h2>AngularJS 特点</h2>
+
+<ul>
+<li>MIT 许可证</li>
+<li>遵循软件工程的 MVC 模式，展现、数据和逻辑组件之间松耦合（依赖注入）</li>
+<li>双向数据绑定</li>
+</ul>
+
+
+<h2>浏览器支持</h2>
+
+<ul>
+<li>AngularJS 1.2 继续支持 IE8，但不会再继续花时间维护；AngularJS 1.3 开始，将不再支持 IE8</li>
+</ul>
+
+
+<h2>相关资源</h2>
+
+<ul>
+<li><a href="http://angular-ui.github.io/">http://angular-ui.github.io/</a></li>
+</ul>
+
+
+<h2>参考资料</h2>
+
+<ol>
+<li><a href="http://zh.wikipedia.org/wiki/AngularJS">维基百科：AngularJS</a></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：docker | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/docker/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-10-10T16:04:47+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Docker 详解]]></title>
+    <link href="http://blog.longgen.me/blog/2014/09/03/docker-xiang-jie/"/>
+    <updated>2014-09-03T16:21:21+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/09/03/docker-xiang-jie</id>
+    <content type="html"><![CDATA[<!-- more -->
+
+
+<h2>Docker 特点</h2>
+
+<ul>
+<li>轻量级</li>
+<li>操作系统级的虚拟化技术</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

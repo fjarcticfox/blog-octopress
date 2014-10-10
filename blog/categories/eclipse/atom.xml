@@ -4,7 +4,7 @@
   <title><![CDATA[分类：eclipse | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/eclipse/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-08-14T11:20:04+08:00</updated>
+  <updated>2014-10-10T16:04:47+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -68,6 +68,8 @@
 
 <h2>eclipse 插件安装</h2>
 
+<p>Eclipse 插件能自动生成 Eclipse IDE 相关的文件，以便该项目能导入 Eclipse 中。自动生成的文件包括 external dependencies（包含 associated source 以及 javadoc files），project dependencies 等。</p>
+
 <h2>参考资料</h2>
 
 <ol>
@@ -98,10 +100,13 @@
 
 <h2>eclipse 插件配置</h2>
 
+<p>安装方式：Help &ndash;> Install New Software &ndash;> Add &ndash;> Archive，或者通过 Help &ndash;> Eclipse Marketplace 来安装</p>
+
 <ol>
 <li>安装 Eclipse Color Theme 插件，配置编辑器样式</li>
 <li>StartExplorer，跨平台的 eclipse 快捷打开文件所在文件夹的插件</li>
-<li>Subversive &ndash; SVN Team Provider 插件，</li>
+<li>Subversive &ndash; SVN Team Provider 插件</li>
+<li>EGit &ndash; Git Team Provider 插件，用于 git 管理</li>
 <li>Enide Studio 插件，Node.js，JavaScript 等开发插件</li>
 <li>UML Designer (Eclipse Kepler version) 3.0，UML 设计插件</li>
 </ol>
@@ -173,6 +178,7 @@
 <li>Preferences > Java > Code Style > Formatter 中配置 Java 代码风格</li>
 <li>Preferences > Java > Code Style > Code Templates 中勾选 Automatically add comments for new methods and types 开启 comments</li>
 <li>Preferences > Java > Editor > Templates 中配置代码模板</li>
+<li>Preferences > XML > XML Files > Editors 中 Formatting 块中 Line width（行宽） 更改为合适的值，例如：100</li>
 </ol>
 
 
@@ -204,6 +210,31 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+```</p>
+
+<ul>
+<li>pom.xml 文件未设置 project.build.sourceEncoding 属性</li>
+</ul>
+
+
+<p>```sh</p>
+
+<h1>错误消息</h1>
+
+<p>Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+```</p>
+
+<p>```xml</p>
+
+<!-- 解决办法：在 pom.xml 的 project 节点下增加如下内容 -->
+
+
+<p><properties></p>
+
+<pre><code>&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+</code></pre>
+
+<p></properties>
 ```</p>
 
 <h2>常见错误解决办法</h2>

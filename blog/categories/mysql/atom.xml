@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[分类：mysql | 逆水行舟]]></title>
+  <link href="http://blog.longgen.me/blog/categories/mysql/atom.xml" rel="self"/>
+  <link href="http://blog.longgen.me/"/>
+  <updated>2014-10-10T16:04:47+08:00</updated>
+  <id>http://blog.longgen.me/</id>
+  <author>
+    <name><![CDATA[Longgen]]></name>
+    <email><![CDATA[fjarcticfox@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[MySQL 详解]]></title>
+    <link href="http://blog.longgen.me/blog/2014/09/05/mysql-xiang-jie/"/>
+    <updated>2014-09-05T10:16:53+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/09/05/mysql-xiang-jie</id>
+    <content type="html"><![CDATA[<!-- more -->
+
+
+<h2>下载安装及配置</h2>
+
+<h3>OS X 环境</h3>
+
+<h3>Windows 环境</h3>
+
+<p>Windows 下有可采用两种方式安装 MySQL 服务。</p>
+
+<ul>
+<li><p>ZIP Archive</p>
+
+<ol>
+<li> 下载 ZIP 压缩包，解压至对应目录下</li>
+<li> 配置环境变量 MYSQL_HOME，以及增加 MySQL 的 bin 目录到 path 变量中</li>
+</ol>
+</li>
+<li><p>MSI Installer</p>
+
+<ol>
+<li> 下载 MSI 安装包，按提示进行安装</li>
+</ol>
+</li>
+</ul>
+
+
+<h2>MySQL 常用命令</h2>
+
+<p>```sh</p>
+
+<h1>mysqld，数据库启动命令</h1>
+
+<p>mysqld</p>
+
+<h1>mysql，数据库链接命令</h1>
+
+<p>mysql</p>
+
+<h1>status，查看数据库状态</h1>
+
+<h2>mysql> status</h2>
+
+<p>mysql  Ver 14.14 Distrib 5.6.20, for Win64 (x86_64)</p>
+
+<p>Connection id:          13
+Current database:
+Current user:           ODBC@localhost
+SSL:                    Not in use
+Using delimiter:        ;
+Server version:         5.6.20 MySQL Community Server (GPL)
+Protocol version:       10
+Connection:             localhost via TCP/IP
+Server characterset:    latin1
+Db     characterset:    latin1
+Client characterset:    gbk
+Conn.  characterset:    gbk
+TCP port:               3306
+Uptime:                 14 min 32 sec</p>
+
+<h2>Threads: 5  Questions: 348  Slow queries: 0  Opens: 68  Flush tables: 1  Open tables: 61  Queries per second avg: 0.399</h2>
+
+<h1>查看数据库列表</h1>
+
+<p>mysql> show databases;
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+
+| Database           |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+
+| information_schema |
+| mysql              |
+| performance_schema |
+| test               |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+
+4 rows in set (0.00 sec)</p>
+
+<h1>数据库切换（切换至 mysql 数据库）</h1>
+
+<p>mysql> use mysql;</p>
+
+<h1>查看库中数据表列表</h1>
+
+<p>mysql> show tables;</p>
+
+<h1>查看 mysql 数据库用户</h1>
+
+<p>mysql> select * from mysql.user;</p>
+
+<h1></h1>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>

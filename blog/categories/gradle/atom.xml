@@ -4,7 +4,7 @@
   <title><![CDATA[分类：gradle | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/gradle/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-08-14T11:20:04+08:00</updated>
+  <updated>2014-10-10T16:04:47+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -67,6 +67,8 @@
 
 
 <h2>eclipse 插件安装</h2>
+
+<p>Eclipse 插件能自动生成 Eclipse IDE 相关的文件，以便该项目能导入 Eclipse 中。自动生成的文件包括 external dependencies（包含 associated source 以及 javadoc files），project dependencies 等。</p>
 
 <h2>参考资料</h2>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[分类：protocol | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/protocol/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-08-14T11:20:04+08:00</updated>
+  <updated>2014-10-10T16:04:47+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -69,6 +69,10 @@
 <p>但是如果修改 LGPL 协议的代码或者衍生，则所有修改的代码，涉及修改部分的额外代码和衍生的代码都必须采用 LGPL 协议。因此 LGPL 协议的开源代码很适合作为第三方类库被商业软件引用，但不适合希望以 LGPL 协议代码为基础，通过修改和衍生的方式做二次开发的商业软件采用。</p>
 
 <p>GPL/LGPL 都保障原作者的知识产权，避免有人利用开源代码复制并开发类似的产品。</p>
+
+<h2>AGPL（The GNU Affero General Public License）</h2>
+
+<p>原有的GPL协议，由于现在网络服务公司兴起（如：google）产生了一定的漏洞，比如使用GPL的自由软件，但是并不发布与网络之中，则可以自由的使用GPL协议却不开源自己私有的解决方案。AGPL则增加了对此做法的约束。</p>
 
 <h2>MIT（MIT）</h2>
 

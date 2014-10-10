@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>图片格式详解 - 逆水行舟</title>
+  <meta name="author" content="Longgen">
+
+  
+  <meta name="description" content="JPEG JPEG 格式是一种大小与质量相平衡的压缩图片格式。通俗一点讲，就是：高的压缩比 = 低的图片质量 = 小的文件大小。反之，低的压缩比 = 高的图片质量 = 大的文件大小。由于 JPEG 文件无法保持 100％ 的原始图像的像素数据，所以它不被认为是一种无损图像格式。 用途 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.longgen.me/blog/2014/09/08/tu-pian-ge-shi-xiang-jie">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="逆水行舟" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48617955-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">逆水行舟</a></h1>
+  
+    <h2>Do what you say, say what you do</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.longgen.me" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">首页</a></li>
+  <li><a href="/blog/archives">归档</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">图片格式详解</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-08T22:04:52+08:00" pubdate data-updated="true">Sep 8<span>th</span>, 2014</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.longgen.me">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><!-- more -->
+
+
+<h2>JPEG</h2>
+
+<p>JPEG 格式是一种大小与质量相平衡的压缩图片格式。通俗一点讲，就是：高的压缩比 = 低的图片质量 = 小的文件大小。反之，低的压缩比 = 高的图片质量 = 大的文件大小。由于 JPEG 文件无法保持 100％ 的原始图像的像素数据，所以它不被认为是一种无损图像格式。</p>
+
+<h3>用途</h3>
+
+<p>由于这种极其敏感的平衡特性，JPEG 非常适合被应用在那些允许轻微失真的像素色彩丰富的图片（照片）场合。反之，JPEG 格式图片并不适合做简单色彩（色调少）的图片，比如 LOGO，各种小图标（ICONS）。</p>
+
+<h2>GIF</h2>
+
+<p>GIF 格式，是为使图片能够应用在在线（online）应用程序上所特别开发的图片格式。Gif，有时也被成为“Giff”，是一种无损，8位图片格式。“无损”是指 100% 的保持原始图片的像素数据信息。专业名词“8位”是指，所能表现的颜色深度——一个 8 位图像仅最多只能支持 256 种不同颜色（一个多余 256 种颜色的图片若用gif图片保存会出现失真）。</p>
+
+<h3>用途</h3>
+
+<p>由于 8 位颜色深度的限制，Gif 不适合应用于各种色彩过于丰富的照片存储场合。但它却非常适合应用在以下场合：Logo、小图标（Icon）、用于布局的图片（例如某个布局角落，边框等等）、仅包含不超过 256 种色彩的简单，小型图片场合</p>
+
+<h3>透明特性：</h3>
+
+<p>GIF 支持基本的透明特性，这意味着你能够使图片的某些像素“不可见”。在其被放置到网页中时，我们就可以看到通过这些不可见区域看到此图片后面的背景颜色（图片）。此特性非常有用：如果你需要将某个 gif 图片的内容置于所有图片的上层，你可以将其设置为透明。</p>
+
+<h3>压缩特性：</h3>
+
+<p>GIF 格式采用 LZW 算法进行压缩，此算法是 Unisys 申请的一项专利。在很久很久之前，如果你想使用 GIF 格式，那么就意味着你需要向 Unisys 付费申请专利许可。不过值得高兴的是，此项专利技术已于2003年6月20日过期，我们现在可以免费的使用 GIF 了！</p>
+
+<h3>隔行扫描：</h3>
+
+<p>GIF 同时也支持隔行扫描。隔行扫描能够令图片在浏览器中更快的加载和显示。此特性对于那些慢网速的浏览者来说尤其实用。</p>
+
+<h3>动画 GIF：</h3>
+
+<p>一个动态的 GIF 文件，是由若干帧图片所联结而成的动态图片。在显示时，这些动态帧被反复的绘制读取出来从而形成了简单的动画效果。合理的运用 GIF 动画能够为网页增添动静结合的效果，而过度的使用则会使网页杂乱无章。</p>
+
+<h2>PNG</h2>
+
+<p>PNG，读“ping”，初始时被作为 GIF 的免费替代格式所开发，采用公共专利压缩算法。PNG 格式也是一种无损压缩，但与 GIF 格式不同的是，PNG 同时支持 8 位和 24 位的图像。</p>
+
+<h3>8位PNG图像：</h3>
+
+<p>一个 8 位 PNG 图片，支持透明背景且像素颜色不能超过 256 种。除了压缩算法不同之外，此 8 位 PNG 格式与 GIF 格式极其相似；</p>
+
+<p>用途：8 位 PNG 图片的用途与 GIF 格式基本相同，Logo、小图标（Icon）、用于布局的图片（例如某个布局角落，边框等等）、仅包含不超过256种色彩的简单，小型图片场合</p>
+
+<h3>24 位 PNG 图像：</h3>
+
+<p>24 位 PNG，支持 160 万种不同的像素颜色且支持 Alpha 透明效果，这就意味着，无论透明度设置为多少，PNG 图片均能够与背景很好的融合在一起。</p>
+
+<h3>对 PNG 的支持：</h3>
+
+<p>由于 PNG 格式的广泛使用和开发者更加重视网页的 WEB 标准，不同浏览器对 PNG 的支持就显得相当重要了。不过，幸运的是，目前市场上主流的浏览器对 PNG 格式都有很好的支持，这包括：IE*, Firefox, Safari, Opera, and Konqueror。但不幸的是，IE6 及 IE6 以下的浏览器对 PNG 透明背景的支持并不好。不过我们仍可以通过其他方法来解决这个问题，详情请查看如何在 IE6 中正常显示透明 PNG。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Longgen</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-08T22:04:52+08:00" pubdate data-updated="true">Sep 8<span>th</span>, 2014</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.longgen.me/blog/2014/09/08/tu-pian-ge-shi-xiang-jie/" data-via="fjarcticfox" data-counturl="http://blog.longgen.me/blog/2014/09/08/tu-pian-ge-shi-xiang-jie/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/09/05/mysql-xiang-jie/" title="Previous Post: MySQL 详解">&laquo; MySQL 详解</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/09/09/chang-yong-jia-mi-suan-fa-xiang-jie/" title="Next Post: 常用加密算法详解">常用加密算法详解 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/10/09/apache-storm-xiang-jie/">Apache Storm 详解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/08/markdown-xiang-jie/">Markdown 详解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/22/http-chao-wen-ben-chuan-shu-xie-yi-xiang-jie/">HTTP 超文本传输协议详解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/09/chang-yong-jia-mi-suan-fa-xiang-jie/">常用加密算法详解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/08/tu-pian-ge-shi-xiang-jie/">图片格式详解</a>
+      </li>
+    
+  </ul>
+</section>
+<section> 
+  <h1>文章分类</h1> 
+  <ul id="categories"> 
+    <li class='category'><a href='/blog/categories/android/'>android (1)</a></li>
+<li class='category'><a href='/blog/categories/angularjs/'>angularjs (1)</a></li>
+<li class='category'><a href='/blog/categories/apache/'>apache (1)</a></li>
+<li class='category'><a href='/blog/categories/architecture/'>architecture (1)</a></li>
+<li class='category'><a href='/blog/categories/blog/'>blog (1)</a></li>
+<li class='category'><a href='/blog/categories/command/'>command (3)</a></li>
+<li class='category'><a href='/blog/categories/database/'>database (1)</a></li>
+<li class='category'><a href='/blog/categories/design/'>design (1)</a></li>
+<li class='category'><a href='/blog/categories/docker/'>docker (1)</a></li>
+<li class='category'><a href='/blog/categories/eclipse/'>eclipse (2)</a></li>
+<li class='category'><a href='/blog/categories/github/'>github (1)</a></li>
+<li class='category'><a href='/blog/categories/github-pages/'>github pages (1)</a></li>
+<li class='category'><a href='/blog/categories/gradle/'>gradle (1)</a></li>
+<li class='category'><a href='/blog/categories/group/'>group (1)</a></li>
+<li class='category'><a href='/blog/categories/homebrew/'>homebrew (2)</a></li>
+<li class='category'><a href='/blog/categories/icon-fonts/'>icon fonts (1)</a></li>
+<li class='category'><a href='/blog/categories/ip/'>ip (1)</a></li>
+<li class='category'><a href='/blog/categories/javascript/'>javascript (2)</a></li>
+<li class='category'><a href='/blog/categories/jekyll/'>jekyll (1)</a></li>
+<li class='category'><a href='/blog/categories/library/'>library (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>linux (3)</a></li>
+<li class='category'><a href='/blog/categories/markdown/'>markdown (2)</a></li>
+<li class='category'><a href='/blog/categories/maven/'>maven (2)</a></li>
+<li class='category'><a href='/blog/categories/mysql/'>mysql (1)</a></li>
+<li class='category'><a href='/blog/categories/nexus/'>nexus (1)</a></li>
+<li class='category'><a href='/blog/categories/nodejs/'>nodejs (1)</a></li>
+<li class='category'><a href='/blog/categories/npm/'>npm (1)</a></li>
+<li class='category'><a href='/blog/categories/objective-c/'>objective-c (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/open-source/'>open source (1)</a></li>
+<li class='category'><a href='/blog/categories/operation-system/'>operation system (1)</a></li>
+<li class='category'><a href='/blog/categories/permission/'>permission (1)</a></li>
+<li class='category'><a href='/blog/categories/picture/'>picture (1)</a></li>
+<li class='category'><a href='/blog/categories/postgis/'>postgis (1)</a></li>
+<li class='category'><a href='/blog/categories/postgresql/'>postgresql (1)</a></li>
+<li class='category'><a href='/blog/categories/pow/'>pow (1)</a></li>
+<li class='category'><a href='/blog/categories/protocol/'>protocol (1)</a></li>
+<li class='category'><a href='/blog/categories/restful/'>restful (1)</a></li>
+<li class='category'><a href='/blog/categories/software/'>software (1)</a></li>
+<li class='category'><a href='/blog/categories/sonar/'>sonar (1)</a></li>
+<li class='category'><a href='/blog/categories/spring/'>spring (1)</a></li>
+<li class='category'><a href='/blog/categories/ssh/'>ssh (2)</a></li>
+<li class='category'><a href='/blog/categories/storage/'>storage (1)</a></li>
+<li class='category'><a href='/blog/categories/storm/'>storm (1)</a></li>
+<li class='category'><a href='/blog/categories/tcpdump/'>tcpdump (1)</a></li>
+<li class='category'><a href='/blog/categories/ubuntu/'>ubuntu (4)</a></li>
+<li class='category'><a href='/blog/categories/user/'>user (1)</a></li>
+<li class='category'><a href='/blog/categories/xcode/'>xcode (1)</a></li>
+<li class='category'><a href='/blog/categories/资源/'>资源 (1)</a></li>
+ 
+  </ul> 
+</section>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/fjarcticfox">@fjarcticfox</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'fjarcticfox',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/fjarcticfox?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/fjarcticfox">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/100396039005337701113?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Longgen -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span> -
+  <span class="credit"><a href="https://www.upyun.com/index.html">静态数据由 UPYUN 托管</a></span> 
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'longgen';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.longgen.me/blog/2014/09/08/tu-pian-ge-shi-xiang-jie/';
+        var disqus_url = 'http://blog.longgen.me/blog/2014/09/08/tu-pian-ge-shi-xiang-jie/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

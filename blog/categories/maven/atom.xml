@@ -4,7 +4,7 @@
   <title><![CDATA[分类：maven | 逆水行舟]]></title>
   <link href="http://blog.longgen.me/blog/categories/maven/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-08-14T11:20:04+08:00</updated>
+  <updated>2014-10-10T16:04:47+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -12,6 +12,25 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[企业 Spring 最佳实践]]></title>
+    <link href="http://blog.longgen.me/blog/2014/08/28/qi-ye-spring-zui-jia-shi-jian/"/>
+    <updated>2014-08-28T22:49:22+08:00</updated>
+    <id>http://blog.longgen.me/blog/2014/08/28/qi-ye-spring-zui-jia-shi-jian</id>
+    <content type="html"><![CDATA[<h2>项目配置</h2>
+
+<h2>参考资料</h2>
+
+<ol>
+<li><a href="http://gordondickens.com/wordpress/2012/07/03/enterprise-spring-best-practices-part-1-project-config/">Enterprise Spring Best Practices – Part 1 – Project Config</a></li>
+<li><a href="http://gordondickens.com/wordpress/2012/07/08/enterprise-spring-best-practices-part-2-application-architecture/">Enterprise Spring Best Practices – Part 2 – Application Architecture</a></li>
+<li><a href="http://gordondickens.com/wordpress/2012/07/30/enterprise-spring-framework-best-practices-part-3-xml-config/">Enterprise Spring Framework Best Practices – Part 3 – XML Config</a></li>
+<li><a href="https://github.com/gordonad/enterprise-spring-best-practices">Enterprise Spring Best Practices &ndash; Part 4 &ndash; Source Code</a></li>
+</ol>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ubuntu 11.04 下使用 Nexus 搭建 Maven 仓库]]></title>
