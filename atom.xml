@@ -4,7 +4,7 @@
   <title><![CDATA[逆水行舟]]></title>
   <link href="http://blog.longgen.me/atom.xml" rel="self"/>
   <link href="http://blog.longgen.me/"/>
-  <updated>2014-10-10T16:13:36+08:00</updated>
+  <updated>2014-10-13T12:39:17+08:00</updated>
   <id>http://blog.longgen.me/</id>
   <author>
     <name><![CDATA[Longgen]]></name>
@@ -72,6 +72,18 @@
 <h2>相关工具</h2>
 
 <h3><a href="https://github.com/jgm/pandoc">Pandoc</a></h3>
+
+<ul>
+<li>OS X</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># 安装 pandoc，可以使用 pandoc 将 markdown 文件转为 docx，之后使用 office 软件转为 pdf 文件</span>
+</span><span class='line'>brew install pandoc
+</span></code></pre></td></tr></table></div></figure>
+
 
 <h3><a href="http://www.princexml.com/">Prince</a></h3>
 
