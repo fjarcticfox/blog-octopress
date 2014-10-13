@@ -16,6 +16,15 @@ categories: [markdown]
 
 ### [Pandoc][2]
 
+* OS X 
+
+```sh
+
+# 安装 pandoc，可以使用 pandoc 将 markdown 文件转为 docx，之后使用 office 软件转为 pdf 文件
+brew install pandoc
+
+```
+
 ### [Prince][6]
 
 * 收费，价格非常高
